@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Auto.Cyprus · Pafou 57, Limassol</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* Dark, from the dealer's own look: black/white photography on Instagram and Taplink, bold uppercase wordmark. One accent: warm gold. */
+  :root{
+    --bg:#111214; --panel:#1b1d21; --line-solid:#2c2f34;
+    --ink:#f5f5f4; --ink-2:#a7abb3; --accent:#c9a227; --on-accent:#111214;
+    --radius:14px; --max:1180px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto} *{transition:none!important}}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Karla,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:"Archivo Black",Karla,system-ui,sans-serif;font-weight:400;letter-spacing:.01em;margin:0;line-height:1.08;text-transform:uppercase}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;font-weight:600;text-decoration:none;border:1px solid transparent;white-space:nowrap;transition:transform .12s}
+  .btn:active{transform:translateY(1px)}
+  .btn-primary{background:var(--accent);color:var(--on-accent)}
+  .btn-ghost{border-color:var(--ink-2);color:var(--ink)}
+  .btn svg{width:18px;height:18px;flex:none}
+
+  /* concept banner */
+  .concept{background:var(--accent);color:var(--on-accent);font-size:13px;font-weight:600;text-align:center;padding:6px 12px}
+
+  /* nav */
+  header{position:sticky;top:0;z-index:20;background:rgba(17,18,20,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-solid)}
+  nav{height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .brand{display:flex;align-items:center;gap:2px;text-decoration:none;white-space:nowrap;font-family:"Archivo Black",sans-serif;font-size:20px;letter-spacing:.02em}
+  .brand .dot{color:var(--accent)}
+  @media (max-width:420px){.brand{font-size:16px}.lang button{padding:5px 8px}}
+  .links{display:flex;gap:26px;font-weight:500}
+  .links a{text-decoration:none;color:var(--ink-2)}
+  .links a:hover{color:var(--ink)}
+  .lang{display:flex;gap:4px;border:1px solid var(--line-solid);border-radius:999px;padding:3px}
+  .lang button{background:none;border:0;color:var(--ink-2);font:inherit;font-weight:600;font-size:13px;padding:5px 10px;border-radius:999px;cursor:pointer}
+  .lang button[aria-pressed="true"]{background:var(--accent);color:var(--on-accent)}
+  @media (max-width:860px){.links{display:none}}
+
+  /* hero: split, left text, right image */
+  .hero{padding:40px 0 56px}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+  .hero h1{font-size:clamp(30px,3.4vw,46px)}
+  .hero p{font-size:19px;color:var(--ink-2);max-width:42ch;margin:18px 0 26px}
+  .cta{display:flex;gap:12px;flex-wrap:wrap}
+  .hero-img{border-radius:var(--radius);overflow:hidden;aspect-ratio:5/4;max-height:460px;background:
+      radial-gradient(120% 140% at 20% 0%,#26282d 0%,#151619 60%);
+    display:flex;align-items:center;justify-content:center;border:1px solid var(--line-solid)}
+  .hero-img svg{width:34%;opacity:.35}
+  @media (max-width:860px){.hero{padding:28px 0 44px}.hero .wrap{grid-template-columns:1fr}.hero-img{aspect-ratio:4/3;max-height:none}}
+
+  /* proof strip: real data from Google/Instagram */
+  .proof{border-top:1px solid var(--line-solid);border-bottom:1px solid var(--line-solid);background:var(--panel)}
+  .proof .wrap{display:flex;gap:40px;flex-wrap:wrap;justify-content:space-between;padding:22px 24px;color:var(--ink-2)}
+  .proof strong{color:var(--ink);font-size:22px;font-family:"Archivo Black",sans-serif;margin-right:8px}
+
+  section{padding:88px 0}
+  section h2{font-size:clamp(26px,3.2vw,40px);margin-bottom:14px}
+  .lead{color:var(--ink-2);max-width:60ch;margin:0 0 40px;font-size:18px}
+
+  /* services: text tiles, no photos needed */
+  .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .tile{border-radius:var(--radius);border:1px solid var(--line-solid);background:var(--panel);padding:26px 22px}
+  .tile h3{font-family:Karla,sans-serif;text-transform:none;font-weight:700;font-size:18px;margin-bottom:8px;letter-spacing:0}
+  .tile p{margin:0;color:var(--ink-2);font-size:15px}
+  @media (max-width:860px){.tiles{grid-template-columns:1fr 1fr}}
+  @media (max-width:560px){.tiles{grid-template-columns:1fr}}
+
+  /* story: vertical stack, narrow */
+  .story{background:var(--panel);border-top:1px solid var(--line-solid);border-bottom:1px solid var(--line-solid)}
+  .story .wrap{max-width:760px}
+  .story p{font-size:19px;color:var(--ink-2)}
+  .story-img{border-radius:var(--radius);margin-top:32px;aspect-ratio:3/2;width:100%;background:radial-gradient(120% 140% at 80% 100%,#26282d 0%,#151619 60%);border:1px solid var(--line-solid);display:flex;align-items:center;justify-content:center}
+  .story-img svg{width:22%;opacity:.3}
+
+  /* reviews: two columns, real quotes */
+  .quotes{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+  blockquote{margin:0;padding:0 0 0 22px;border-left:2px solid var(--accent);font-size:19px;line-height:1.5}
+  blockquote footer{margin-top:12px;font-size:14px;color:var(--ink-2);font-family:Karla,sans-serif}
+  @media (max-width:860px){.quotes{grid-template-columns:1fr}}
+
+  /* visit: 3 columns of facts + map full width */
+  .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-bottom:28px}
+  .facts h3{font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;font-family:Karla,sans-serif;font-weight:700}
+  .facts p{margin:0;color:var(--ink-2)}
+  .hours{display:grid;grid-template-columns:auto 1fr;gap:4px 18px;color:var(--ink-2)}
+  .hours .closed{color:var(--ink)}
+  .map{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line-solid);aspect-ratio:21/8;background:var(--panel)}
+  .map iframe{width:100%;height:100%;border:0;filter:grayscale(.3) invert(.92) contrast(.9)}
+  @media (max-width:860px){.facts{grid-template-columns:1fr}.map{aspect-ratio:4/3}}
+
+  footer.site{border-top:1px solid var(--line-solid);padding:32px 0;color:var(--ink-2);font-size:14px}
+  footer.site .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+</style>
+</head>
+<body>
+
+<div class="concept" data-i18n="concept">Design concept for Auto.Cyprus · not the live website</div>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#top">AUTO<span class="dot">.</span>CYPRUS</a>
+      <div class="links">
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#story" data-i18n="nav.story">About</a>
+        <a href="#visit" data-i18n="nav.visit">Visit</a>
+      </div>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="el" aria-pressed="false">EL</button>
+        <button type="button" data-lang="de" aria-pressed="false">DE</button>
+        <button type="button" data-lang="ru" aria-pressed="false">RU</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1 data-i18n="hero.h1">Used cars, no monthly payments</h1>
+        <p data-i18n="hero.p">Family-run dealership on Pafou Street, Limassol. Buy, sell or trade in, cars imported to order, viewing strictly by appointment.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="https://wa.me/35795149488" rel="noopener">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6.3 6.3l1.3-1.3a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z"/></svg>
+            <span data-i18n="cta.whatsapp">Message on WhatsApp</span>
+          </a>
+          <a class="btn btn-ghost" href="https://www.bazaraki.com/items/author/8598735/" rel="noopener" data-i18n="cta.cars">See available cars</a>
+        </div>
+      </div>
+      <div class="hero-img">
+        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 38l4-13a4 4 0 0 1 3.8-2.7h36.4A4 4 0 0 1 54 25.3L58 38M6 38v10a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-3h36v3a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V38M6 38h52M16 45a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM48 45a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="proof">
+    <div class="wrap">
+      <span><strong data-i18n="proof.num">4.9</strong><span data-i18n="proof.rating">Google rating, 195 reviews</span></span>
+      <span><strong>22K</strong><span data-i18n="proof.ig">Instagram followers</span></span>
+      <span><strong data-i18n="proof.appt">Appointment</strong><span data-i18n="proof.apptp">only, all week</span></span>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <h2 data-i18n="services.h2">What Auto.Cyprus does</h2>
+      <p class="lead" data-i18n="services.lead">One dealership, Cyprus-wide reach. Straightforward, in your language.</p>
+      <div class="tiles">
+        <div class="tile"><h3 data-i18n="s1.h">Buying &amp; selling</h3><p data-i18n="s1.p">Used cars bought and sold, straight deals, no pressure.</p></div>
+        <div class="tile"><h3 data-i18n="s2.h">Trade-in</h3><p data-i18n="s2.p">Bring your current car, we offset it against the next one.</p></div>
+        <div class="tile"><h3 data-i18n="s3.h">Import to order</h3><p data-i18n="s3.p">Looking for something specific? We import cars by order.</p></div>
+        <div class="tile"><h3 data-i18n="s4.h">No monthly payments</h3><p data-i18n="s4.p">Cash deals, no financing plan attached.</p></div>
+        <div class="tile"><h3 data-i18n="s5.h">By appointment</h3><p data-i18n="s5.p">Viewings are arranged in advance, so your visit isn't wasted.</p></div>
+        <div class="tile"><h3 data-i18n="s6.h">EN · RU · HE</h3><p data-i18n="s6.p">The team speaks English, Russian and Hebrew.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="story" class="story">
+    <div class="wrap">
+      <h2 data-i18n="story.h2">A dealership, not a showroom</h2>
+      <p data-i18n="story.p1">Auto.Cyprus is based on Pafou Street in Limassol and works across the island, importing cars to order as well as selling from stock. No walk-in showroom floor: every viewing is booked ahead, so you get someone's full attention when you come.</p>
+      <p data-i18n="story.p2">195 Google reviews, most of them five stars, describe the same thing: a straightforward deal and a team that answers questions instead of dodging them.</p>
+      <div class="story-img">
+        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 38l4-13a4 4 0 0 1 3.8-2.7h36.4A4 4 0 0 1 54 25.3L58 38M6 38v10a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-3h36v3a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V38M6 38h52M16 45a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM48 45a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews">
+    <div class="wrap">
+      <h2 data-i18n="reviews.h2">From the guest book</h2>
+      <p class="lead" data-i18n="reviews.lead">Two of 195 Google reviews.</p>
+      <div class="quotes">
+        <blockquote>
+          <span data-i18n="q1.text">“I arrived at the dealership on Friday at 5pm, hoping to drive the car away the same day, and it all worked out perfectly. Manager Nikita helped with everything, even arranging insurance that same Friday evening.”</span>
+          <footer>Dmitriy Lebedinskiy · <span data-i18n="q.source">Google review</span></footer>
+        </blockquote>
+        <blockquote>
+          <span data-i18n="q2.text">“I had a great experience buying a car here. The team was friendly, honest and always helpful. They answered all my questions and made the whole process straightforward. I'm very happy with my purchase and recommend them without hesitation.”</span>
+          <footer>Vladislav Bykov · <span data-i18n="q.source">Google review</span></footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section id="visit">
+    <div class="wrap">
+      <h2 data-i18n="visit.h2">Find us</h2>
+      <div class="facts">
+        <div>
+          <h3 data-i18n="visit.address">Address</h3>
+          <p>Pafou 57<br>Limassol 3051<br>Cyprus</p>
+        </div>
+        <div>
+          <h3 data-i18n="visit.hours">Opening hours</h3>
+          <div class="hours">
+            <span data-i18n="d.mon">Monday</span><span>09:00 – 18:00</span>
+            <span data-i18n="d.tue">Tuesday</span><span>09:00 – 18:00</span>
+            <span data-i18n="d.wed">Wednesday</span><span>09:00 – 18:00</span>
+            <span data-i18n="d.thu">Thursday</span><span>09:00 – 18:00</span>
+            <span data-i18n="d.fri">Friday</span><span>09:00 – 18:00</span>
+            <span data-i18n="d.sat">Saturday</span><span>09:00 – 15:00</span>
+            <span data-i18n="d.sun">Sunday</span><span class="closed" data-i18n="d.closed">Closed</span>
+          </div>
+        </div>
+        <div>
+          <h3 data-i18n="visit.contact">Contact</h3>
+          <p><a href="tel:+35795149488">+357 95 149488</a><br><a href="https://wa.me/35795149488" rel="noopener">WhatsApp</a><br><a href="https://www.instagram.com/auto.cyprus" rel="noopener">@auto.cyprus</a></p>
+          <p style="margin-top:14px"><a class="btn btn-primary" href="https://wa.me/35795149488" rel="noopener" data-i18n="cta.whatsapp">Message on WhatsApp</a></p>
+        </div>
+      </div>
+      <div class="map">
+        <iframe title="Map: Auto.Cyprus" data-i18n-title="visit.map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Auto.Cyprus+Sales%26Rent,+Pafou+57,+Limassol&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© 2026 Auto.Cyprus · Pafou 57, Limassol</span>
+    <span data-i18n="footer.note">Design concept. Content from Auto.Cyprus' own Google, Instagram and Taplink listings.</span>
+  </div>
+</footer>
+
+<script>
+  var T = {
+    en: {
+      'concept':'Design concept for Auto.Cyprus · not the live website',
+      'nav.services':'Services','nav.story':'About','nav.visit':'Visit',
+      'hero.h1':'Used cars, no monthly payments',
+      'hero.p':'Family-run dealership on Pafou Street, Limassol. Buy, sell or trade in, cars imported to order, viewing strictly by appointment.',
+      'cta.whatsapp':'Message on WhatsApp','cta.cars':'See available cars',
+      'proof.num':'4.9','visit.map':'Map: Auto.Cyprus',
+      'proof.rating':'Google rating, 195 reviews','proof.ig':'Instagram followers','proof.appt':'Appointment','proof.apptp':'only, all week',
+      'services.h2':'What Auto.Cyprus does',
+      'services.lead':'One dealership, Cyprus-wide reach. Straightforward, in your language.',
+      's1.h':'Buying & selling','s1.p':'Used cars bought and sold, straight deals, no pressure.',
+      's2.h':'Trade-in','s2.p':'Bring your current car, we offset it against the next one.',
+      's3.h':'Import to order','s3.p':"Looking for something specific? We import cars by order.",
+      's4.h':'No monthly payments','s4.p':'Cash deals, no financing plan attached.',
+      's5.h':'By appointment','s5.p':"Viewings are arranged in advance, so your visit isn't wasted.",
+      's6.h':'EN · RU · HE','s6.p':'The team speaks English, Russian and Hebrew.',
+      'story.h2':'A dealership, not a showroom',
+      'story.p1':"Auto.Cyprus is based on Pafou Street in Limassol and works across the island, importing cars to order as well as selling from stock. No walk-in showroom floor: every viewing is booked ahead, so you get someone's full attention when you come.",
+      'story.p2':'195 Google reviews, most of them five stars, describe the same thing: a straightforward deal and a team that answers questions instead of dodging them.',
+      'reviews.h2':'From the guest book','reviews.lead':'Two of 195 Google reviews.',
+      'q1.text':'“I arrived at the dealership on Friday at 5pm, hoping to drive the car away the same day, and it all worked out perfectly. Manager Nikita helped with everything, even arranging insurance that same Friday evening.”',
+      'q2.text':'“I had a great experience buying a car here. The team was friendly, honest and always helpful. They answered all my questions and made the whole process straightforward. I\'m very happy with my purchase and recommend them without hesitation.”',
+      'q.source':'Google review',
+      'visit.h2':'Find us','visit.address':'Address','visit.hours':'Opening hours','visit.contact':'Contact',
+      'd.mon':'Monday','d.tue':'Tuesday','d.wed':'Wednesday','d.thu':'Thursday','d.fri':'Friday','d.sat':'Saturday','d.sun':'Sunday','d.closed':'Closed',
+      'footer.note':"Design concept. Content from Auto.Cyprus' own Google, Instagram and Taplink listings."
+    },
+    el: {
+      'concept':'Πρόταση σχεδιασμού για την Auto.Cyprus · όχι η επίσημη ιστοσελίδα',
+      'nav.services':'Υπηρεσίες','nav.story':'Σχετικά','nav.visit':'Επίσκεψη',
+      'hero.h1':'Μεταχειρισμένα, χωρίς δόσεις',
+      'hero.p':'Οικογενειακή επιχείρηση στην οδό Πάφου, Λεμεσός. Αγορά, πώληση ή ανταλλαγή, εισαγωγή αυτοκινήτων κατόπιν παραγγελίας, επίσκεψη μόνο με ραντεβού.',
+      'cta.whatsapp':'Μήνυμα στο WhatsApp','cta.cars':'Δείτε διαθέσιμα αυτοκίνητα',
+      'proof.num':'4,9','visit.map':'Χάρτης: Auto.Cyprus',
+      'proof.rating':'βαθμολογία Google, 195 κριτικές','proof.ig':'ακόλουθοι στο Instagram','proof.appt':'Ραντεβού','proof.apptp':'μόνο, όλη την εβδομάδα',
+      'services.h2':'Τι κάνει η Auto.Cyprus',
+      'services.lead':'Μία επιχείρηση, εμβέλεια σε όλη την Κύπρο. Απλά, στη γλώσσα σας.',
+      's1.h':'Αγορά & πώληση','s1.p':'Μεταχειρισμένα αυτοκίνητα, ξεκάθαρες συμφωνίες, καμία πίεση.',
+      's2.h':'Ανταλλαγή','s2.p':'Φέρτε το αυτοκίνητό σας, το συμψηφίζουμε με το επόμενο.',
+      's3.h':'Εισαγωγή κατόπιν παραγγελίας','s3.p':'Ψάχνετε κάτι συγκεκριμένο; Εισάγουμε αυτοκίνητα κατόπιν παραγγελίας.',
+      's4.h':'Χωρίς δόσεις','s4.p':'Συμφωνίες τοις μετρητοίς, χωρίς σχέδιο χρηματοδότησης.',
+      's5.h':'Με ραντεβού','s5.p':'Οι επισκέψεις κανονίζονται εκ των προτέρων.',
+      's6.h':'EN · RU · HE','s6.p':'Η ομάδα μιλά αγγλικά, ρωσικά και εβραϊκά.',
+      'story.h2':'Επιχείρηση, όχι έκθεση',
+      'story.p1':'Η Auto.Cyprus εδρεύει στην οδό Πάφου στη Λεμεσό και δραστηριοποιείται σε όλο το νησί, εισάγοντας αυτοκίνητα κατόπιν παραγγελίας αλλά και πωλώντας από απόθεμα. Χωρίς ανοιχτή έκθεση: κάθε επίσκεψη κλείνεται εκ των προτέρων.',
+      'story.p2':'195 κριτικές Google, οι περισσότερες πέντε αστέρων, περιγράφουν το ίδιο πράγμα: ξεκάθαρη συμφωνία και ομάδα που απαντά στις ερωτήσεις.',
+      'reviews.h2':'Από το βιβλίο επισκεπτών','reviews.lead':'Δύο από 195 κριτικές Google.',
+      'q1.text':'«Έφτασα στην αντιπροσωπεία την Παρασκευή στις 5μμ, ελπίζοντας να οδηγήσω το αυτοκίνητο την ίδια μέρα, και όλα πήγαν τέλεια. Ο διευθυντής Nikita με βοήθησε σε όλα, κανόνισε ακόμη και την ασφάλιση το ίδιο βράδυ.»',
+      'q2.text':'«Είχα εξαιρετική εμπειρία αγοράζοντας αυτοκίνητο εδώ. Η ομάδα ήταν φιλική, ειλικρινής και πάντα βοηθητική. Απάντησαν σε όλες τις ερωτήσεις μου. Είμαι πολύ ευχαριστημένος και τους συστήνω ανεπιφύλακτα.»',
+      'q.source':'κριτική Google',
+      'visit.h2':'Πού θα μας βρείτε','visit.address':'Διεύθυνση','visit.hours':'Ώρες λειτουργίας','visit.contact':'Επικοινωνία',
+      'd.mon':'Δευτέρα','d.tue':'Τρίτη','d.wed':'Τετάρτη','d.thu':'Πέμπτη','d.fri':'Παρασκευή','d.sat':'Σάββατο','d.sun':'Κυριακή','d.closed':'Κλειστά',
+      'footer.note':'Πρόταση σχεδιασμού. Περιεχόμενο από τις δικές της καταχωρίσεις της Auto.Cyprus στο Google, Instagram και Taplink.'
+    },
+    de: {
+      'concept':'Designentwurf für Auto.Cyprus · nicht die offizielle Website',
+      'nav.services':'Leistungen','nav.story':'Über uns','nav.visit':'Anfahrt',
+      'hero.h1':'Gebrauchtwagen, ohne Raten',
+      'hero.p':'Familienbetrieb in der Pafou-Straße, Limassol. Kauf, Verkauf oder Inzahlungnahme, Fahrzeugimport auf Bestellung, Besichtigung nur nach Termin.',
+      'cta.whatsapp':'Nachricht per WhatsApp','cta.cars':'Verfügbare Autos ansehen',
+      'proof.num':'4,9','visit.map':'Karte: Auto.Cyprus',
+      'proof.rating':'Google-Bewertung, 195 Rezensionen','proof.ig':'Instagram-Follower','proof.appt':'Nur nach','proof.apptp':'Termin, die ganze Woche',
+      'services.h2':'Was Auto.Cyprus macht',
+      'services.lead':'Ein Autohaus, Reichweite über ganz Zypern. Unkompliziert, in deiner Sprache.',
+      's1.h':'Kauf & Verkauf','s1.p':'Gebrauchtwagen kaufen und verkaufen, klare Deals, kein Druck.',
+      's2.h':'Inzahlungnahme','s2.p':'Bring dein aktuelles Auto mit, wir verrechnen es mit dem nächsten.',
+      's3.h':'Import auf Bestellung','s3.p':'Suchst du etwas Bestimmtes? Wir importieren Autos auf Bestellung.',
+      's4.h':'Ohne Raten','s4.p':'Bardeals, keine Finanzierung angehängt.',
+      's5.h':'Nach Termin','s5.p':'Besichtigungen werden im Voraus vereinbart.',
+      's6.h':'EN · RU · HE','s6.p':'Das Team spricht Englisch, Russisch und Hebräisch.',
+      'story.h2':'Ein Autohaus, kein Showroom',
+      'story.p1':'Auto.Cyprus sitzt in der Pafou-Straße in Limassol und ist auf der ganzen Insel aktiv, importiert Fahrzeuge auf Bestellung und verkauft aus dem eigenen Bestand. Keine offene Ausstellungsfläche: jede Besichtigung wird vorher vereinbart, damit du volle Aufmerksamkeit bekommst.',
+      'story.p2':'195 Google-Rezensionen, die meisten mit fünf Sternen, beschreiben dasselbe: ein klarer Deal und ein Team, das Fragen beantwortet statt ausweicht.',
+      'reviews.h2':'Aus dem Gästebuch','reviews.lead':'Zwei von 195 Google-Rezensionen.',
+      'q1.text':'„Ich kam am Freitag um 17 Uhr beim Autohaus an, in der Hoffnung, das Auto noch am selben Tag zu fahren, und alles hat wunderbar geklappt. Manager Nikita hat mir bei allem geholfen, sogar die Versicherung noch am selben Freitagabend organisiert.“',
+      'q2.text':'„Ich hatte eine tolle Erfahrung beim Autokauf hier. Das Team war freundlich, ehrlich und immer hilfsbereit. Sie haben alle meine Fragen beantwortet und den ganzen Prozess unkompliziert gestaltet. Ich bin sehr zufrieden und empfehle sie uneingeschränkt weiter.“',
+      'q.source':'Google-Rezension',
+      'visit.h2':'So findest du uns','visit.address':'Adresse','visit.hours':'Öffnungszeiten','visit.contact':'Kontakt',
+      'd.mon':'Montag','d.tue':'Dienstag','d.wed':'Mittwoch','d.thu':'Donnerstag','d.fri':'Freitag','d.sat':'Samstag','d.sun':'Sonntag','d.closed':'Geschlossen',
+      'footer.note':'Designentwurf. Inhalte aus den eigenen Google-, Instagram- und Taplink-Einträgen von Auto.Cyprus.'
+    },
+    ru: {
+      'concept':'Дизайн-концепция для Auto.Cyprus · не официальный сайт',
+      'nav.services':'Услуги','nav.story':'О нас','nav.visit':'Как добраться',
+      'hero.h1':'Авто без ежемесячных платежей',
+      'hero.p':'Семейный автосалон на улице Пафу, Лимассол. Покупка, продажа или трейд-ин, доставка авто под заказ, просмотр только по предварительной записи.',
+      'cta.whatsapp':'Написать в WhatsApp','cta.cars':'Смотреть доступные авто',
+      'proof.num':'4,9','visit.map':'Карта: Auto.Cyprus',
+      'proof.rating':'рейтинг Google, 195 отзывов','proof.ig':'подписчиков в Instagram','proof.appt':'Только по','proof.apptp':'записи, всю неделю',
+      'services.h2':'Чем занимается Auto.Cyprus',
+      'services.lead':'Один автосалон, работа по всему Кипру. Просто и на вашем языке.',
+      's1.h':'Покупка и продажа','s1.p':'Продажа и покупка авто с пробегом, честные сделки, без давления.',
+      's2.h':'Трейд-ин','s2.p':'Привозите свою машину, зачтём её стоимость в следующую.',
+      's3.h':'Доставка под заказ','s3.p':'Ищете конкретную модель? Доставляем авто под заказ.',
+      's4.h':'Без ежемесячных платежей','s4.p':'Сделки наличными, без привязки к рассрочке.',
+      's5.h':'Только по записи','s5.p':'Просмотры назначаются заранее.',
+      's6.h':'EN · RU · HE','s6.p':'Команда говорит на английском, русском и иврите.',
+      'story.h2':'Автосалон, а не выставочный зал',
+      'story.p1':'Auto.Cyprus находится на улице Пафу в Лимассоле и работает по всему острову: доставляет авто под заказ и продаёт из собственного наличия. Нет открытого зала: каждый просмотр назначается заранее, чтобы вам уделили полное внимание.',
+      'story.p2':'195 отзывов в Google, большинство на пять звёзд, говорят об одном и том же: честная сделка и команда, которая отвечает на вопросы, а не уходит от них.',
+      'reviews.h2':'Из книги отзывов','reviews.lead':'Два из 195 отзывов Google.',
+      'q1.text':'«Я приехал в автосалон в пятницу в 17:00, надеясь уехать на машине в тот же день, и всё прошло прекрасно. Менеджер Никита помог со всем, даже организовал страховку в тот же вечер.»',
+      'q2.text':'«Отличный опыт покупки машины здесь. Команда была дружелюбной, честной и всегда готовой помочь. Ответили на все мои вопросы и сделали весь процесс простым. Я очень доволен покупкой и рекомендую без колебаний.»',
+      'q.source':'отзыв Google',
+      'visit.h2':'Как нас найти','visit.address':'Адрес','visit.hours':'Часы работы','visit.contact':'Контакты',
+      'd.mon':'Понедельник','d.tue':'Вторник','d.wed':'Среда','d.thu':'Четверг','d.fri':'Пятница','d.sat':'Суббота','d.sun':'Воскресенье','d.closed':'Закрыто',
+      'footer.note':'Дизайн-концепция. Материалы из собственных страниц Auto.Cyprus в Google, Instagram и Taplink.'
+    }
+  };
+  var cur = 'en';
+  function setLang(l) {
+    cur = l;
+    document.documentElement.lang = l;
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var s = T[l][el.getAttribute('data-i18n')];
+      if (s) el.textContent = s;
+    });
+    document.querySelectorAll('[data-i18n-title]').forEach(function (el) {
+      var s = T[l][el.getAttribute('data-i18n-title')];
+      if (s) el.title = s;
+    });
+    document.querySelectorAll('[data-lang]').forEach(function (b) {
+      b.setAttribute('aria-pressed', b.getAttribute('data-lang') === l ? 'true' : 'false');
+    });
+    try { localStorage.setItem('lang', l); } catch (e) {}
+  }
+  document.querySelectorAll('[data-lang]').forEach(function (b) {
+    b.addEventListener('click', function () { setLang(b.getAttribute('data-lang')); });
+  });
+  try { var saved = localStorage.getItem('lang'); if (saved && T[saved]) setLang(saved); } catch (e) {}
+</script>
+</body>
+</html>
