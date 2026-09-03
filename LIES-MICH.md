@@ -6,9 +6,9 @@ Claude baut sie mit `python3 werkzeuge/einzeldatei.py <ordner>`. Veröffentlicht
 ## Einmalig (Julian, rund 10 Minuten)
 1. Leeres, öffentliches GitHub-Repository mit neutralem Namen anlegen (z. B. `vorschau`), ohne README.
 2. Diesen Ordner `vorschauen/` als Repository einrichten und hochschieben:
-   `cd vorschauen && git init -b main && git add . && git commit -m "Vorschauen" && git remote add origin <repo-url> && git push -u origin main`
+   `cd vorschauen && git init -b main && git add . && git commit -m "Vorschauen" && git remote add origin https://github.com/jr-consulting-cy/vorschau.git && git push -u origin main`
 3. Im Repository unter Settings → Pages: Source "Deploy from a branch", Branch `main`, Ordner `/ (root)`.
-4. Basisadresse in `loop/STAND.md` unter "Vorschau-Basis" eintragen, z. B. `https://<konto>.github.io/vorschau`.
+4. Basisadresse in `loop/STAND.md` unter "Vorschau-Basis" eintragen, z. B. `https://jr-consulting-cy.github.io/vorschau` (Organisation jr-consulting-cy, seit 3.9.2026).
    Optional eigene Domain unter Pages → Custom domain, dann die Basis entsprechend.
 
 ## Je Lauf (Julian, ein Befehl, egal wie viele neue Entwürfe)
