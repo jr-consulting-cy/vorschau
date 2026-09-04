@@ -108,18 +108,29 @@
   .gallery img{width:100%;height:100%;object-fit:cover;display:block}
   .story-img img{width:100%;height:100%;object-fit:cover;display:block}
   @media (max-width:560px){.gallery{grid-template-columns:1fr}}
-  /* Niveau-Baustein (4.9.2026): Bewegung und Tiefe, sparsam. Zwei bewegte Elemente je Ansicht, prefers-reduced-motion schaltet alles ab. */
-  .kenburns{animation:kb 24s ease-in-out infinite alternate;transform-origin:center;will-change:transform}
-  @keyframes kb{from{transform:scale(1)}to{transform:scale(1.08)}}
+  /* Niveau-Baustein (4.9.2026, nach design-motion-principles am 4.9. 21:10 geschärft): Marketing-Seite, Gewichtung Jakub (Politur), Jhey (Einstieg), Emil (Navigation). Animiert werden transform, opacity, filter; einzige Ausnahme sind die kurzen 200-ms-Hover-Übergänge auf box-shadow bei Karten und Kopfzeile. */
+  :root{--ease-out:cubic-bezier(.22,1,.36,1);--ease-soft:cubic-bezier(.4,0,.2,1)}
+  .kenburns{animation:kb 28s var(--ease-soft) infinite alternate;transform-origin:center;will-change:transform}
+  @keyframes kb{from{transform:scale(1)}to{transform:scale(1.06)}}
+  /* Sektionen erscheinen beim Scrollen: Deckkraft, 12 px von unten, Unschärfe zu scharf (Jakub-Rezept), 450 ms, eigene Kurve */
   .reveal{opacity:1;transform:none}
-  .js .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
-  .js .reveal.in{opacity:1;transform:none}
-  .lift{transition:transform .25s ease,box-shadow .25s ease}
-  .lift:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(0,0,0,.14)}
-  .btn{transition:transform .15s ease,filter .15s ease}
-  .btn:hover{filter:brightness(1.08)}
+  .js .reveal{opacity:0;transform:translateY(12px);filter:blur(4px);transition:opacity .45s var(--ease-out),transform .45s var(--ease-out),filter .45s var(--ease-out)}
+  .js .reveal.in{opacity:1;transform:none;filter:blur(0)}
+  /* Erster Bildschirm: Kicker, Überschrift, Text, Knöpfe kommen einmal nacheinander (Jhey, nur beim Laden) */
+  .js .hero .wrap>div:first-child>*{animation:hero-in .55s var(--ease-out) both}
+  .js .hero .wrap>div:first-child>*:nth-child(2){animation-delay:70ms}
+  .js .hero .wrap>div:first-child>*:nth-child(3){animation-delay:140ms}
+  .js .hero .wrap>div:first-child>*:nth-child(4){animation-delay:210ms}
+  @keyframes hero-in{from{opacity:0;transform:translateY(10px);filter:blur(4px)}to{opacity:1;transform:none;filter:blur(0)}}
+  /* Karten heben sich leicht, 200 ms; Knöpfe geben beim Drücken nach (Emil) */
+  .lift{transition:transform .2s var(--ease-out),box-shadow .2s var(--ease-out)}
+  .lift:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,.14)}
+  .btn{transition:transform .15s var(--ease-out),filter .15s var(--ease-out)}
+  .btn:hover{filter:brightness(1.06)}
+  .btn:active{transform:scale(.98)}
+  header{transition:box-shadow .2s var(--ease-out)}
   header.scrolled{box-shadow:0 6px 24px rgba(0,0,0,.12)}
-  @media (prefers-reduced-motion:reduce){.kenburns{animation:none}.js .reveal{opacity:1;transform:none;transition:none}.lift,.lift:hover{transform:none;box-shadow:none}}
+  @media (prefers-reduced-motion:reduce){.kenburns{animation:none}.js .reveal{opacity:1;transform:none;filter:none;transition:none}.js .hero .wrap>div:first-child>*{animation:none}.lift,.lift:hover{transform:none;box-shadow:none}.btn:active{transform:none}}
   /* Hero vollflächig (4.9.2026 13:25): Foto füllt den ersten Bildschirm, zoomt langsam, dunkler Verlauf für den Text. */
   .hero.hero-full{position:relative;overflow:hidden;min-height:82vh;display:grid;align-items:center;color:#fff}
   .hero.hero-full .hero-img{position:absolute;inset:0;z-index:0;aspect-ratio:auto;max-height:none;border:0;background:#111}
@@ -132,8 +143,9 @@
   .hero.hero-full .btn-ghost,.hero.hero-full .btn-outline{color:#fff;border-color:#fff;background:transparent}
   .hero.hero-full .btn-light{background:#fff;color:#111}
   /* Hero ohne Foto: bewegter Verlauf in den Firmenfarben */
-  .hero.hero-anim{position:relative;overflow:hidden;min-height:82vh;display:grid;align-items:center;background:linear-gradient(120deg,var(--hero-a),var(--hero-b),var(--hero-c),var(--hero-a));background-size:300% 300%;animation:grad 14s ease-in-out infinite alternate}
-  @keyframes grad{from{background-position:0% 50%}to{background-position:100% 50%}}
+  .hero.hero-anim{position:relative;overflow:hidden;min-height:82vh;display:grid;align-items:center;background:var(--hero-a)}
+  .hero.hero-anim::before{content:"";position:absolute;top:0;left:0;width:300%;height:100%;z-index:0;background:linear-gradient(120deg,var(--hero-a),var(--hero-b),var(--hero-c),var(--hero-a));animation:grad 14s var(--ease-soft) infinite alternate;will-change:transform}
+  @keyframes grad{from{transform:translateX(0)}to{transform:translateX(-66.66%)}}
   .hero.hero-anim .hero-img{display:none}
   .hero.hero-anim::after{content:"";position:absolute;inset:0;z-index:1;background:rgba(8,8,12,.62)}
   .hero.hero-anim .wrap{position:relative;z-index:2}
@@ -143,7 +155,7 @@
   .hero.hero-anim .wrap{display:block;padding-top:72px;padding-bottom:80px}
   .hero.hero-anim .wrap>div:first-child{max-width:680px}
   @media (max-width:860px){.hero.hero-full,.hero.hero-anim{min-height:auto}.hero.hero-full .wrap,.hero.hero-anim .wrap{padding-top:56px;padding-bottom:64px}}
-  @media (prefers-reduced-motion:reduce){.hero.hero-anim{animation:none}}
+  @media (prefers-reduced-motion:reduce){.hero.hero-anim::before{animation:none}}
 </style>
 </head>
 <body>
