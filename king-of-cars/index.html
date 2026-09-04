@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>King Of Cars · Nikou Pattichi 50C, Limassol</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* From the dealer's own look (Instagram @kingofcarscy, Facebook kingofcarslim): black showroom photography, white bold uppercase wordmark
+     "KING OF CARS · CAR SALES / RENTALS" (profile picture), gold lettering in their pinned post, measured #ccb14e. No other colours. */
+  :root{
+    --bg:#0f1012; --panel:#1a1b1e; --line-solid:#2b2d31;
+    --ink:#f5f5f4; --ink-2:#a9adb4; --gold:#ccb14e; --on-gold:#0f1012;
+    --radius:14px; --max:1180px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto} *{transition:none!important}}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Karla,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:"Archivo Black",Karla,system-ui,sans-serif;font-weight:400;letter-spacing:.01em;margin:0;line-height:1.08;text-transform:uppercase}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;font-weight:700;text-decoration:none;border:1px solid transparent;white-space:nowrap;transition:transform .12s}
+  .btn:active{transform:translateY(1px)}
+  .btn:focus-visible,.lang button:focus-visible,.links a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+  .btn-primary{background:var(--gold);color:var(--on-gold)}
+  .btn-ghost{border-color:var(--ink-2);color:var(--ink)}
+  .btn svg{width:18px;height:18px;flex:none}
+
+  .concept{background:var(--gold);color:var(--on-gold);font-size:13px;font-weight:700;text-align:center;padding:6px 12px}
+
+  header{position:sticky;top:0;z-index:20;background:rgba(15,16,18,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-solid)}
+  nav{height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .brand{display:flex;flex-direction:column;text-decoration:none;white-space:nowrap;font-family:"Archivo Black",sans-serif;font-size:19px;letter-spacing:.04em;line-height:1}
+  .brand small{font-family:Karla,sans-serif;font-weight:600;font-size:9px;letter-spacing:.28em;color:var(--ink-2);margin-top:3px}
+  @media (max-width:420px){.brand{font-size:15px}.brand small{font-size:8px}.lang button{padding:5px 8px}}
+  .links{display:flex;gap:26px;font-weight:500}
+  .links a{text-decoration:none;color:var(--ink-2)}
+  .links a:hover{color:var(--ink)}
+  .lang{display:flex;gap:4px;border:1px solid var(--line-solid);border-radius:999px;padding:3px}
+  .lang button{background:none;border:0;color:var(--ink-2);font:inherit;font-weight:600;font-size:13px;padding:5px 10px;border-radius:999px;cursor:pointer}
+  .lang button[aria-pressed="true"]{background:var(--gold);color:var(--on-gold)}
+  @media (max-width:860px){.links{display:none}}
+
+  .hero{padding:40px 0 56px}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+  .hero h1{font-size:clamp(30px,3.4vw,46px)}
+  .hero h1 em{font-style:normal;color:var(--gold)}
+  .hero p{font-size:19px;color:var(--ink-2);max-width:42ch;margin:18px 0 26px}
+  .cta{display:flex;gap:12px;flex-wrap:wrap}
+  /* placeholder until photos are approved (their Google listing has "By owner" and "Inside" photos) */
+  .hero-img{border-radius:var(--radius);overflow:hidden;aspect-ratio:5/4;max-height:460px;background:radial-gradient(120% 140% at 20% 0%,#25262a 0%,#141517 60%);display:flex;align-items:center;justify-content:center;border:1px solid var(--line-solid)}
+  .hero-img svg{width:34%;opacity:.35}
+  @media (max-width:860px){.hero{padding:28px 0 44px}.hero .wrap{grid-template-columns:1fr}.hero-img{aspect-ratio:4/3;max-height:none}}
+
+  .proof{border-top:1px solid var(--line-solid);border-bottom:1px solid var(--line-solid);background:var(--panel)}
+  .proof .wrap{display:flex;gap:40px;flex-wrap:wrap;justify-content:space-between;padding:22px 24px;color:var(--ink-2)}
+  .proof strong{color:var(--gold);font-size:22px;font-family:"Archivo Black",sans-serif;margin-right:8px}
+
+  section{padding:88px 0}
+  section h2{font-size:clamp(26px,3.2vw,40px);margin-bottom:14px}
+  .lead{color:var(--ink-2);max-width:60ch;margin:0 0 40px;font-size:18px}
+
+  .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .tile{border-radius:var(--radius);border:1px solid var(--line-solid);background:var(--panel);padding:26px 22px}
+  .tile h3{font-family:Karla,sans-serif;text-transform:none;font-weight:700;font-size:18px;margin-bottom:8px;letter-spacing:0}
+  .tile p{margin:0;color:var(--ink-2);font-size:15px}
+  @media (max-width:860px){.tiles{grid-template-columns:1fr 1fr}}
+  @media (max-width:560px){.tiles{grid-template-columns:1fr}}
+
+  .story{background:var(--panel);border-top:1px solid var(--line-solid);border-bottom:1px solid var(--line-solid)}
+  .story .wrap{max-width:760px}
+  .story p{font-size:19px;color:var(--ink-2)}
+  .story-img{border-radius:var(--radius);margin-top:32px;aspect-ratio:3/2;width:100%;background:radial-gradient(120% 140% at 80% 100%,#25262a 0%,#141517 60%);border:1px solid var(--line-solid);display:flex;align-items:center;justify-content:center}
+  .story-img svg{width:22%;opacity:.3}
+
+  .quotes{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+  blockquote{margin:0;padding:0 0 0 22px;border-left:2px solid var(--gold);font-size:19px;line-height:1.5}
+  blockquote footer{margin-top:12px;font-size:14px;color:var(--ink-2)}
+  .tags{margin-top:32px;display:flex;gap:10px;flex-wrap:wrap}
+  .tags span{border:1px solid var(--line-solid);border-radius:999px;padding:6px 14px;font-size:14px;color:var(--ink-2)}
+  @media (max-width:860px){.quotes{grid-template-columns:1fr}}
+
+  .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-bottom:28px}
+  .facts h3{font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-family:Karla,sans-serif;font-weight:700}
+  .facts p{margin:0;color:var(--ink-2)}
+  .hours{display:grid;grid-template-columns:auto 1fr;gap:4px 18px;color:var(--ink-2)}
+  .hours .closed{color:var(--ink)}
+  .map{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line-solid);aspect-ratio:21/8;background:var(--panel)}
+  .map iframe{width:100%;height:100%;border:0;filter:grayscale(.3) invert(.92) contrast(.9)}
+  @media (max-width:860px){.facts{grid-template-columns:1fr}.map{aspect-ratio:4/3}}
+
+  footer.site{border-top:1px solid var(--line-solid);padding:32px 0;color:var(--ink-2);font-size:14px}
+  footer.site .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<div class="concept" data-i18n="concept">Design concept for King Of Cars · not the live website</div>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#top" aria-label="King Of Cars">KING OF CARS<small>CAR SALES / RENTALS</small></a>
+      <div class="links">
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#story" data-i18n="nav.story">About</a>
+        <a href="#visit" data-i18n="nav.visit">Visit</a>
+      </div>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="el" aria-pressed="false">EL</button>
+        <button type="button" data-lang="de" aria-pressed="false">DE</button>
+        <button type="button" data-lang="ru" aria-pressed="false">RU</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1 data-i18n="hero.h1">Luxury &amp; performance cars in Cyprus</h1>
+        <p data-i18n="hero.p">Handpicked used cars and rental cars in Limassol since 2017. Sales, rentals and import to order, from a team that answers the phone.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="https://wa.me/35796418468" rel="noopener">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6.3 6.3l1.3-1.3a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z"/></svg>
+            <span data-i18n="cta.whatsapp">Message on WhatsApp</span>
+          </a>
+          <a class="btn btn-ghost" href="https://www.instagram.com/kingofcarscy/" rel="noopener" data-i18n="cta.cars">See the cars on Instagram</a>
+        </div>
+      </div>
+      <div class="hero-img">
+        <svg aria-hidden="true" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 38l4-13a4 4 0 0 1 3.8-2.7h36.4A4 4 0 0 1 54 25.3L58 38M6 38v10a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-3h36v3a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V38M6 38h52M16 45a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM48 45a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="proof">
+    <div class="wrap">
+      <span><strong data-i18n="proof.num">4.7</strong><span data-i18n="proof.rating">Google rating, 65 reviews</span></span>
+      <span><strong>2017</strong><span data-i18n="proof.since">in Limassol since</span></span>
+      <span><strong>3.5K</strong><span data-i18n="proof.fb">Facebook followers</span></span>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <h2 data-i18n="services.h2">What King Of Cars does</h2>
+      <p class="lead" data-i18n="services.lead">Sales and rentals under one roof on Nikou Pattichi Street, with the island covered.</p>
+      <div class="tiles">
+        <div class="tile"><h3 data-i18n="s1.h">Quality used cars</h3><p data-i18n="s1.p">Handpicked vehicles for sale in Limassol, from everyday models to premium cars.</p></div>
+        <div class="tile"><h3 data-i18n="s2.h">Rental cars</h3><p data-i18n="s2.p">Short and longer rentals in Limassol, ask for what is available.</p></div>
+        <div class="tile"><h3 data-i18n="s3.h">Import to order</h3><p data-i18n="s3.p">Looking for a specific car? It can be sourced and imported for you, UK included.</p></div>
+        <div class="tile"><h3 data-i18n="s4.h">Luxury &amp; performance</h3><p data-i18n="s4.p">Premium and performance models are the specialty, not the exception.</p></div>
+        <div class="tile"><h3 data-i18n="s5.h">Delivery</h3><p data-i18n="s5.p">Your car can be delivered to you, as listed on Google.</p></div>
+        <div class="tile"><h3 data-i18n="s6.h">No pressure</h3><p data-i18n="s6.p">Straightforward, helpful team, guests say. Ask, compare, decide.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="story" class="story">
+    <div class="wrap">
+      <h2 data-i18n="story.h2">A family dealership since 2017</h2>
+      <p data-i18n="story.p1">King Of Cars is run by the Pavlou brothers on Nikou Pattichi Street in Limassol. Since 2017 the dealership has supplied Cyprus with a wide range of cars, from everyday used models to luxury and performance cars, for sale and for rent.</p>
+      <p data-i18n="story.p2">65 Google reviews, 4.7 stars on average, describe the same thing: clean cars, a helpful team, a swift purchase and no pressure.</p>
+      <div class="story-img">
+        <svg aria-hidden="true" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 38l4-13a4 4 0 0 1 3.8-2.7h36.4A4 4 0 0 1 54 25.3L58 38M6 38v10a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-3h36v3a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V38M6 38h52M16 45a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM48 45a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews">
+    <div class="wrap">
+      <h2 data-i18n="reviews.h2">From the guest book</h2>
+      <p class="lead" data-i18n="reviews.lead">Two of 65 Google reviews.</p>
+      <div class="quotes">
+        <blockquote>
+          <span data-i18n="q1.text">“I had an amazing experience with the Pavlou brothers. They are true professionals in their field and have exceptional knowledge when it comes to luxury cars.”</span>
+          <footer>kyriaki andreou · <span data-i18n="q.source">Google review</span></footer>
+        </blockquote>
+        <blockquote>
+          <span data-i18n="q2.text">“Very good experience overall. Athos helped me import an Audi RS5 from the UK to Cyprus and the process was smooth and straightforward.”</span>
+          <footer>Giannis Charalampous · <span data-i18n="q.source">Google review</span></footer>
+        </blockquote>
+      </div>
+      <div class="tags" aria-label="Most mentioned in reviews">
+        <span data-i18n="tag.team">helpful team · 3</span>
+        <span data-i18n="tag.swift">swift car purchase · 2</span>
+        <span data-i18n="tag.clean">clean cars · 2</span>
+        <span data-i18n="tag.pressure">no pressure sales · 2</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="visit">
+    <div class="wrap">
+      <h2 data-i18n="visit.h2">Find us</h2>
+      <div class="facts">
+        <div>
+          <h3 data-i18n="visit.address">Address</h3>
+          <p>Nikou Pattichi 50C<br>Limassol 3071<br>Cyprus</p>
+        </div>
+        <div>
+          <h3 data-i18n="visit.hours">Opening hours</h3>
+          <div class="hours">
+            <span data-i18n="d.monfri">Monday – Friday</span><span>09:00 – 13:00, 15:00 – 18:00</span>
+            <span data-i18n="d.sat">Saturday</span><span>09:00 – 13:00</span>
+            <span data-i18n="d.sun">Sunday</span><span class="closed" data-i18n="d.closed">Closed</span>
+          </div>
+        </div>
+        <div>
+          <h3 data-i18n="visit.contact">Contact</h3>
+          <p><a href="tel:+35725434466">+357 25 434466</a><br><a href="https://wa.me/35796418468" rel="noopener">WhatsApp +357 96 418468</a><br><a href="https://www.instagram.com/kingofcarscy/" rel="noopener">@kingofcarscy</a></p>
+          <p style="margin-top:14px"><a class="btn btn-primary" href="https://wa.me/35796418468" rel="noopener" data-i18n="cta.whatsapp">Message on WhatsApp</a></p>
+        </div>
+      </div>
+      <div class="map">
+        <iframe title="Map: King Of Cars" data-i18n-title="visit.map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=King+Of+Cars,+Nikou+Pattichi+50C,+Limassol&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© 2026 King Of Cars · Nikou Pattichi 50C, Limassol</span>
+    <span data-i18n="footer.note">Design concept. Content from King Of Cars' own Google, Instagram and Facebook listings.</span>
+  </div>
+</footer>
+
+<script>
+  var T = {
+    en: {
+      'concept':'Design concept for King Of Cars · not the live website',
+      'nav.services':'Services','nav.story':'About','nav.visit':'Visit',
+      'hero.h1':'Luxury & performance cars in Cyprus',
+      'hero.p':'Handpicked used cars and rental cars in Limassol since 2017. Sales, rentals and import to order, from a team that answers the phone.',
+      'cta.whatsapp':'Message on WhatsApp','cta.cars':'See the cars on Instagram',
+      'proof.num':'4.7','visit.map':'Map: King Of Cars',
+      'proof.rating':'Google rating, 65 reviews','proof.since':'in Limassol since','proof.fb':'Facebook followers',
+      'services.h2':'What King Of Cars does',
+      'services.lead':'Sales and rentals under one roof on Nikou Pattichi Street, with the island covered.',
+      's1.h':'Quality used cars','s1.p':'Handpicked vehicles for sale in Limassol, from everyday models to premium cars.',
+      's2.h':'Rental cars','s2.p':'Short and longer rentals in Limassol, ask for what is available.',
+      's3.h':'Import to order','s3.p':'Looking for a specific car? It can be sourced and imported for you, UK included.',
+      's4.h':'Luxury & performance','s4.p':'Premium and performance models are the specialty, not the exception.',
+      's5.h':'Delivery','s5.p':'Your car can be delivered to you, as listed on Google.',
+      's6.h':'No pressure','s6.p':'Straightforward, helpful team, guests say. Ask, compare, decide.',
+      'story.h2':'A family dealership since 2017',
+      'story.p1':'King Of Cars is run by the Pavlou brothers on Nikou Pattichi Street in Limassol. Since 2017 the dealership has supplied Cyprus with a wide range of cars, from everyday used models to luxury and performance cars, for sale and for rent.',
+      'story.p2':'65 Google reviews, 4.7 stars on average, describe the same thing: clean cars, a helpful team, a swift purchase and no pressure.',
+      'reviews.h2':'From the guest book','reviews.lead':'Two of 65 Google reviews.',
+      'q1.text':'“I had an amazing experience with the Pavlou brothers. They are true professionals in their field and have exceptional knowledge when it comes to luxury cars.”',
+      'q2.text':'“Very good experience overall. Athos helped me import an Audi RS5 from the UK to Cyprus and the process was smooth and straightforward.”',
+      'q.source':'Google review',
+      'tag.team':'helpful team · 3','tag.swift':'swift car purchase · 2','tag.clean':'clean cars · 2','tag.pressure':'no pressure sales · 2',
+      'visit.h2':'Find us','visit.address':'Address','visit.hours':'Opening hours','visit.contact':'Contact',
+      'd.monfri':'Monday – Friday','d.sat':'Saturday','d.sun':'Sunday','d.closed':'Closed',
+      'footer.note':'Design concept. Content from King Of Cars’ own Google, Instagram and Facebook listings.'
+    },
+    el: {
+      'concept':'Πρόταση σχεδιασμού για την King Of Cars · όχι η επίσημη ιστοσελίδα',
+      'nav.services':'Υπηρεσίες','nav.story':'Η εταιρεία','nav.visit':'Επίσκεψη',
+      'hero.h1':'Πολυτελή & σπορ αυτοκίνητα στην Κύπρο',
+      'hero.p':'Επιλεγμένα μεταχειρισμένα και ενοικιαζόμενα αυτοκίνητα στη Λεμεσό από το 2017. Πωλήσεις, ενοικιάσεις και εισαγωγή κατόπιν παραγγελίας, από μια ομάδα που απαντά στο τηλέφωνο.',
+      'cta.whatsapp':'Μήνυμα στο WhatsApp','cta.cars':'Δείτε τα αυτοκίνητα στο Instagram',
+      'proof.num':'4,7','visit.map':'Χάρτης: King Of Cars',
+      'proof.rating':'βαθμολογία Google, 65 κριτικές','proof.since':'στη Λεμεσό από το','proof.fb':'ακόλουθοι στο Facebook',
+      'services.h2':'Τι κάνει η King Of Cars',
+      'services.lead':'Πωλήσεις και ενοικιάσεις κάτω από μία στέγη στην οδό Νίκου Παττίχη, με κάλυψη σε όλο το νησί.',
+      's1.h':'Ποιοτικά μεταχειρισμένα','s1.p':'Επιλεγμένα οχήματα προς πώληση στη Λεμεσό, από καθημερινά μοντέλα μέχρι premium.',
+      's2.h':'Ενοικιάσεις','s2.p':'Βραχυχρόνιες και μακροχρόνιες ενοικιάσεις στη Λεμεσό, ρωτήστε τι είναι διαθέσιμο.',
+      's3.h':'Εισαγωγή κατόπιν παραγγελίας','s3.p':'Ψάχνετε κάτι συγκεκριμένο; Μπορεί να βρεθεί και να εισαχθεί για εσάς, και από το Ηνωμένο Βασίλειο.',
+      's4.h':'Πολυτέλεια & επιδόσεις','s4.p':'Τα premium και σπορ μοντέλα είναι η ειδικότητα, όχι η εξαίρεση.',
+      's5.h':'Παράδοση','s5.p':'Το αυτοκίνητό σας μπορεί να παραδοθεί σε εσάς, όπως αναφέρεται στο Google.',
+      's6.h':'Χωρίς πίεση','s6.p':'Ευθύς λόγος, εξυπηρετική ομάδα, λένε οι πελάτες. Ρωτήστε, συγκρίνετε, αποφασίστε.',
+      'story.h2':'Οικογενειακή επιχείρηση από το 2017',
+      'story.p1':'Την King Of Cars διευθύνουν τα αδέλφια Παύλου στην οδό Νίκου Παττίχη στη Λεμεσό. Από το 2017 η εταιρεία προμηθεύει την Κύπρο με μεγάλη γκάμα αυτοκινήτων, από καθημερινά μεταχειρισμένα μέχρι πολυτελή και σπορ μοντέλα, για πώληση και ενοικίαση.',
+      'story.p2':'65 κριτικές Google, 4,7 αστέρια κατά μέσο όρο, περιγράφουν το ίδιο: καθαρά αυτοκίνητα, εξυπηρετική ομάδα, γρήγορη αγορά και καμία πίεση.',
+      'reviews.h2':'Από το βιβλίο επισκεπτών','reviews.lead':'Δύο από 65 κριτικές Google.',
+      'q1.text':'«Είχα μια εξαιρετική εμπειρία με τα αδέλφια Παύλου. Είναι πραγματικοί επαγγελματίες στον χώρο τους και έχουν εξαιρετική γνώση όταν πρόκειται για πολυτελή αυτοκίνητα.»',
+      'q2.text':'«Πολύ καλή εμπειρία συνολικά. Ο Άθως με βοήθησε να εισαγάγω ένα Audi RS5 από το Ηνωμένο Βασίλειο στην Κύπρο και η διαδικασία ήταν ομαλή και απλή.»',
+      'q.source':'κριτική Google',
+      'tag.team':'εξυπηρετική ομάδα · 3','tag.swift':'γρήγορη αγορά · 2','tag.clean':'καθαρά αυτοκίνητα · 2','tag.pressure':'πώληση χωρίς πίεση · 2',
+      'visit.h2':'Πού θα μας βρείτε','visit.address':'Διεύθυνση','visit.hours':'Ώρες λειτουργίας','visit.contact':'Επικοινωνία',
+      'd.monfri':'Δευτέρα – Παρασκευή','d.sat':'Σάββατο','d.sun':'Κυριακή','d.closed':'Κλειστά',
+      'footer.note':'Πρόταση σχεδιασμού. Περιεχόμενο από τις καταχωρίσεις της King Of Cars στο Google, το Instagram και το Facebook.'
+    },
+    de: {
+      'concept':'Designentwurf für King Of Cars · nicht die offizielle Website',
+      'nav.services':'Leistungen','nav.story':'Über uns','nav.visit':'Anfahrt',
+      'hero.h1':'Luxus- & Sportwagen auf Zypern',
+      'hero.p':'Handverlesene Gebrauchtwagen und Mietwagen in Limassol seit 2017. Verkauf, Vermietung und Import auf Bestellung, von einem Team, das ans Telefon geht.',
+      'cta.whatsapp':'Nachricht per WhatsApp','cta.cars':'Autos auf Instagram ansehen',
+      'proof.num':'4,7','visit.map':'Karte: King Of Cars',
+      'proof.rating':'Google-Bewertung, 65 Rezensionen','proof.since':'in Limassol seit','proof.fb':'Facebook-Follower',
+      'services.h2':'Was King Of Cars macht',
+      'services.lead':'Verkauf und Vermietung unter einem Dach an der Nikou-Pattichi-Straße, die ganze Insel im Blick.',
+      's1.h':'Gebrauchtwagen mit Qualität','s1.p':'Handverlesene Fahrzeuge zum Verkauf in Limassol, vom Alltagsmodell bis zum Premiumwagen.',
+      's2.h':'Mietwagen','s2.p':'Kurz- und Langzeitmiete in Limassol, frag einfach, was gerade verfügbar ist.',
+      's3.h':'Import auf Bestellung','s3.p':'Du suchst ein bestimmtes Auto? Es wird für dich beschafft und importiert, auch aus Großbritannien.',
+      's4.h':'Luxus & Performance','s4.p':'Premium- und Sportmodelle sind die Spezialität, nicht die Ausnahme.',
+      's5.h':'Lieferung','s5.p':'Dein Auto kann zu dir geliefert werden, so steht es bei Google.',
+      's6.h':'Ohne Druck','s6.p':'Geradeaus und hilfsbereit, sagen die Kunden. Fragen, vergleichen, entscheiden.',
+      'story.h2':'Ein Familienbetrieb seit 2017',
+      'story.p1':'King Of Cars wird von den Brüdern Pavlou an der Nikou-Pattichi-Straße in Limassol geführt. Seit 2017 versorgt der Händler Zypern mit einer breiten Auswahl an Autos, vom Alltagsgebrauchten bis zum Luxus- und Sportwagen, zum Kauf und zur Miete.',
+      'story.p2':'65 Google-Rezensionen mit 4,7 Sternen im Schnitt beschreiben dasselbe: saubere Autos, ein hilfsbereites Team, ein zügiger Kauf und kein Druck.',
+      'reviews.h2':'Aus dem Gästebuch','reviews.lead':'Zwei von 65 Google-Rezensionen.',
+      'q1.text':'„Ich hatte eine großartige Erfahrung mit den Brüdern Pavlou. Sie sind echte Profis in ihrem Fach und kennen sich bei Luxusautos außergewöhnlich gut aus.“',
+      'q2.text':'„Insgesamt eine sehr gute Erfahrung. Athos hat mir geholfen, einen Audi RS5 aus Großbritannien nach Zypern zu importieren, und der Ablauf war reibungslos und unkompliziert.“',
+      'q.source':'Google-Rezension',
+      'tag.team':'hilfsbereites Team · 3','tag.swift':'zügiger Kauf · 2','tag.clean':'saubere Autos · 2','tag.pressure':'Verkauf ohne Druck · 2',
+      'visit.h2':'So findest du uns','visit.address':'Adresse','visit.hours':'Öffnungszeiten','visit.contact':'Kontakt',
+      'd.monfri':'Montag – Freitag','d.sat':'Samstag','d.sun':'Sonntag','d.closed':'Geschlossen',
+      'footer.note':'Designentwurf. Inhalte aus den eigenen Google-, Instagram- und Facebook-Einträgen von King Of Cars.'
+    },
+    ru: {
+      'concept':'Дизайн-концепция для King Of Cars · не официальный сайт',
+      'nav.services':'Услуги','nav.story':'О компании','nav.visit':'Как добраться',
+      'hero.h1':'Люксовые и спортивные автомобили на Кипре',
+      'hero.p':'Отобранные вручную подержанные и арендные автомобили в Лимассоле с 2017 года. Продажа, аренда и импорт под заказ от команды, которая отвечает на звонки.',
+      'cta.whatsapp':'Написать в WhatsApp','cta.cars':'Смотреть автомобили в Instagram',
+      'proof.num':'4,7','visit.map':'Карта: King Of Cars',
+      'proof.rating':'рейтинг Google, 65 отзывов','proof.since':'в Лимассоле с','proof.fb':'подписчиков в Facebook',
+      'services.h2':'Чем занимается King Of Cars',
+      'services.lead':'Продажа и аренда под одной крышей на улице Никоу Паттихи, работаем по всему острову.',
+      's1.h':'Качественные подержанные авто','s1.p':'Отобранные автомобили на продажу в Лимассоле, от повседневных моделей до премиальных.',
+      's2.h':'Аренда автомобилей','s2.p':'Краткосрочная и длительная аренда в Лимассоле, спросите, что сейчас доступно.',
+      's3.h':'Импорт под заказ','s3.p':'Ищете конкретную машину? Её найдут и привезут для вас, в том числе из Великобритании.',
+      's4.h':'Люкс и спорт','s4.p':'Премиальные и спортивные модели здесь специализация, а не исключение.',
+      's5.h':'Доставка','s5.p':'Автомобиль могут доставить вам, как указано в Google.',
+      's6.h':'Без давления','s6.p':'Прямо и с готовностью помочь, говорят клиенты. Спросите, сравните, решите.',
+      'story.h2':'Семейный автосалон с 2017 года',
+      'story.p1':'King Of Cars ведут братья Павлу на улице Никоу Паттихи в Лимассоле. С 2017 года компания поставляет на Кипр широкий выбор автомобилей, от повседневных подержанных до люксовых и спортивных, на продажу и в аренду.',
+      'story.p2':'65 отзывов Google со средней оценкой 4,7 описывают одно и то же: чистые автомобили, отзывчивая команда, быстрая покупка и никакого давления.',
+      'reviews.h2':'Из книги отзывов','reviews.lead':'Два из 65 отзывов Google.',
+      'q1.text':'«У меня был отличный опыт с братьями Павлу. Они настоящие профессионалы своего дела и исключительно хорошо разбираются в люксовых автомобилях.»',
+      'q2.text':'«В целом очень хороший опыт. Атос помог мне привезти Audi RS5 из Великобритании на Кипр, и всё прошло гладко и просто.»',
+      'q.source':'отзыв Google',
+      'tag.team':'отзывчивая команда · 3','tag.swift':'быстрая покупка · 2','tag.clean':'чистые автомобили · 2','tag.pressure':'продажа без давления · 2',
+      'visit.h2':'Как нас найти','visit.address':'Адрес','visit.hours':'Часы работы','visit.contact':'Контакты',
+      'd.monfri':'понедельник – пятница','d.sat':'суббота','d.sun':'воскресенье','d.closed':'Закрыто',
+      'footer.note':'Дизайн-концепция. Содержание из собственных карточек King Of Cars в Google, Instagram и Facebook.'
+    }
+  };
+  var cur = 'en';
+  function setLang(l) {
+    cur = l;
+    document.documentElement.lang = l;
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var s = T[l][el.getAttribute('data-i18n')];
+      if (s) el.textContent = s;
+    });
+    document.querySelectorAll('[data-i18n-title]').forEach(function (el) {
+      var s = T[l][el.getAttribute('data-i18n-title')];
+      if (s) el.title = s;
+    });
+    document.querySelectorAll('[data-lang]').forEach(function (b) {
+      b.setAttribute('aria-pressed', b.getAttribute('data-lang') === l ? 'true' : 'false');
+    });
+    try { localStorage.setItem('lang', l); } catch (e) {}
+  }
+  document.querySelectorAll('[data-lang]').forEach(function (b) {
+    b.addEventListener('click', function () { setLang(b.getAttribute('data-lang')); });
+  });
+  try { var saved = localStorage.getItem('lang'); if (saved && T[saved]) setLang(saved); } catch (e) {}
+</script>
+</body>
+</html>
