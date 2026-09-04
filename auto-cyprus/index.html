@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   /* Dark, from the dealer's own look: black/white photography on Instagram and Taplink, bold uppercase wordmark. Colours only from taplink.cc/autocyprus: black, white, green #087108 (their WhatsApp button), blue #1976be (their cars button). */
-  :root{
+  :root{ --hero-a:#0b0b0d; --hero-b:#1976be; --hero-c:#087108;
     --bg:#111214; --panel:#1b1d21; --line-solid:#2c2f34;
     --ink:#f5f5f4; --ink-2:#a7abb3; --accent:#1976be; --on-accent:#ffffff; --wa:#087108;
     --radius:14px; --max:1180px;
@@ -113,6 +113,30 @@
   .btn:hover{filter:brightness(1.08)}
   header.scrolled{box-shadow:0 6px 24px rgba(0,0,0,.12)}
   @media (prefers-reduced-motion:reduce){.kenburns{animation:none}.js .reveal{opacity:1;transform:none;transition:none}.lift,.lift:hover{transform:none;box-shadow:none}}
+  /* Hero vollflächig (Julian, 4.9.2026 13:25): Foto füllt den ersten Bildschirm, zoomt langsam, dunkler Verlauf für den Text. */
+  .hero.hero-full{position:relative;overflow:hidden;min-height:82vh;display:grid;align-items:center;color:#fff}
+  .hero.hero-full .hero-img{position:absolute;inset:0;z-index:0;aspect-ratio:auto;max-height:none;border:0;background:#111}
+  .hero.hero-full .hero-img img{width:100%;height:100%;object-fit:cover}
+  .hero.hero-full::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(8,8,12,.82) 0%,rgba(8,8,12,.55) 55%,rgba(8,8,12,.25) 100%)}
+  .hero.hero-full .wrap{position:static;display:block;padding-top:72px;padding-bottom:80px}
+  .hero.hero-full .wrap>div:first-child{position:relative;z-index:2;max-width:640px}
+  .hero.hero-full h1,.hero.hero-full .kicker{color:#fff}
+  .hero.hero-full p{color:#e6e6ea}
+  .hero.hero-full .btn-ghost,.hero.hero-full .btn-outline{color:#fff;border-color:#fff;background:transparent}
+  .hero.hero-full .btn-light{background:#fff;color:#111}
+  /* Hero ohne Foto: bewegter Verlauf in den Firmenfarben */
+  .hero.hero-anim{position:relative;overflow:hidden;min-height:82vh;display:grid;align-items:center;background:linear-gradient(120deg,var(--hero-a),var(--hero-b),var(--hero-c),var(--hero-a));background-size:300% 300%;animation:grad 28s ease-in-out infinite alternate}
+  @keyframes grad{from{background-position:0% 50%}to{background-position:100% 50%}}
+  .hero.hero-anim .hero-img{display:none}
+  .hero.hero-anim::after{content:"";position:absolute;inset:0;z-index:1;background:rgba(8,8,12,.62)}
+  .hero.hero-anim .wrap{position:relative;z-index:2}
+  .hero.hero-anim h1,.hero.hero-anim .kicker{color:#fff}
+  .hero.hero-anim p{color:#e6e6ea}
+  .hero.hero-anim .btn-ghost,.hero.hero-anim .btn-outline{color:#fff;border-color:#fff;background:transparent}
+  .hero.hero-anim .wrap{display:block;padding-top:72px;padding-bottom:80px}
+  .hero.hero-anim .wrap>div:first-child{max-width:680px}
+  @media (max-width:860px){.hero.hero-full,.hero.hero-anim{min-height:auto}.hero.hero-full .wrap,.hero.hero-anim .wrap{padding-top:56px;padding-bottom:64px}}
+  @media (prefers-reduced-motion:reduce){.hero.hero-anim{animation:none}}
 </style>
 </head>
 <body>
@@ -139,7 +163,7 @@
 </header>
 
 <main id="top">
-  <div class="hero">
+  <div class="hero hero-anim">
     <div class="wrap">
       <div>
         <h1 data-i18n="hero.h1">Used cars, no monthly payments</h1>
