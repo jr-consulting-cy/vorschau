@@ -9,10 +9,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  /* Dark, from the dealer's own look: black/white photography on Instagram and Taplink, bold uppercase wordmark. One accent: warm gold. */
+  /* Dark, from the dealer's own look: black/white photography on Instagram and Taplink, bold uppercase wordmark. Colours only from taplink.cc/autocyprus: black, white, green #087108 (their WhatsApp button), blue #1976be (their cars button). */
   :root{
     --bg:#111214; --panel:#1b1d21; --line-solid:#2c2f34;
-    --ink:#f5f5f4; --ink-2:#a7abb3; --accent:#c9a227; --on-accent:#111214;
+    --ink:#f5f5f4; --ink-2:#a7abb3; --accent:#1976be; --on-accent:#ffffff; --wa:#087108;
     --radius:14px; --max:1180px;
   }
   *{box-sizing:border-box}
@@ -25,7 +25,7 @@
   .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
   .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;font-weight:600;text-decoration:none;border:1px solid transparent;white-space:nowrap;transition:transform .12s}
   .btn:active{transform:translateY(1px)}
-  .btn-primary{background:var(--accent);color:var(--on-accent)}
+  .btn-primary{background:var(--wa);color:#fff}
   .btn-ghost{border-color:var(--ink-2);color:var(--ink)}
   .btn svg{width:18px;height:18px;flex:none}
 
@@ -141,7 +141,7 @@
         </div>
       </div>
       <div class="hero-img">
-        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 38l4-13a4 4 0 0 1 3.8-2.7h36.4A4 4 0 0 1 54 25.3L58 38M6 38v10a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-3h36v3a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V38M6 38h52M16 45a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM48 45a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+        <svg aria-hidden="true" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 38l4-13a4 4 0 0 1 3.8-2.7h36.4A4 4 0 0 1 54 25.3L58 38M6 38v10a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-3h36v3a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V38M6 38h52M16 45a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM48 45a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
       </div>
     </div>
   </div>
@@ -175,7 +175,7 @@
       <p data-i18n="story.p1">Auto.Cyprus is based on Pafou Street in Limassol and works across the island, importing cars to order as well as selling from stock. No walk-in showroom floor: every viewing is booked ahead, so you get someone's full attention when you come.</p>
       <p data-i18n="story.p2">195 Google reviews, most of them five stars, describe the same thing: a straightforward deal and a team that answers questions instead of dodging them.</p>
       <div class="story-img">
-        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 38l4-13a4 4 0 0 1 3.8-2.7h36.4A4 4 0 0 1 54 25.3L58 38M6 38v10a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-3h36v3a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V38M6 38h52M16 45a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM48 45a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+        <svg aria-hidden="true" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 38l4-13a4 4 0 0 1 3.8-2.7h36.4A4 4 0 0 1 54 25.3L58 38M6 38v10a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-3h36v3a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V38M6 38h52M16 45a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM48 45a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
       </div>
     </div>
   </section>

@@ -20,3 +20,13 @@ vorbereitet werden, bevor gepusht ist. Verschickt wird erst nach dem Push.
 
 ## Was nicht hier rein darf
 Keine MAIL.md, keine Notizen, keine Preise, kein Sichtungsordner. Nur `index.html` je Firma.
+
+## Versand (einmalig, Julian, rund 5 Minuten)
+Der Gmail-Baustein in Claude hüllt jeden Link in eine google.com-Weiterleitung (Weiterleitungshinweis
+beim Empfänger). Deshalb geht der Versand direkt über Gmail per Skript `werkzeuge/mail-senden.py`.
+1. Google-Konto office.julian99 → Sicherheit → Bestätigung in zwei Schritten muss an sein.
+2. Dort "App-Passwörter" → neues App-Passwort, Name "Website-Flip Versand", 16 Zeichen kopieren.
+3. Im Terminal ablegen (fragt das Passwort ab, es landet nur in der Keychain):
+   `security add-generic-password -s gmail-app-password -a office.julian99@gmail.com -w`
+Danach je Mail: `python3 werkzeuge/mail-senden.py <ordner> --an <adresse>` zeigt die Vorschau,
+mit `--senden` geht sie raus und liegt in Gmail unter Gesendet.
