@@ -108,7 +108,7 @@
   .gallery img{width:100%;height:100%;object-fit:cover;display:block}
   .story-img img{width:100%;height:100%;object-fit:cover;display:block}
   @media (max-width:560px){.gallery{grid-template-columns:1fr}}
-  /* Niveau-Baustein (Julian, 4.9.2026): Bewegung und Tiefe, sparsam. Zwei bewegte Elemente je Ansicht, prefers-reduced-motion schaltet alles ab. */
+  /* Niveau-Baustein (4.9.2026): Bewegung und Tiefe, sparsam. Zwei bewegte Elemente je Ansicht, prefers-reduced-motion schaltet alles ab. */
   .kenburns{animation:kb 24s ease-in-out infinite alternate;transform-origin:center;will-change:transform}
   @keyframes kb{from{transform:scale(1)}to{transform:scale(1.08)}}
   .reveal{opacity:1;transform:none}
@@ -120,7 +120,7 @@
   .btn:hover{filter:brightness(1.08)}
   header.scrolled{box-shadow:0 6px 24px rgba(0,0,0,.12)}
   @media (prefers-reduced-motion:reduce){.kenburns{animation:none}.js .reveal{opacity:1;transform:none;transition:none}.lift,.lift:hover{transform:none;box-shadow:none}}
-  /* Hero vollflächig (Julian, 4.9.2026 13:25): Foto füllt den ersten Bildschirm, zoomt langsam, dunkler Verlauf für den Text. */
+  /* Hero vollflächig (4.9.2026 13:25): Foto füllt den ersten Bildschirm, zoomt langsam, dunkler Verlauf für den Text. */
   .hero.hero-full{position:relative;overflow:hidden;min-height:82vh;display:grid;align-items:center;color:#fff}
   .hero.hero-full .hero-img{position:absolute;inset:0;z-index:0;aspect-ratio:auto;max-height:none;border:0;background:#111}
   .hero.hero-full .hero-img img{width:100%;height:100%;object-fit:cover}

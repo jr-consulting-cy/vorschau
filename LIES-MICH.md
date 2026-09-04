@@ -21,6 +21,9 @@ vorbereitet werden, bevor gepusht ist. Verschickt wird erst nach dem Push.
 ## Was nicht hier rein darf
 Keine MAIL.md, keine Notizen, keine Preise, kein Sichtungsordner. Nur `index.html` je Firma.
 
+## Namenssperre
+Das Werkzeug einzeldatei.py bricht ab, wenn "Julian" oder "Riegler" in der Ausgabe stünde (auch in Kommentaren). Dann die Stelle im Entwurf ändern, nie die Sperre.
+
 ## Versand (einmalig, Julian, rund 5 Minuten)
 Der Gmail-Baustein in Claude hüllt jeden Link in eine google.com-Weiterleitung (Weiterleitungshinweis
 beim Empfänger). Deshalb geht der Versand direkt über Gmail per Skript `werkzeuge/mail-senden.py`.
