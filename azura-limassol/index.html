@@ -100,6 +100,18 @@
 
   footer.site{border-top:1px solid var(--line-solid);padding:32px 0;color:var(--ink-2);font-size:14px}
   footer.site .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  /* Niveau-Baustein (Julian, 4.9.2026): Bewegung und Tiefe, sparsam. Zwei bewegte Elemente je Ansicht, prefers-reduced-motion schaltet alles ab. */
+  .kenburns{animation:kb 24s ease-in-out infinite alternate;transform-origin:center;will-change:transform}
+  @keyframes kb{from{transform:scale(1)}to{transform:scale(1.08)}}
+  .reveal{opacity:1;transform:none}
+  .js .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+  .js .reveal.in{opacity:1;transform:none}
+  .lift{transition:transform .25s ease,box-shadow .25s ease}
+  .lift:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(0,0,0,.14)}
+  .btn{transition:transform .15s ease,filter .15s ease}
+  .btn:hover{filter:brightness(1.08)}
+  header.scrolled{box-shadow:0 6px 24px rgba(0,0,0,.12)}
+  @media (prefers-reduced-motion:reduce){.kenburns{animation:none}.js .reveal{opacity:1;transform:none;transition:none}.lift,.lift:hover{transform:none;box-shadow:none}}
 </style>
 </head>
 <body>
@@ -152,21 +164,21 @@
     </div>
   </div>
 
-  <section id="menu">
+  <section class="reveal" id="menu">
     <div class="wrap">
       <h2 data-i18n="menu.h2">From land, sea and fire</h2>
       <p class="lead" data-i18n="menu.lead">Seven plates from the current menu. Beef tartare and octopus are the ones guests mention most.</p>
       <div class="tiles">
-        <div class="tile big">
+        <div class="lift tile big">
           <div><h3>Salt-baked sea bass</h3><p data-i18n="m.seabass">For two. Whole fish baked in a salt crust, the way the coast does it.</p></div>
           <span class="price">75 €</span>
         </div>
-        <div class="tile"><h3>Beef tartare</h3><p data-i18n="m.tartare">Dijon mustard, soy, truffle, graviera cheese, mustard ice cream.</p><span class="price">23 €</span></div>
-        <div class="tile"><h3>Mediterranean octopus</h3><p data-i18n="m.octopus">Baby potatoes, kimchi, olives, cherry tomatoes.</p><span class="price">26 €</span></div>
-        <div class="tile"><h3>Seafood orzo</h3><p data-i18n="m.orzo">Saffron, dashi, lemon.</p><span class="price">25 €</span></div>
-        <div class="tile"><h3>Fava</h3><p data-i18n="m.fava">Yellow split peas, chorizo, cultured butter, thyme, truffle oil.</p><span class="price" data-i18n="m.fava.price">9.5 €</span></div>
-        <div class="tile"><h3>Azura cheesecake</h3><p data-i18n="m.cheesecake">Baked, vanilla cream cheese, pistachio crust.</p><span class="price">12 €</span></div>
-        <div class="tile"><h3>Greek salad Azura</h3><p data-i18n="m.salad">Tomato, sweet peppers, cucumber, feta, Kalamata olives.</p><span class="price">17 €</span></div>
+        <div class="lift tile"><h3>Beef tartare</h3><p data-i18n="m.tartare">Dijon mustard, soy, truffle, graviera cheese, mustard ice cream.</p><span class="price">23 €</span></div>
+        <div class="lift tile"><h3>Mediterranean octopus</h3><p data-i18n="m.octopus">Baby potatoes, kimchi, olives, cherry tomatoes.</p><span class="price">26 €</span></div>
+        <div class="lift tile"><h3>Seafood orzo</h3><p data-i18n="m.orzo">Saffron, dashi, lemon.</p><span class="price">25 €</span></div>
+        <div class="lift tile"><h3>Fava</h3><p data-i18n="m.fava">Yellow split peas, chorizo, cultured butter, thyme, truffle oil.</p><span class="price" data-i18n="m.fava.price">9.5 €</span></div>
+        <div class="lift tile"><h3>Azura cheesecake</h3><p data-i18n="m.cheesecake">Baked, vanilla cream cheese, pistachio crust.</p><span class="price">12 €</span></div>
+        <div class="lift tile"><h3>Greek salad Azura</h3><p data-i18n="m.salad">Tomato, sweet peppers, cucumber, feta, Kalamata olives.</p><span class="price">17 €</span></div>
       </div>
       <div class="menu-links">
         <a class="btn btn-ghost" href="https://azura-limassol.com/wp-content/uploads/2026/08/AZURA_menu_A4.pdf" rel="noopener" data-i18n="menu.pdf">Full menu (PDF)</a>
@@ -175,7 +187,7 @@
     </div>
   </section>
 
-  <section id="story" class="story">
+  <section id="story" class="reveal story">
     <div class="wrap">
       <h2 data-i18n="story.h2">All day, in the heart of the Marina</h2>
       <p data-i18n="story.p1">At Azura, simple and familiar food becomes deeper through skill, respect for ingredients and natural cooking techniques. The kitchen works with the fundamental elements, land, water and fire, to bring out true flavours.</p>
@@ -184,7 +196,7 @@
     </div>
   </section>
 
-  <section id="reviews">
+  <section class="reveal" id="reviews">
     <div class="wrap">
       <h2 data-i18n="reviews.h2">From the guest book</h2>
       <p class="lead" data-i18n="reviews.lead">Two of 191 Google reviews.</p>
@@ -207,7 +219,7 @@
     </div>
   </section>
 
-  <section id="visit">
+  <section class="reveal" id="visit">
     <div class="wrap">
       <h2 data-i18n="visit.h2">Find us</h2>
       <div class="facts">
@@ -393,6 +405,19 @@
     b.addEventListener('click', function () { setLang(b.getAttribute('data-lang')); });
   });
   try { var saved = localStorage.getItem('lang'); if (saved && T[saved]) setLang(saved); } catch (e) {}
+</script>
+<script>
+  (function(){
+    document.documentElement.classList.add('js');
+    var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var els=document.querySelectorAll('.reveal');
+    if(!rm && 'IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+      els.forEach(function(el){io.observe(el);});
+    } else { els.forEach(function(el){el.classList.add('in');}); }
+    var h=document.querySelector('header');
+    if(h){ var onS=function(){h.classList.toggle('scrolled',window.scrollY>12);}; onS(); window.addEventListener('scroll',onS,{passive:true}); }
+  })();
 </script>
 </body>
 </html>

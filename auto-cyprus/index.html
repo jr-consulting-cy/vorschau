@@ -101,6 +101,18 @@
   footer.site{border-top:1px solid var(--line-solid);padding:32px 0;color:var(--ink-2);font-size:14px}
   footer.site .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
+  /* Niveau-Baustein (Julian, 4.9.2026): Bewegung und Tiefe, sparsam. Zwei bewegte Elemente je Ansicht, prefers-reduced-motion schaltet alles ab. */
+  .kenburns{animation:kb 24s ease-in-out infinite alternate;transform-origin:center;will-change:transform}
+  @keyframes kb{from{transform:scale(1)}to{transform:scale(1.08)}}
+  .reveal{opacity:1;transform:none}
+  .js .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+  .js .reveal.in{opacity:1;transform:none}
+  .lift{transition:transform .25s ease,box-shadow .25s ease}
+  .lift:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(0,0,0,.14)}
+  .btn{transition:transform .15s ease,filter .15s ease}
+  .btn:hover{filter:brightness(1.08)}
+  header.scrolled{box-shadow:0 6px 24px rgba(0,0,0,.12)}
+  @media (prefers-reduced-motion:reduce){.kenburns{animation:none}.js .reveal{opacity:1;transform:none;transition:none}.lift,.lift:hover{transform:none;box-shadow:none}}
 </style>
 </head>
 <body>
@@ -154,22 +166,22 @@
     </div>
   </div>
 
-  <section id="services">
+  <section class="reveal" id="services">
     <div class="wrap">
       <h2 data-i18n="services.h2">What Auto.Cyprus does</h2>
       <p class="lead" data-i18n="services.lead">One dealership, Cyprus-wide reach. Straightforward, in your language.</p>
       <div class="tiles">
-        <div class="tile"><h3 data-i18n="s1.h">Buying &amp; selling</h3><p data-i18n="s1.p">Used cars bought and sold, straight deals, no pressure.</p></div>
-        <div class="tile"><h3 data-i18n="s2.h">Trade-in</h3><p data-i18n="s2.p">Bring your current car, we offset it against the next one.</p></div>
-        <div class="tile"><h3 data-i18n="s3.h">Import to order</h3><p data-i18n="s3.p">Looking for something specific? We import cars by order.</p></div>
-        <div class="tile"><h3 data-i18n="s4.h">No monthly payments</h3><p data-i18n="s4.p">Cash deals, no financing plan attached.</p></div>
-        <div class="tile"><h3 data-i18n="s5.h">By appointment</h3><p data-i18n="s5.p">Viewings are arranged in advance, so your visit isn't wasted.</p></div>
-        <div class="tile"><h3 data-i18n="s6.h">EN · RU · HE</h3><p data-i18n="s6.p">The team speaks English, Russian and Hebrew.</p></div>
+        <div class="lift tile"><h3 data-i18n="s1.h">Buying &amp; selling</h3><p data-i18n="s1.p">Used cars bought and sold, straight deals, no pressure.</p></div>
+        <div class="lift tile"><h3 data-i18n="s2.h">Trade-in</h3><p data-i18n="s2.p">Bring your current car, we offset it against the next one.</p></div>
+        <div class="lift tile"><h3 data-i18n="s3.h">Import to order</h3><p data-i18n="s3.p">Looking for something specific? We import cars by order.</p></div>
+        <div class="lift tile"><h3 data-i18n="s4.h">No monthly payments</h3><p data-i18n="s4.p">Cash deals, no financing plan attached.</p></div>
+        <div class="lift tile"><h3 data-i18n="s5.h">By appointment</h3><p data-i18n="s5.p">Viewings are arranged in advance, so your visit isn't wasted.</p></div>
+        <div class="lift tile"><h3 data-i18n="s6.h">EN · RU · HE</h3><p data-i18n="s6.p">The team speaks English, Russian and Hebrew.</p></div>
       </div>
     </div>
   </section>
 
-  <section id="story" class="story">
+  <section id="story" class="reveal story">
     <div class="wrap">
       <h2 data-i18n="story.h2">A dealership, not a showroom</h2>
       <p data-i18n="story.p1">Auto.Cyprus is based on Pafou Street in Limassol and works across the island, importing cars to order as well as selling from stock. No walk-in showroom floor: every viewing is booked ahead, so you get someone's full attention when you come.</p>
@@ -180,7 +192,7 @@
     </div>
   </section>
 
-  <section id="reviews">
+  <section class="reveal" id="reviews">
     <div class="wrap">
       <h2 data-i18n="reviews.h2">From the guest book</h2>
       <p class="lead" data-i18n="reviews.lead">Two of 195 Google reviews.</p>
@@ -197,7 +209,7 @@
     </div>
   </section>
 
-  <section id="visit">
+  <section class="reveal" id="visit">
     <div class="wrap">
       <h2 data-i18n="visit.h2">Find us</h2>
       <div class="facts">
@@ -370,6 +382,19 @@
     b.addEventListener('click', function () { setLang(b.getAttribute('data-lang')); });
   });
   try { var saved = localStorage.getItem('lang'); if (saved && T[saved]) setLang(saved); } catch (e) {}
+</script>
+<script>
+  (function(){
+    document.documentElement.classList.add('js');
+    var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var els=document.querySelectorAll('.reveal');
+    if(!rm && 'IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+      els.forEach(function(el){io.observe(el);});
+    } else { els.forEach(function(el){el.classList.add('in');}); }
+    var h=document.querySelector('header');
+    if(h){ var onS=function(){h.classList.toggle('scrolled',window.scrollY>12);}; onS(); window.addEventListener('scroll',onS,{passive:true}); }
+  })();
 </script>
 </body>
 </html>
