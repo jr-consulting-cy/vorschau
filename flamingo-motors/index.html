@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Flamingo Motors · Quality Used Cars Limassol</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Noto+Sans:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  /* Upgrade of flamingomotors.com.cy, not a redesign. Everything from their own site (computed styles, 4.9.2026): white body, black header and hero,
+     headings in Michroma uppercase, Open Sans text, square buttons, one red #DB2C2C (their logo element and one section), text grey #33373D,
+     their white SVG logo. Michroma has no Greek or Cyrillic, so those headings fall back to Noto Sans. */
+  :root{
+    --bg:#ffffff; --panel:#f4f4f4; --line-solid:#e3e3e3; --dark:#000000; --dark-2:#141414;
+    --ink:#33373d; --ink-2:#5c6168; --red:#DB2C2C; --on-dark:#ffffff;
+    --max:1180px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto} *{transition:none!important}}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 "Open Sans","Noto Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:Michroma,"Noto Sans",sans-serif;font-weight:400;letter-spacing:.04em;margin:0;line-height:1.2;text-transform:uppercase}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border:1px solid var(--dark);white-space:nowrap;transition:transform .12s}
+  .btn:active{transform:translateY(1px)}
+  .btn:focus-visible,.lang button:focus-visible,.links a:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+  .btn-dark{background:var(--dark);color:var(--on-dark)}
+  .btn-light{background:var(--on-dark);color:var(--dark)}
+  .btn-outline{background:transparent;color:var(--on-dark);border-color:var(--on-dark)}
+  .btn svg{width:18px;height:18px;flex:none}
+
+  .concept{background:var(--red);color:#fff;font-size:13px;font-weight:600;text-align:center;padding:6px 12px}
+
+  header{position:sticky;top:0;z-index:20;background:var(--dark);color:var(--on-dark)}
+  nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .brand{display:block;text-decoration:none}
+  .brand img{height:38px;width:auto}
+  @media (max-width:420px){.brand img{height:30px}.lang button{padding:5px 8px}}
+  .links{display:flex;gap:26px;font-weight:600;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+  .links a{text-decoration:none;color:#cfd2d6}
+  .links a:hover{color:#fff}
+  .lang{display:flex;gap:4px;border:1px solid #3a3a3a;padding:3px}
+  .lang button{background:none;border:0;color:#cfd2d6;font:inherit;font-weight:700;font-size:13px;padding:5px 10px;cursor:pointer}
+  .lang button[aria-pressed="true"]{background:#fff;color:var(--dark)}
+  @media (max-width:860px){.links{display:none}}
+
+  /* hero: black like theirs, but it renders immediately (theirs loads blank) */
+  .hero{background:var(--dark);color:var(--on-dark);padding:64px 0 72px}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
+  .hero .kicker{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#cfd2d6;margin-bottom:18px}
+  .hero h1{font-size:clamp(26px,3vw,40px)}
+  .hero p{font-size:18px;color:#cfd2d6;max-width:46ch;margin:22px 0 30px}
+  .cta{display:flex;gap:12px;flex-wrap:wrap}
+  .hero-img{aspect-ratio:5/4;max-height:460px;background:var(--dark-2);display:flex;align-items:center;justify-content:center;border:1px solid #2a2a2a}
+  .hero-img img{width:34%;opacity:.5}
+  @media (max-width:860px){.hero{padding:44px 0 52px}.hero .wrap{grid-template-columns:1fr}.hero-img{aspect-ratio:4/3;max-height:none}}
+
+  .proof{border-bottom:1px solid var(--line-solid);background:var(--panel)}
+  .proof .wrap{display:flex;gap:40px;flex-wrap:wrap;justify-content:space-between;padding:22px 24px;color:var(--ink-2)}
+  .proof strong{color:var(--dark);font-size:22px;font-family:Michroma,"Noto Sans",sans-serif;margin-right:10px}
+
+  section{padding:88px 0}
+  section h2{font-size:clamp(22px,2.6vw,32px);margin-bottom:14px}
+  .lead{color:var(--ink-2);max-width:60ch;margin:0 0 40px;font-size:18px}
+  .label{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:12px}
+
+  /* vehicles: cards like theirs, text only until photos are approved */
+  .cars{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .car{border:1px solid var(--line-solid);padding:0;display:flex;flex-direction:column}
+  .car .ph{aspect-ratio:16/10;background:var(--panel);display:flex;align-items:center;justify-content:center}
+  .car .ph img{width:22%;opacity:.18;filter:invert(1)}
+  .car .body{padding:18px 20px 20px;display:grid;gap:6px}
+  .car h3{font-family:"Open Sans","Noto Sans",sans-serif;text-transform:none;font-weight:700;font-size:17px;letter-spacing:0}
+  .car .price{font-family:"Open Sans","Noto Sans",sans-serif;font-weight:700;font-size:18px;color:var(--dark)}
+  .car .price s{color:var(--ink-2);font-size:14px;margin-right:8px}
+  .car .specs{color:var(--ink-2);font-size:14px}
+  .car a{margin-top:8px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;text-decoration:none;color:var(--dark)}
+  @media (max-width:860px){.cars{grid-template-columns:1fr 1fr}}
+  @media (max-width:560px){.cars{grid-template-columns:1fr}}
+
+  /* services: dark band like their "Our services" section */
+  .services{background:var(--dark);color:var(--on-dark)}
+  .services .lead{color:#cfd2d6}
+  .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .tile{border:1px solid #2a2a2a;background:var(--dark-2);padding:26px 22px}
+  .tile h3{font-size:14px;letter-spacing:.14em;margin-bottom:10px}
+  .tile p{margin:0;color:#cfd2d6;font-size:15px}
+  @media (max-width:860px){.tiles{grid-template-columns:1fr 1fr}}
+  @media (max-width:560px){.tiles{grid-template-columns:1fr}}
+
+  .story .wrap{max-width:760px}
+  .story p{font-size:19px;color:var(--ink-2)}
+  .facts3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:36px}
+  .facts3 h3{font-size:13px;letter-spacing:.16em;margin-bottom:8px}
+  .facts3 p{margin:0;font-size:15px;color:var(--ink-2)}
+  @media (max-width:860px){.facts3{grid-template-columns:1fr}}
+
+  .quotes{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+  blockquote{margin:0;padding:0 0 0 22px;border-left:3px solid var(--red);font-size:19px;line-height:1.5}
+  blockquote footer{margin-top:12px;font-size:14px;color:var(--ink-2)}
+  .tags{margin-top:32px;display:flex;gap:10px;flex-wrap:wrap}
+  .tags span{border:1px solid var(--line-solid);padding:6px 14px;font-size:14px;color:var(--ink-2)}
+  @media (max-width:860px){.quotes{grid-template-columns:1fr}}
+
+  .visit{background:var(--panel);border-top:1px solid var(--line-solid)}
+  .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-bottom:28px}
+  .facts h3{font-size:12px;letter-spacing:.2em;color:var(--ink);font-weight:700;margin-bottom:10px}
+  .facts p{margin:0;color:var(--ink-2)}
+  .hours{display:grid;grid-template-columns:auto 1fr;gap:4px 18px;color:var(--ink-2)}
+  .hours .closed{color:var(--ink)}
+  .map{overflow:hidden;border:1px solid var(--line-solid);aspect-ratio:21/8;background:#fff}
+  .map iframe{width:100%;height:100%;border:0;filter:grayscale(.3)}
+  @media (max-width:860px){.facts{grid-template-columns:1fr}.map{aspect-ratio:4/3}}
+
+  footer.site{background:var(--dark);color:#cfd2d6;padding:36px 0;font-size:14px}
+  footer.site .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+  footer.site img{height:34px;width:auto}
+</style>
+</head>
+<body>
+
+<div class="concept" data-i18n="concept">Design concept for Flamingo Motors · not the live website</div>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#top"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJMYXllcl8yIiBkYXRhLW5hbWU9IkxheWVyIDIiIHZpZXdCb3g9IjAgMCA1MTAuOTkgMTE1LjA4Ij48ZGVmcz48c3R5bGU+IC5jbHMtMSB7IGZpbGw6ICNmZmY7IH0gPC9zdHlsZT48L2RlZnM+PGcgaWQ9IkxheWVyXzEtMiIgZGF0YS1uYW1lPSJMYXllciAxIj48Zz48Zz48Zz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xMzYuMTQsMTEuOTNoMzUuMzR2Ny42aC0yN3YxMi45NmgyMy45NXY3LjZoLTIzLjk1djE5LjMzaC04LjM0VjExLjkzWiI+PC9wYXRoPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTE4MC42NSwxMS45M2g4LjM0djM5Ljg5aDI0Ljk2djcuNmgtMzMuMzFWMTEuOTNaIj48L3BhdGg+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjM5LjQ3LDExLjU5aDcuNzNsMjAuODksNDcuODNoLTguODJsLTQuODItMTEuNDZoLTIyLjQ2bC00Ljg4LDExLjQ2aC04LjU1bDIwLjg5LTQ3LjgzWk0yNTEuNDEsNDAuNTVsLTguMjEtMTktOC4xNCwxOWgxNi4zNVoiPjwvcGF0aD48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNzYuMjUsMTEuOTNoOC44OWwxNC40NSwyMi40NSwxNC40NS0yMi40NWg4Ljg5djQ3LjQ5aC04LjM0VjI1LjM2bC0xNC45OSwyMi4zOWgtLjI3bC0xNC44Ni0yMi4yNXYzMy45MmgtOC4yMVYxMS45M1oiPjwvcGF0aD48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zMzUuNjEsMTEuOTNoOC4zNHY0Ny40OWgtOC4zNFYxMS45M1oiPjwvcGF0aD48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zNTYuNjQsMTEuOTNoNy43M2wyNS40NCwzMi44M1YxMS45M2g4LjIxdjQ3LjQ5aC02Ljk5bC0yNi4xOS0zMy43OHYzMy43OGgtOC4yMVYxMS45M1oiPjwvcGF0aD48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik00MDguMTQsMzUuODF2LS4xNGMwLTEzLjMsMTAuMTgtMjQuNTYsMjQuNDktMjQuNTYsOC4yOCwwLDEzLjM2LDIuMzEsMTguMjUsNi40NWwtNS4yOSw2LjMxYy0zLjY2LTMuMTItNy4yNi01LjA5LTEzLjMtNS4wOS04Ljc1LDAtMTUuNCw3LjY3LTE1LjQsMTYuNzZ2LjE0YzAsOS43Nyw2LjQ1LDE2Ljk2LDE2LjE1LDE2Ljk2LDQuNDgsMCw4LjU1LTEuNDIsMTEuNDYtMy42di04Ljg5aC0xMi4xNHYtNy4yNmgyMC4yMnYxOS45NWMtNC42OCw0LTExLjQsNy4zOS0xOS44MSw3LjM5LTE0Ljg2LDAtMjQuNjMtMTAuNTgtMjQuNjMtMjQuNDJaIj48L3BhdGg+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNDYxLjMzLDM1Ljgxdi0uMTRjMC0xMy4zNiwxMC4zMS0yNC41NiwyNC45LTI0LjU2czI0Ljc2LDExLjA2LDI0Ljc2LDI0LjQydi4xNGMwLDEzLjM2LTEwLjMxLDI0LjU2LTI0LjksMjQuNTZzLTI0Ljc2LTExLjA2LTI0Ljc2LTI0LjQyWk01MDIuMjQsMzUuODF2LS4xNGMwLTkuMjMtNi43Mi0xNi44OS0xNi4xNS0xNi44OXMtMTYuMDEsNy41My0xNi4wMSwxNi43NnYuMTRjMCw5LjIzLDYuNzIsMTYuODksMTYuMTUsMTYuODlzMTYuMDEtNy41MywxNi4wMS0xNi43NloiPjwvcGF0aD48L2c+PGc+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjQ2LjU0LDgwLjM1aDEuNzVsMTAuMDIsMTQuNzYsMTAuMDItMTQuNzZoMS43NXYyNC45NmgtMS44NXYtMjEuNjhsLTkuODgsMTQuMzdoLS4xNGwtOS44OC0xNC4zN3YyMS42OGgtMS43OHYtMjQuOTZaIj48L3BhdGg+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjc2LjM5LDkyLjl2LS4wN2MwLTYuODEsNS4wMy0xMi45MSwxMi41OS0xMi45MXMxMi41Miw2LjAzLDEyLjUyLDEyLjg0di4wN2MwLDYuODEtNS4wMywxMi45MS0xMi41OSwxMi45MXMtMTIuNTItNi4wMy0xMi41Mi0xMi44NFpNMjk5LjU3LDkyLjl2LS4wN2MwLTYuMTctNC40OS0xMS4yMy0xMC42Ni0xMS4yM3MtMTAuNTksNC45OS0xMC41OSwxMS4xNnYuMDdjMCw2LjE3LDQuNDksMTEuMjMsMTAuNjYsMTEuMjNzMTAuNTktNC45OSwxMC41OS0xMS4xNloiPjwvcGF0aD48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zMTIuNzcsODIuMDZoLTguN3YtMS43MWgxOS4yNnYxLjcxaC04Ljd2MjMuMjVoLTEuODV2LTIzLjI1WiI+PC9wYXRoPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTMyNS44OSw5Mi45di0uMDdjMC02LjgxLDUuMDMtMTIuOTEsMTIuNTktMTIuOTFzMTIuNTIsNi4wMywxMi41MiwxMi44NHYuMDdjMCw2LjgxLTUuMDMsMTIuOTEtMTIuNTksMTIuOTFzLTEyLjUyLTYuMDMtMTIuNTItMTIuODRaTTM0OS4wNyw5Mi45di0uMDdjMC02LjE3LTQuNDktMTEuMjMtMTAuNjYtMTEuMjNzLTEwLjU5LDQuOTktMTAuNTksMTEuMTZ2LjA3YzAsNi4xNyw0LjQ5LDExLjIzLDEwLjY2LDExLjIzczEwLjU5LTQuOTksMTAuNTktMTEuMTZaIj48L3BhdGg+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMzU3LjMxLDgwLjM1aDEwLjQ4YzMuMDcsMCw1LjUzLjk2LDcuMDMsMi40NiwxLjE4LDEuMTgsMS44OSwyLjg1LDEuODksNC42NHYuMDdjMCw0LjE3LTMuMSw2LjU2LTcuMzEsNy4xM2w4LjI0LDEwLjY2aC0yLjM1bC03Ljk1LTEwLjM0aC04LjE3djEwLjM0aC0xLjg1di0yNC45NlpNMzY3LjU4LDkzLjI5YzQuMTcsMCw3LjI3LTIuMSw3LjI3LTUuNzF2LS4wN2MwLTMuMzUtMi42NC01LjQ2LTcuMTctNS40NmgtOC41MnYxMS4yM2g4LjQyWiI+PC9wYXRoPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTM4MS40OSwxMDEuNjdsMS4yMS0xLjM5YzIuNzUsMi41Myw1LjI4LDMuNzEsOC45NSwzLjcxczYuMzEtMi4xLDYuMzEtNC45NnYtLjA3YzAtMi42NC0xLjM5LTQuMTctNy4wNi01LjMxLTUuOTktMS4yMS04LjQyLTMuMjUtOC40Mi03LjAydi0uMDdjMC0zLjcxLDMuMzktNi41Niw4LjAyLTYuNTYsMy42NCwwLDYuMDMsMSw4LjU2LDMuMDNsLTEuMTgsMS40NmMtMi4zNS0yLjAzLTQuNzEtMi44Mi03LjQ1LTIuODItMy42NywwLTYuMSwyLjEtNi4xLDQuNzF2LjA3YzAsMi42NCwxLjM1LDQuMjQsNy4yNyw1LjQ2LDUuNzgsMS4xOCw4LjIsMy4yNSw4LjIsNi44OHYuMDdjMCw0LjAzLTMuNDYsNi44MS04LjI3LDYuODEtMy45OSwwLTcuMDYtMS4zMi0xMC4wNi0zLjk5WiI+PC9wYXRoPjwvZz48L2c+PGc+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjguODksODMuNThjLTUuMjksMS45OS0xMC41OSwzLjk2LTE1Ljg2LDUuOTktMy4xNiwxLjIyLTYuMjcsMi41NC05LjUsMy42MSwxMS4xLTEwLjMzLDI2LjE0LTEzLjQyLDM4Ljk3LTIxLjAxLTcuNzEtNS42Ny0xNi43OC03LjU3LTI1LjMzLTExLjU5aDExLjI2Yy04LjgtNS4yMi0xOC42Ni01LjQzLTI4LjQyLTguMDgsNC4zMy0xLjMsOC4xNi0yLjQ1LDEyLjI5LTMuNy0uNy0uNTktMS4xNi0uOTctMS45My0xLjYxLDE3LjgtMS45NywzNS4yMS00LjEzLDUyLjc1LTIuMSw0LjMxLjUsOC41NiwyLjIxLDEyLjY2LDMuODEsNC42NiwxLjgzLDkuMjcsMy4zNywxNC4zLDIuMDMsNC40Mi0xLjE3LDUuNjYtMy40MSw1LjAxLTguMDQtMS4xNi04LjE5LTYuMjctMTMuOC0xMi4yLTE4Ljg0LTIuOTUtMi41MS02LjE2LTQuNzEtOS4xMy03LjItMy4zMS0yLjc3LTIuOTEtNi4zNi0xLjY3LTkuOTEsMS4yOS0zLjcxLDMuNjUtNi41NSw3LjgzLTYuODYsNC4yOC0uMzEsOC40Ny4wMiwxMi4wOCwzLDEuMDcuODgsMi43OCwxLjAyLDQuMjIsMS40MywyLjMxLjY2LDMuNzIsMi4wOCw0LjIsNC40Ny4zNSwxLjc2Ljg0LDMuNDksMS4yOCw1LjIyLDEuMDMsNC4wNC4wOSw1LjMxLTMuODksNS42LS4xNi0xLjc1LjE5LTMuNzctLjYtNS4xMi0uODEtMS4zOC0yLjc4LTIuMDQtNC4xNS0zLjE0LS45Mi0uNzQtMS44Mi0xLjU5LTIuNDktMi41NS0xLjg1LTIuNjYtMy41My01LjI2LTcuMjUtNS43OC0zLjg2LS41NC03LjA0Ljg4LTkuMDEsNC43LTEuNTMsMi45Ni0uNyw2Ljg2LDIuMTksOS4yMSwyLjA1LDEuNjcsNC40MywyLjk0LDYuNDUsNC42NCw2LjA2LDUuMTIsMTIuNTcsOS44NiwxNy44NiwxNS43LDYuMDYsNi42OSw5LjAxLDE0Ljg3LDUuODksMjQuMTQtMS4zNSw0LjAyLTMuOTUsNy4xNS04LjA0LDguMTktNi41NywxLjY2LTEzLjIyLDMuMjItMTkuOTMsNC4wMS0xNS4wNCwxLjc3LTI5Ljk2LDQuMTUtNDQuNjksNy42Ni0uOTYuMjMtMS44Mi45LTIuNzIsMS4zNy0uOC4yNC0xLjYuNDktMi40LjczWiI+PC9wYXRoPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI4Ljg5LDgzLjU4Yy44LS4yNCwxLjYtLjQ5LDIuNC0uNzMuMzMtLjEyLjY3LS4yNCwxLS4zNi4xLjE3LjIuMzUuMzEuNTItMS41My44Ni0zLjA1LDEuNzMtNC41OSwyLjU4LTYuNjEsMy42NC03LjMyLDEwLjgyLS44NywxNC42MywyMC44NiwxMi4zMiwzNy4zNCwxNC4wNyw1Ny45My44NCwxMC43Mi02Ljg4LDE3LjczLTE2LjU2LDIxLjgtMjguNTIuMzktMS4xNi45Mi0yLjI3LDEuMzktMy40LjExLS4yNS4yNC0uNDkuNDMtLjg3LTIuNDYsMTguNzktNy41MiwzMS40My0yNy40NSw0MS4xOC0xOS44Myw5LjY5LTM4Ljc4LDYuNS01Ni4yMS02LjYxLTMuNDctMi42MS02LjY3LTUuNTktMTAuMDMtOC4zNi0uNjItLjUxLTEuNC0uODMtMi4xLTEuMjQuMzctLjQxLjc1LS44MiwxLjEyLTEuMjMsMS44NiwxLjUyLDMuNzIsMy4wNSw1LjY2LDQuNjQuMi0uMy40OC0uNTIuNDYtLjcxLS4zOS01LjI3LDIuNTgtOC40Niw2LjcxLTEwLjk1LjcxLS40MywxLjM3LS45MywyLjA1LTEuMzlaIj48L3BhdGg+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTUuNzcsNDUuMDJjMS41NC0xNS45OSwxMy4xNS0yNS40OSwzNi4xOC0yOS41Ny0yLjc4LDEuMy00Ljk0LDIuMjMtNy4wMywzLjMxLTcuNzUsNC4wNC0xMy43Myw5Ljk4LTE4LjE2LDE3LjQ2LS45NCwxLjU5LTEuNTgsMy40NC0xLjk2LDUuMjYtLjM0LDEuNjMtLjk5LDIuNTItMi42NiwyLjctMi4wNC4yMi00LjA2LjUzLTYuMzcuODRaIj48L3BhdGg+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNjEuMTIsMTIuMDJjLTE4LjY3LS4wOC0zNC4wNiw1Ljk2LTQ1Ljg3LDIwLjk1QzE4LjY1LDEyLjMzLDQ1Ljg0LDMuNjUsNjEuMTIsMTIuMDJaIj48L3BhdGg+PC9nPjwvZz48L2c+PC9zdmc+" alt="Flamingo Motors" width="511" height="115"></a>
+      <div class="links">
+        <a href="#cars" data-i18n="nav.cars">Vehicles</a>
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#story" data-i18n="nav.story">About</a>
+        <a href="#visit" data-i18n="nav.visit">Contact</a>
+      </div>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="el" aria-pressed="false">EL</button>
+        <button type="button" data-lang="de" aria-pressed="false">DE</button>
+        <button type="button" data-lang="ru" aria-pressed="false">RU</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <div class="kicker" data-i18n="hero.kicker">Where quality meets confidence</div>
+        <h1 data-i18n="hero.h1">New and used car specialists in Cyprus</h1>
+        <p data-i18n="hero.p">Serving Cyprus with quality used cars since the 1980s. A carefully selected range from Mercedes, BMW, Range Rover, Toyota and Mazda, sold with trust, transparency and service.</p>
+        <div class="cta">
+          <a class="btn btn-light" href="#cars" data-i18n="cta.cars">Browse cars</a>
+          <a class="btn btn-outline" href="mailto:info@flamingomotors.com.cy" data-i18n="cta.service">Schedule service</a>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJMYXllcl8yIiBkYXRhLW5hbWU9IkxheWVyIDIiIHZpZXdCb3g9IjAgMCAxMTAuODkgMTE3LjQyIj48ZGVmcz48c3R5bGU+IC5jbHMtMSB7IGZpbGw6ICNmZmY7IH0gPC9zdHlsZT48L2RlZnM+PGcgaWQ9IkxheWVyXzEtMiIgZGF0YS1uYW1lPSJMYXllciAxIj48Zz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yOS40Nyw4NS4yN2MtNS40LDIuMDQtMTAuOCw0LjA0LTE2LjE4LDYuMTItMy4yMiwxLjI0LTYuNCwyLjU5LTkuNjksMy42OCwxMS4zMy0xMC41NCwyNi42Ny0xMy43LDM5Ljc2LTIxLjQ0LTcuODYtNS43OC0xNy4xMi03LjczLTI1Ljg1LTExLjgzaDExLjQ5Yy04Ljk4LTUuMzMtMTkuMDQtNS41NC0yOS04LjI1LDQuNDEtMS4zMyw4LjMzLTIuNSwxMi41NC0zLjc3LS43Mi0uNi0xLjE4LS45OS0xLjk3LTEuNjQsMTguMTYtMi4wMSwzNS45My00LjIxLDUzLjgyLTIuMTQsNC40LjUxLDguNzMsMi4yNSwxMi45MSwzLjg5LDQuNzYsMS44Niw5LjQ2LDMuNDQsMTQuNTksMi4wOCw0LjUxLTEuMiw1Ljc4LTMuNDgsNS4xMS04LjItMS4xOS04LjM2LTYuNC0xNC4wOC0xMi40NS0xOS4yMi0zLjAxLTIuNTYtNi4yOS00LjgxLTkuMzItNy4zNC0zLjM3LTIuODMtMi45Ny02LjQ5LTEuNzEtMTAuMTEsMS4zMi0zLjc5LDMuNzMtNi42OSw3Ljk5LTcsNC4zNy0uMzIsOC42NS4wMiwxMi4zMiwzLjA2LDEuMDkuOSwyLjg0LDEuMDQsNC4zLDEuNDYsMi4zNi42NywzLjgsMi4xMiw0LjI5LDQuNTYuMzYsMS43OS44NiwzLjU2LDEuMzEsNS4zMywxLjA1LDQuMTIuMDksNS40Mi0zLjk3LDUuNzEtLjE2LTEuNzguMTktMy44NC0uNjItNS4yMi0uODItMS40MS0yLjg0LTIuMDktNC4yMy0zLjItLjk0LS43NS0xLjg1LTEuNjItMi41NC0yLjYtMS44OS0yLjcxLTMuNi01LjM3LTcuMzktNS45LTMuOTQtLjU1LTcuMTguODktOS4yLDQuOC0xLjU2LDMuMDItLjcxLDcsMi4yMyw5LjQsMi4wOSwxLjcsNC41MiwyLjk5LDYuNTgsNC43Myw2LjE4LDUuMjMsMTIuODMsMTAuMDYsMTguMjMsMTYuMDIsNi4xOCw2LjgyLDkuMTksMTUuMTcsNi4wMSwyNC42My0xLjM4LDQuMS00LjAzLDcuMy04LjIxLDguMzUtNi43LDEuNjktMTMuNDksMy4yOC0yMC4zNCw0LjA5LTE1LjM1LDEuOC0zMC41Nyw0LjIzLTQ1LjYsNy44Mi0uOTguMjMtMS44NS45Mi0yLjc4LDEuNC0uODIuMjUtMS42My41LTIuNDUuNzRaIj48L3BhdGg+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjkuNDcsODUuMjdjLjgyLS4yNSwxLjYzLS41LDIuNDUtLjc0LjM0LS4xMi42OC0uMjUsMS4wMi0uMzcuMS4xOC4yMS4zNS4zMS41My0xLjU2Ljg4LTMuMTIsMS43Ny00LjY4LDIuNjMtNi43NSwzLjcyLTcuNDcsMTEuMDQtLjg5LDE0LjkzLDIxLjI4LDEyLjU3LDM4LjA5LDE0LjM1LDU5LjExLjg2LDEwLjk0LTcuMDIsMTguMDktMTYuOSwyMi4yNC0yOS4xLjQtMS4xOC45NC0yLjMyLDEuNDItMy40Ny4xMS0uMjYuMjUtLjUuNDQtLjg5LTIuNTEsMTkuMTctNy42NywzMi4wNy0yOC4wMSw0Mi4wMS0yMC4yMyw5Ljg5LTM5LjU2LDYuNjMtNTcuMzUtNi43NC0zLjU1LTIuNjctNi44MS01LjctMTAuMjQtOC41My0uNjMtLjUyLTEuNDMtLjg1LTIuMTQtMS4yNy4zOC0uNDIuNzYtLjg0LDEuMTQtMS4yNiwxLjksMS41NSwzLjc5LDMuMTEsNS43Nyw0LjczLjIxLS4zMS40OS0uNTMuNDctLjczLS40LTUuMzgsMi42NC04LjYzLDYuODQtMTEuMTguNzItLjQ0LDEuNC0uOTQsMi4wOS0xLjQyWiI+PC9wYXRoPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTE2LjA5LDQ1LjkzYzEuNTctMTYuMzEsMTMuNDItMjYuMDEsMzYuOTEtMzAuMTctMi44NCwxLjMzLTUuMDUsMi4yNy03LjE3LDMuMzgtNy45MSw0LjEyLTE0LjAxLDEwLjE4LTE4LjUyLDE3LjgyLS45NiwxLjYyLTEuNjEsMy41MS0yLDUuMzYtLjM1LDEuNjctMS4wMSwyLjU3LTIuNzIsMi43NS0yLjA4LjIyLTQuMTUuNTQtNi41Ljg2WiI+PC9wYXRoPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTYyLjM2LDEyLjI3Yy0xOS4wNS0uMDgtMzQuNzUsNi4wOC00Ni44LDIxLjM3QzE5LjAyLDEyLjU4LDQ2Ljc3LDMuNzIsNjIuMzYsMTIuMjdaIj48L3BhdGg+PC9nPjwvZz48L3N2Zz4=" alt="" aria-hidden="true" width="111" height="117">
+      </div>
+    </div>
+  </div>
+
+  <div class="proof">
+    <div class="wrap">
+      <span><strong data-i18n="proof.num">4.9</strong><span data-i18n="proof.rating">Google rating, 162 reviews</span></span>
+      <span><strong>1980s</strong><span data-i18n="proof.since">in Limassol since the</span></span>
+      <span><strong>24h</strong><span data-i18n="proof.reply">reply to every enquiry</span></span>
+    </div>
+  </div>
+
+  <section id="cars">
+    <div class="wrap">
+      <div class="label" data-i18n="cars.label">In stock</div>
+      <h2 data-i18n="cars.h2">Featured vehicles</h2>
+      <p class="lead" data-i18n="cars.lead">Six cars from the current stock, prices as listed on flamingomotors.com.cy on 4 September 2026.</p>
+      <div class="cars">
+        <div class="car"><div class="ph"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJMYXllcl8yIiBkYXRhLW5hbWU9IkxheWVyIDIiIHZpZXdCb3g9IjAgMCAxMTAuODkgMTE3LjQyIj48ZGVmcz48c3R5bGU+IC5jbHMtMSB7IGZpbGw6ICNmZmY7IH0gPC9zdHlsZT48L2RlZnM+PGcgaWQ9IkxheWVyXzEtMiIgZGF0YS1uYW1lPSJMYXllciAxIj48Zz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yOS40Nyw4NS4yN2MtNS40LDIuMDQtMTAuOCw0LjA0LTE2LjE4LDYuMTItMy4yMiwxLjI0LTYuNCwyLjU5LTkuNjksMy42OCwxMS4zMy0xMC41NCwyNi42Ny0xMy43LDM5Ljc2LTIxLjQ0LTcuODYtNS43OC0xNy4xMi03LjczLTI1Ljg1LTExLjgzaDExLjQ5Yy04Ljk4LTUuMzMtMTkuMDQtNS41NC0yOS04LjI1LDQuNDEtMS4zMyw4LjMzLTIuNSwxMi41NC0zLjc3LS43Mi0uNi0xLjE4LS45OS0xLjk3LTEuNjQsMTguMTYtMi4wMSwzNS45My00LjIxLDUzLjgyLTIuMTQsNC40LjUxLDguNzMsMi4yNSwxMi45MSwzLjg5LDQuNzYsMS44Niw5LjQ2LDMuNDQsMTQuNTksMi4wOCw0LjUxLTEuMiw1Ljc4LTMuNDgsNS4xMS04LjItMS4xOS04LjM2LTYuNC0xNC4wOC0xMi40NS0xOS4yMi0zLjAxLTIuNTYtNi4yOS00LjgxLTkuMzItNy4zNC0zLjM3LTIuODMtMi45Ny02LjQ5LTEuNzEtMTAuMTEsMS4zMi0zLjc5LDMuNzMtNi42OSw3Ljk5LTcsNC4zNy0uMzIsOC42NS4wMiwxMi4zMiwzLjA2LDEuMDkuOSwyLjg0LDEuMDQsNC4zLDEuNDYsMi4zNi42NywzLjgsMi4xMiw0LjI5LDQuNTYuMzYsMS43OS44NiwzLjU2LDEuMzEsNS4zMywxLjA1LDQuMTIuMDksNS40Mi0zLjk3LDUuNzEtLjE2LTEuNzguMTktMy44NC0uNjItNS4yMi0uODItMS40MS0yLjg0LTIuMDktNC4yMy0zLjItLjk0LS43NS0xLjg1LTEuNjItMi41NC0yLjYtMS44OS0yLjcxLTMuNi01LjM3LTcuMzktNS45LTMuOTQtLjU1LTcuMTguODktOS4yLDQuOC0xLjU2LDMuMDItLjcxLDcsMi4yMyw5LjQsMi4wOSwxLjcsNC41MiwyLjk5LDYuNTgsNC43Myw2LjE4LDUuMjMsMTIuODMsMTAuMDYsMTguMjMsMTYuMDIsNi4xOCw2LjgyLDkuMTksMTUuMTcsNi4wMSwyNC42My0xLjM4LDQuMS00LjAzLDcuMy04LjIxLDguMzUtNi43LDEuNjktMTMuNDksMy4yOC0yMC4zNCw0LjA5LTE1LjM1LDEuOC0zMC41Nyw0LjIzLTQ1LjYsNy44Mi0uOTguMjMtMS44NS45Mi0yLjc4LDEuNC0uODIuMjUtMS42My41LTIuNDUuNzRaIj48L3BhdGg+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjkuNDcsODUuMjdjLjgyLS4yNSwxLjYzLS41LDIuNDUtLjc0LjM0LS4xMi42OC0uMjUsMS4wMi0uMzcuMS4xOC4yMS4zNS4zMS41My0xLjU2Ljg4LTMuMTIsMS43Ny00LjY4LDIuNjMtNi43NSwzLjcyLTcuNDcsMTEuMDQtLjg5LDE0LjkzLDIxLjI4LDEyLjU3LDM4LjA5LDE0LjM1LDU5LjExLjg2LDEwLjk0LTcuMDIsMTguMDktMTYuOSwyMi4yNC0yOS4xLjQtMS4xOC45NC0yLjMyLDEuNDItMy40Ny4xMS0uMjYuMjUtLjUuNDQtLjg5LTIuNTEsMTkuMTctNy42NywzMi4wNy0yOC4wMSw0Mi4wMS0yMC4yMyw5Ljg5LTM5LjU2LDYuNjMtNTcuMzUtNi43NC0zLjU1LTIuNjctNi44MS01LjctMTAuMjQtOC41My0uNjMtLjUyLTEuNDMtLjg1LTIuMTQtMS4yNy4zOC0uNDIuNzYtLjg0LDEuMTQtMS4yNiwxLjksMS41NSwzLjc5LDMuMTEsNS43Nyw0LjczLjIxLS4zMS40OS0uNTMuNDctLjczLS40LTUuMzgsMi42NC04LjYzLDYuODQtMTEuMTguNzItLjQ0LDEuNC0uOTQsMi4wOS0xLjQyWiI+PC9wYXRoPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTE2LjA5LDQ1LjkzYzEuNTctMTYuMzEsMTMuNDItMjYuMDEsMzYuOTEtMzAuMTctMi44NCwxLjMzLTUuMDUsMi4yNy03LjE3LDMuMzgtNy45MSw0LjEyLTE0LjAxLDEwLjE4LTE4LjUyLDE3LjgyLS45NiwxLjYyLTEuNjEsMy41MS0yLDUuMzYtLjM1LDEuNjctMS4wMSwyLjU3LTIuNzIsMi43NS0yLjA4LjIyLTQuMTUuNTQtNi41Ljg2WiI+PC9wYXRoPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTYyLjM2LDEyLjI3Yy0xOS4wNS0uMDgtMzQuNzUsNi4wOC00Ni44LDIxLjM3QzE5LjAyLDEyLjU4LDQ2Ljc3LDMuNzIsNjIuMzYsMTIuMjdaIj48L3BhdGg+PC9nPjwvZz48L3N2Zz4=" alt="" aria-hidden="true"></div><div class="body"><h3>Toyota Yaris 1.5 · 2024</h3><span class="price">€15.800</span><span class="specs" data-i18n="c1.specs">10,000 km · petrol · automatic</span><a href="https://flamingomotors.com.cy/" rel="noopener" data-i18n="cars.view">View vehicle</a></div></div>
+        <div class="car"><div class="ph"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJMYXllcl8yIiBkYXRhLW5hbWU9IkxheWVyIDIiIHZpZXdCb3g9IjAgMCAxMTAuODkgMTE3LjQyIj48ZGVmcz48c3R5bGU+IC5jbHMtMSB7IGZpbGw6ICNmZmY7IH0gPC9zdHlsZT48L2RlZnM+PGcgaWQ9IkxheWVyXzEtMiIgZGF0YS1uYW1lPSJMYXllciAxIj48Zz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yOS40Nyw4NS4yN2MtNS40LDIuMDQtMTAuOCw0LjA0LTE2LjE4LDYuMTItMy4yMiwxLjI0LTYuNCwyLjU5LTkuNjksMy42OCwxMS4zMy0xMC41NCwyNi42Ny0xMy43LDM5Ljc2LTIxLjQ0LTcuODYtNS43OC0xNy4xMi03LjczLTI1Ljg1LTExLjgzaDExLjQ5Yy04Ljk4LTUuMzMtMTkuMDQtNS41NC0yOS04LjI1LDQuNDEtMS4zMyw4LjMzLTIuNSwxMi41NC0zLjc3LS43Mi0uNi0xLjE4LS45OS0xLjk3LTEuNjQsMTguMTYtMi4wMSwzNS45My00LjIxLDUzLjgyLTIuMTQsNC40LjUxLDguNzMsMi4yNSwxMi45MSwzLjg5LDQuNzYsMS44Niw5LjQ2LDMuNDQsMTQuNTksMi4wOCw0LjUxLTEuMiw1Ljc4LTMuNDgsNS4xMS04LjItMS4xOS04LjM2LTYuNC0xNC4wOC0xMi40NS0xOS4yMi0zLjAxLTIuNTYtNi4yOS00LjgxLTkuMzItNy4zNC0zLjM3LTIuODMtMi45Ny02LjQ5LTEuNzEtMTAuMTEsMS4zMi0zLjc5LDMuNzMtNi42OSw3Ljk5LTcsNC4zNy0uMzIsOC42NS4wMiwxMi4zMiwzLjA2LDEuMDkuOSwyLjg0LDEuMDQsNC4zLDEuNDYsMi4zNi42NywzLjgsMi4xMiw0LjI5LDQuNTYuMzYsMS43OS44NiwzLjU2LDEuMzEsNS4zMywxLjA1LDQuMTIuMDksNS40Mi0zLjk3LDUuNzEtLjE2LTEuNzguMTktMy44NC0uNjItNS4yMi0uODItMS40MS0yLjg0LTIuMDktNC4yMy0zLjItLjk0LS43NS0xLjg1LTEuNjItMi41NC0yLjYtMS44OS0yLjcxLTMuNi01LjM3LTcuMzktNS45LTMuOTQtLjU1LTcuMTguODktOS4yLDQuOC0xLjU2LDMuMDItLjcxLDcsMi4yMyw5LjQsMi4wOSwxLjcsNC41MiwyLjk5LDYuNTgsNC43Myw2LjE4LDUuMjMsMTIuODMsMTAuMDYsMTguMjMsMTYuMDIsNi4xOCw2LjgyLDkuMTksMTUuMTcsNi4wMSwyNC42My0xLjM4LDQuMS00LjAzLDcuMy04LjIxLDguMzUtNi43LDEuNjktMTMuNDksMy4yOC0yMC4zNCw0LjA5LTE1LjM1LDEuOC0zMC41Nyw0LjIzLTQ1LjYsNy44Mi0uOTguMjMtMS44NS45Mi0yLjc4LDEuNC0uODIuMjUtMS42My41LTIuNDUuNzRaIj48L3BhdGg+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjkuNDcsODUuMjdjLjgyLS4yNSwxLjYzLS41LDIuNDUtLjc0LjM0LS4xMi42OC0uMjUsMS4wMi0uMzcuMS4xOC4yMS4zNS4zMS41My0xLjU2Ljg4LTMuMTIsMS43Ny00LjY4LDIuNjMtNi43NSwzLjcyLTcuNDcsMTEuMDQtLjg5LDE0LjkzLDIxLjI4LDEyLjU3LDM4LjA5LDE0LjM1LDU5LjExLjg2LDEwLjk0LTcuMDIsMTguMDktMTYuOSwyMi4yNC0yOS4xLjQtMS4xOC45NC0yLjMyLDEuNDItMy40Ny4xMS0uMjYuMjUtLjUuNDQtLjg5LTIuNTEsMTkuMTctNy42NywzMi4wNy0yOC4wMSw0Mi4wMS0yMC4yMyw5Ljg5LTM5LjU2LDYuNjMtNTcuMzUtNi43NC0zLjU1LTIuNjctNi44MS01LjctMTAuMjQtOC41My0uNjMtLjUyLTEuNDMtLjg1LTIuMTQtMS4yNy4zOC0uNDIuNzYtLjg0LDEuMTQtMS4yNiwxLjksMS41NSwzLjc5LDMuMTEsNS43Nyw0LjczLjIxLS4zMS40OS0uNTMuNDctLjczLS40LTUuMzgsMi42NC04LjYzLDYuODQtMTEuMTguNzItLjQ0LDEuNC0uOTQsMi4wOS0xLjQyWiI+PC9wYXRoPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTE2LjA5LDQ1LjkzYzEuNTctMTYuMzEsMTMuNDItMjYuMDEsMzYuOTEtMzAuMTctMi44NCwxLjMzLTUuMDUsMi4yNy03LjE3LDMuMzgtNy45MSw0LjEyLTE0LjAxLDEwLjE4LTE4LjUyLDE3LjgyLS45NiwxLjYyLTEuNjEsMy41MS0yLDUuMzYtLjM1LDEuNjctMS4wMSwyLjU3LTIuNzIsMi43NS0yLjA4LjIyLTQuMTUuNTQtNi41Ljg2WiI+PC9wYXRoPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTYyLjM2LDEyLjI3Yy0xOS4wNS0uMDgtMzQuNzUsNi4wOC00Ni44LDIxLjM3QzE5LjAyLDEyLjU4LDQ2Ljc3LDMuNzIsNjIuMzYsMTIuMjdaIj48L3BhdGg+PC9nPjwvZz48L3N2Zz4=" alt="" aria-hidden="true"></div><div class="body"><h3>Toyota Corolla Cross 1.8 · 2025</h3><span class="price">€33.500</span><span class="specs" data-i18n="c2.specs">30 km · hybrid / petrol · automatic</span><a href="https://flamingomotors.com.cy/" rel="noopener" data-i18n="cars.view">View vehicle</a></div></div>
+        <div class="car"><div class="ph"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJMYXllcl8yIiBkYXRhLW5hbWU9IkxheWVyIDIiIHZpZXdCb3g9IjAgMCAxMTAuODkgMTE3LjQyIj48ZGVmcz48c3R5bGU+IC5jbHMtMSB7IGZpbGw6ICNmZmY7IH0gPC9zdHlsZT48L2RlZnM+PGcgaWQ9IkxheWVyXzEtMiIgZGF0YS1uYW1lPSJMYXllciAxIj48Zz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yOS40Nyw4NS4yN2MtNS40LDIuMDQtMTAuOCw0LjA0LTE2LjE4LDYuMTItMy4yMiwxLjI0LTYuNCwyLjU5LTkuNjksMy42OCwxMS4zMy0xMC41NCwyNi42Ny0xMy43LDM5Ljc2LTIxLjQ0LTcuODYtNS43OC0xNy4xMi03LjczLTI1Ljg1LTExLjgzaDExLjQ5Yy04Ljk4LTUuMzMtMTkuMDQtNS41NC0yOS04LjI1LDQuNDEtMS4zMyw4LjMzLTIuNSwxMi41NC0zLjc3LS43Mi0uNi0xLjE4LS45OS0xLjk3LTEuNjQsMTguMTYtMi4wMSwzNS45My00LjIxLDUzLjgyLTIuMTQsNC40LjUxLDguNzMsMi4yNSwxMi45MSwzLjg5LDQuNzYsMS44Niw5LjQ2LDMuNDQsMTQuNTksMi4wOCw0LjUxLTEuMiw1Ljc4LTMuNDgsNS4xMS04LjItMS4xOS04LjM2LTYuNC0xNC4wOC0xMi40NS0xOS4yMi0zLjAxLTIuNTYtNi4yOS00LjgxLTkuMzItNy4zNC0zLjM3LTIuODMtMi45Ny02LjQ5LTEuNzEtMTAuMTEsMS4zMi0zLjc5LDMuNzMtNi42OSw3Ljk5LTcsNC4zNy0uMzIsOC42NS4wMiwxMi4zMiwzLjA2LDEuMDkuOSwyLjg0LDEuMDQsNC4zLDEuNDYsMi4zNi42NywzLjgsMi4xMiw0LjI5LDQuNTYuMzYsMS43OS44NiwzLjU2LDEuMzEsNS4zMywxLjA1LDQuMTIuMDksNS40Mi0zLjk3LDUuNzEtLjE2LTEuNzguMTktMy44NC0uNjItNS4yMi0uODItMS40MS0yLjg0LTIuMDktNC4yMy0zLjItLjk0LS43NS0xLjg1LTEuNjItMi41NC0yLjYtMS44OS0yLjcxLTMuNi01LjM3LTcuMzktNS45LTMuOTQtLjU1LTcuMTguODktOS4yLDQuOC0xLjU2LDMuMDItLjcxLDcsMi4yMyw5LjQsMi4wOSwxLjcsNC41MiwyLjk5LDYuNTgsNC43Myw2LjE4LDUuMjMsMTIuODMsMTAuMDYsMTguMjMsMTYuMDIsNi4xOCw2LjgyLDkuMTksMTUuMTcsNi4wMSwyNC42My0xLjM4LDQuMS00LjAzLDcuMy04LjIxLDguMzUtNi43LDEuNjktMTMuNDksMy4yOC0yMC4zNCw0LjA5LTE1LjM1LDEuOC0zMC41Nyw0LjIzLTQ1LjYsNy44Mi0uOTguMjMtMS44NS45Mi0yLjc4LDEuNC0uODIuMjUtMS42My41LTIuNDUuNzRaIj48L3BhdGg+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjkuNDcsODUuMjdjLjgyLS4yNSwxLjYzLS41LDIuNDUtLjc0LjM0LS4xMi42OC0uMjUsMS4wMi0uMzcuMS4xOC4yMS4zNS4zMS41My0xLjU2Ljg4LTMuMTIsMS43Ny00LjY4LDIuNjMtNi43NSwzLjcyLTcuNDcsMTEuMDQtLjg5LDE0LjkzLDIxLjI4LDEyLjU3LDM4LjA5LDE0LjM1LDU5LjExLjg2LDEwLjk0LTcuMDIsMTguMDktMTYuOSwyMi4yNC0yOS4xLjQtMS4xOC45NC0yLjMyLDEuNDItMy40Ny4xMS0uMjYuMjUtLjUuNDQtLjg5LTIuNTEsMTkuMTctNy42NywzMi4wNy0yOC4wMSw0Mi4wMS0yMC4yMyw5Ljg5LTM5LjU2LDYuNjMtNTcuMzUtNi43NC0zLjU1LTIuNjctNi44MS01LjctMTAuMjQtOC41My0uNjMtLjUyLTEuNDMtLjg1LTIuMTQtMS4yNy4zOC0uNDIuNzYtLjg0LDEuMTQtMS4yNiwxLjksMS41NSwzLjc5LDMuMTEsNS43Nyw0LjczLjIxLS4zMS40OS0uNTMuNDctLjczLS40LTUuMzgsMi42NC04LjYzLDYuODQtMTEuMTguNzItLjQ0LDEuNC0uOTQsMi4wOS0xLjQyWiI+PC9wYXRoPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTE2LjA5LDQ1LjkzYzEuNTctMTYuMzEsMTMuNDItMjYuMDEsMzYuOTEtMzAuMTctMi44NCwxLjMzLTUuMDUsMi4yNy03LjE3LDMuMzgtNy45MSw0LjEyLTE0LjAxLDEwLjE4LTE4LjUyLDE3LjgyLS45NiwxLjYyLTEuNjEsMy41MS0yLDUuMzYtLjM1LDEuNjctMS4wMSwyLjU3LTIuNzIsMi43NS0yLjA4LjIyLTQuMTUuNTQtNi41Ljg2WiI+PC9wYXRoPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTYyLjM2LDEyLjI3Yy0xOS4wNS0uMDgtMzQuNzUsNi4wOC00Ni44LDIxLjM3QzE5LjAyLDEyLjU4LDQ2Ljc3LDMuNzIsNjIuMzYsMTIuMjdaIj48L3BhdGg+PC9nPjwvZz48L3N2Zz4=" alt="" aria-hidden="true"></div><div class="body"><h3>Mazda CX-3 1.5 · 2023</h3><span class="price">€22.000</span><span class="specs" data-i18n="c3.specs">21,000 km · petrol · automatic</span><a href="https://flamingomotors.com.cy/" rel="noopener" data-i18n="cars.view">View vehicle</a></div></div>
+        <div class="car"><div class="ph"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJMYXllcl8yIiBkYXRhLW5hbWU9IkxheWVyIDIiIHZpZXdCb3g9IjAgMCAxMTAuODkgMTE3LjQyIj48ZGVmcz48c3R5bGU+IC5jbHMtMSB7IGZpbGw6ICNmZmY7IH0gPC9zdHlsZT48L2RlZnM+PGcgaWQ9IkxheWVyXzEtMiIgZGF0YS1uYW1lPSJMYXllciAxIj48Zz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yOS40Nyw4NS4yN2MtNS40LDIuMDQtMTAuOCw0LjA0LTE2LjE4LDYuMTItMy4yMiwxLjI0LTYuNCwyLjU5LTkuNjksMy42OCwxMS4zMy0xMC41NCwyNi42Ny0xMy43LDM5Ljc2LTIxLjQ0LTcuODYtNS43OC0xNy4xMi03LjczLTI1Ljg1LTExLjgzaDExLjQ5Yy04Ljk4LTUuMzMtMTkuMDQtNS41NC0yOS04LjI1LDQuNDEtMS4zMyw4LjMzLTIuNSwxMi41NC0zLjc3LS43Mi0uNi0xLjE4LS45OS0xLjk3LTEuNjQsMTguMTYtMi4wMSwzNS45My00LjIxLDUzLjgyLTIuMTQsNC40LjUxLDguNzMsMi4yNSwxMi45MSwzLjg5LDQuNzYsMS44Niw5LjQ2LDMuNDQsMTQuNTksMi4wOCw0LjUxLTEuMiw1Ljc4LTMuNDgsNS4xMS04LjItMS4xOS04LjM2LTYuNC0xNC4wOC0xMi40NS0xOS4yMi0zLjAxLTIuNTYtNi4yOS00LjgxLTkuMzItNy4zNC0zLjM3LTIuODMtMi45Ny02LjQ5LTEuNzEtMTAuMTEsMS4zMi0zLjc5LDMuNzMtNi42OSw3Ljk5LTcsNC4zNy0uMzIsOC42NS4wMiwxMi4zMiwzLjA2LDEuMDkuOSwyLjg0LDEuMDQsNC4zLDEuNDYsMi4zNi42NywzLjgsMi4xMiw0LjI5LDQuNTYuMzYsMS43OS44NiwzLjU2LDEuMzEsNS4zMywxLjA1LDQuMTIuMDksNS40Mi0zLjk3LDUuNzEtLjE2LTEuNzguMTktMy44NC0uNjItNS4yMi0uODItMS40MS0yLjg0LTIuMDktNC4yMy0zLjItLjk0LS43NS0xLjg1LTEuNjItMi41NC0yLjYtMS44OS0yLjcxLTMuNi01LjM3LTcuMzktNS45LTMuOTQtLjU1LTcuMTguODktOS4yLDQuOC0xLjU2LDMuMDItLjcxLDcsMi4yMyw5LjQsMi4wOSwxLjcsNC41MiwyLjk5LDYuNTgsNC43Myw2LjE4LDUuMjMsMTIuODMsMTAuMDYsMTguMjMsMTYuMDIsNi4xOCw2LjgyLDkuMTksMTUuMTcsNi4wMSwyNC42My0xLjM4LDQuMS00LjAzLDcuMy04LjIxLDguMzUtNi43LDEuNjktMTMuNDksMy4yOC0yMC4zNCw0LjA5LTE1LjM1LDEuOC0zMC41Nyw0LjIzLTQ1LjYsNy44Mi0uOTguMjMtMS44NS45Mi0yLjc4LDEuNC0uODIuMjUtMS42My41LTIuNDUuNzRaIj48L3BhdGg+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjkuNDcsODUuMjdjLjgyLS4yNSwxLjYzLS41LDIuNDUtLjc0LjM0LS4xMi42OC0uMjUsMS4wMi0uMzcuMS4xOC4yMS4zNS4zMS41My0xLjU2Ljg4LTMuMTIsMS43Ny00LjY4LDIuNjMtNi43NSwzLjcyLTcuNDcsMTEuMDQtLjg5LDE0LjkzLDIxLjI4LDEyLjU3LDM4LjA5LDE0LjM1LDU5LjExLjg2LDEwLjk0LTcuMDIsMTguMDktMTYuOSwyMi4yNC0yOS4xLjQtMS4xOC45NC0yLjMyLDEuNDItMy40Ny4xMS0uMjYuMjUtLjUuNDQtLjg5LTIuNTEsMTkuMTctNy42NywzMi4wNy0yOC4wMSw0Mi4wMS0yMC4yMyw5Ljg5LTM5LjU2LDYuNjMtNTcuMzUtNi43NC0zLjU1LTIuNjctNi44MS01LjctMTAuMjQtOC41My0uNjMtLjUyLTEuNDMtLjg1LTIuMTQtMS4yNy4zOC0uNDIuNzYtLjg0LDEuMTQtMS4yNiwxLjksMS41NSwzLjc5LDMuMTEsNS43Nyw0LjczLjIxLS4zMS40OS0uNTMuNDctLjczLS40LTUuMzgsMi42NC04LjYzLDYuODQtMTEuMTguNzItLjQ0LDEuNC0uOTQsMi4wOS0xLjQyWiI+PC9wYXRoPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTE2LjA5LDQ1LjkzYzEuNTctMTYuMzEsMTMuNDItMjYuMDEsMzYuOTEtMzAuMTctMi44NCwxLjMzLTUuMDUsMi4yNy03LjE3LDMuMzgtNy45MSw0LjEyLTE0LjAxLDEwLjE4LTE4LjUyLDE3LjgyLS45NiwxLjYyLTEuNjEsMy41MS0yLDUuMzYtLjM1LDEuNjctMS4wMSwyLjU3LTIuNzIsMi43NS0yLjA4LjIyLTQuMTUuNTQtNi41Ljg2WiI+PC9wYXRoPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTYyLjM2LDEyLjI3Yy0xOS4wNS0uMDgtMzQuNzUsNi4wOC00Ni44LDIxLjM3QzE5LjAyLDEyLjU4LDQ2Ljc3LDMuNzIsNjIuMzYsMTIuMjdaIj48L3BhdGg+PC9nPjwvZz48L3N2Zz4=" alt="" aria-hidden="true"></div><div class="body"><h3>Toyota Yaris Cross 1.5 · 2025</h3><span class="price">€25.500</span><span class="specs" data-i18n="c4.specs">2,900 km · hybrid / petrol · automatic</span><a href="https://flamingomotors.com.cy/" rel="noopener" data-i18n="cars.view">View vehicle</a></div></div>
+        <div class="car"><div class="ph"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJMYXllcl8yIiBkYXRhLW5hbWU9IkxheWVyIDIiIHZpZXdCb3g9IjAgMCAxMTAuODkgMTE3LjQyIj48ZGVmcz48c3R5bGU+IC5jbHMtMSB7IGZpbGw6ICNmZmY7IH0gPC9zdHlsZT48L2RlZnM+PGcgaWQ9IkxheWVyXzEtMiIgZGF0YS1uYW1lPSJMYXllciAxIj48Zz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yOS40Nyw4NS4yN2MtNS40LDIuMDQtMTAuOCw0LjA0LTE2LjE4LDYuMTItMy4yMiwxLjI0LTYuNCwyLjU5LTkuNjksMy42OCwxMS4zMy0xMC41NCwyNi42Ny0xMy43LDM5Ljc2LTIxLjQ0LTcuODYtNS43OC0xNy4xMi03LjczLTI1Ljg1LTExLjgzaDExLjQ5Yy04Ljk4LTUuMzMtMTkuMDQtNS41NC0yOS04LjI1LDQuNDEtMS4zMyw4LjMzLTIuNSwxMi41NC0zLjc3LS43Mi0uNi0xLjE4LS45OS0xLjk3LTEuNjQsMTguMTYtMi4wMSwzNS45My00LjIxLDUzLjgyLTIuMTQsNC40LjUxLDguNzMsMi4yNSwxMi45MSwzLjg5LDQuNzYsMS44Niw5LjQ2LDMuNDQsMTQuNTksMi4wOCw0LjUxLTEuMiw1Ljc4LTMuNDgsNS4xMS04LjItMS4xOS04LjM2LTYuNC0xNC4wOC0xMi40NS0xOS4yMi0zLjAxLTIuNTYtNi4yOS00LjgxLTkuMzItNy4zNC0zLjM3LTIuODMtMi45Ny02LjQ5LTEuNzEtMTAuMTEsMS4zMi0zLjc5LDMuNzMtNi42OSw3Ljk5LTcsNC4zNy0uMzIsOC42NS4wMiwxMi4zMiwzLjA2LDEuMDkuOSwyLjg0LDEuMDQsNC4zLDEuNDYsMi4zNi42NywzLjgsMi4xMiw0LjI5LDQuNTYuMzYsMS43OS44NiwzLjU2LDEuMzEsNS4zMywxLjA1LDQuMTIuMDksNS40Mi0zLjk3LDUuNzEtLjE2LTEuNzguMTktMy44NC0uNjItNS4yMi0uODItMS40MS0yLjg0LTIuMDktNC4yMy0zLjItLjk0LS43NS0xLjg1LTEuNjItMi41NC0yLjYtMS44OS0yLjcxLTMuNi01LjM3LTcuMzktNS45LTMuOTQtLjU1LTcuMTguODktOS4yLDQuOC0xLjU2LDMuMDItLjcxLDcsMi4yMyw5LjQsMi4wOSwxLjcsNC41MiwyLjk5LDYuNTgsNC43Myw2LjE4LDUuMjMsMTIuODMsMTAuMDYsMTguMjMsMTYuMDIsNi4xOCw2LjgyLDkuMTksMTUuMTcsNi4wMSwyNC42My0xLjM4LDQuMS00LjAzLDcuMy04LjIxLDguMzUtNi43LDEuNjktMTMuNDksMy4yOC0yMC4zNCw0LjA5LTE1LjM1LDEuOC0zMC41Nyw0LjIzLTQ1LjYsNy44Mi0uOTguMjMtMS44NS45Mi0yLjc4LDEuNC0uODIuMjUtMS42My41LTIuNDUuNzRaIj48L3BhdGg+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjkuNDcsODUuMjdjLjgyLS4yNSwxLjYzLS41LDIuNDUtLjc0LjM0LS4xMi42OC0uMjUsMS4wMi0uMzcuMS4xOC4yMS4zNS4zMS41My0xLjU2Ljg4LTMuMTIsMS43Ny00LjY4LDIuNjMtNi43NSwzLjcyLTcuNDcsMTEuMDQtLjg5LDE0LjkzLDIxLjI4LDEyLjU3LDM4LjA5LDE0LjM1LDU5LjExLjg2LDEwLjk0LTcuMDIsMTguMDktMTYuOSwyMi4yNC0yOS4xLjQtMS4xOC45NC0yLjMyLDEuNDItMy40Ny4xMS0uMjYuMjUtLjUuNDQtLjg5LTIuNTEsMTkuMTctNy42NywzMi4wNy0yOC4wMSw0Mi4wMS0yMC4yMyw5Ljg5LTM5LjU2LDYuNjMtNTcuMzUtNi43NC0zLjU1LTIuNjctNi44MS01LjctMTAuMjQtOC41My0uNjMtLjUyLTEuNDMtLjg1LTIuMTQtMS4yNy4zOC0uNDIuNzYtLjg0LDEuMTQtMS4yNiwxLjksMS41NSwzLjc5LDMuMTEsNS43Nyw0LjczLjIxLS4zMS40OS0uNTMuNDctLjczLS40LTUuMzgsMi42NC04LjYzLDYuODQtMTEuMTguNzItLjQ0LDEuNC0uOTQsMi4wOS0xLjQyWiI+PC9wYXRoPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTE2LjA5LDQ1LjkzYzEuNTctMTYuMzEsMTMuNDItMjYuMDEsMzYuOTEtMzAuMTctMi44NCwxLjMzLTUuMDUsMi4yNy03LjE3LDMuMzgtNy45MSw0LjEyLTE0LjAxLDEwLjE4LTE4LjUyLDE3LjgyLS45NiwxLjYyLTEuNjEsMy41MS0yLDUuMzYtLjM1LDEuNjctMS4wMSwyLjU3LTIuNzIsMi43NS0yLjA4LjIyLTQuMTUuNTQtNi41Ljg2WiI+PC9wYXRoPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTYyLjM2LDEyLjI3Yy0xOS4wNS0uMDgtMzQuNzUsNi4wOC00Ni44LDIxLjM3QzE5LjAyLDEyLjU4LDQ2Ljc3LDMuNzIsNjIuMzYsMTIuMjdaIj48L3BhdGg+PC9nPjwvZz48L3N2Zz4=" alt="" aria-hidden="true"></div><div class="body"><h3>Toyota Yaris 1.5 · 2024</h3><span class="price">€17.500</span><span class="specs" data-i18n="c5.specs">14,000 km · hybrid / petrol · automatic</span><a href="https://flamingomotors.com.cy/" rel="noopener" data-i18n="cars.view">View vehicle</a></div></div>
+        <div class="car"><div class="ph"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJMYXllcl8yIiBkYXRhLW5hbWU9IkxheWVyIDIiIHZpZXdCb3g9IjAgMCAxMTAuODkgMTE3LjQyIj48ZGVmcz48c3R5bGU+IC5jbHMtMSB7IGZpbGw6ICNmZmY7IH0gPC9zdHlsZT48L2RlZnM+PGcgaWQ9IkxheWVyXzEtMiIgZGF0YS1uYW1lPSJMYXllciAxIj48Zz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yOS40Nyw4NS4yN2MtNS40LDIuMDQtMTAuOCw0LjA0LTE2LjE4LDYuMTItMy4yMiwxLjI0LTYuNCwyLjU5LTkuNjksMy42OCwxMS4zMy0xMC41NCwyNi42Ny0xMy43LDM5Ljc2LTIxLjQ0LTcuODYtNS43OC0xNy4xMi03LjczLTI1Ljg1LTExLjgzaDExLjQ5Yy04Ljk4LTUuMzMtMTkuMDQtNS41NC0yOS04LjI1LDQuNDEtMS4zMyw4LjMzLTIuNSwxMi41NC0zLjc3LS43Mi0uNi0xLjE4LS45OS0xLjk3LTEuNjQsMTguMTYtMi4wMSwzNS45My00LjIxLDUzLjgyLTIuMTQsNC40LjUxLDguNzMsMi4yNSwxMi45MSwzLjg5LDQuNzYsMS44Niw5LjQ2LDMuNDQsMTQuNTksMi4wOCw0LjUxLTEuMiw1Ljc4LTMuNDgsNS4xMS04LjItMS4xOS04LjM2LTYuNC0xNC4wOC0xMi40NS0xOS4yMi0zLjAxLTIuNTYtNi4yOS00LjgxLTkuMzItNy4zNC0zLjM3LTIuODMtMi45Ny02LjQ5LTEuNzEtMTAuMTEsMS4zMi0zLjc5LDMuNzMtNi42OSw3Ljk5LTcsNC4zNy0uMzIsOC42NS4wMiwxMi4zMiwzLjA2LDEuMDkuOSwyLjg0LDEuMDQsNC4zLDEuNDYsMi4zNi42NywzLjgsMi4xMiw0LjI5LDQuNTYuMzYsMS43OS44NiwzLjU2LDEuMzEsNS4zMywxLjA1LDQuMTIuMDksNS40Mi0zLjk3LDUuNzEtLjE2LTEuNzguMTktMy44NC0uNjItNS4yMi0uODItMS40MS0yLjg0LTIuMDktNC4yMy0zLjItLjk0LS43NS0xLjg1LTEuNjItMi41NC0yLjYtMS44OS0yLjcxLTMuNi01LjM3LTcuMzktNS45LTMuOTQtLjU1LTcuMTguODktOS4yLDQuOC0xLjU2LDMuMDItLjcxLDcsMi4yMyw5LjQsMi4wOSwxLjcsNC41MiwyLjk5LDYuNTgsNC43Myw2LjE4LDUuMjMsMTIuODMsMTAuMDYsMTguMjMsMTYuMDIsNi4xOCw2LjgyLDkuMTksMTUuMTcsNi4wMSwyNC42My0xLjM4LDQuMS00LjAzLDcuMy04LjIxLDguMzUtNi43LDEuNjktMTMuNDksMy4yOC0yMC4zNCw0LjA5LTE1LjM1LDEuOC0zMC41Nyw0LjIzLTQ1LjYsNy44Mi0uOTguMjMtMS44NS45Mi0yLjc4LDEuNC0uODIuMjUtMS42My41LTIuNDUuNzRaIj48L3BhdGg+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjkuNDcsODUuMjdjLjgyLS4yNSwxLjYzLS41LDIuNDUtLjc0LjM0LS4xMi42OC0uMjUsMS4wMi0uMzcuMS4xOC4yMS4zNS4zMS41My0xLjU2Ljg4LTMuMTIsMS43Ny00LjY4LDIuNjMtNi43NSwzLjcyLTcuNDcsMTEuMDQtLjg5LDE0LjkzLDIxLjI4LDEyLjU3LDM4LjA5LDE0LjM1LDU5LjExLjg2LDEwLjk0LTcuMDIsMTguMDktMTYuOSwyMi4yNC0yOS4xLjQtMS4xOC45NC0yLjMyLDEuNDItMy40Ny4xMS0uMjYuMjUtLjUuNDQtLjg5LTIuNTEsMTkuMTctNy42NywzMi4wNy0yOC4wMSw0Mi4wMS0yMC4yMyw5Ljg5LTM5LjU2LDYuNjMtNTcuMzUtNi43NC0zLjU1LTIuNjctNi44MS01LjctMTAuMjQtOC41My0uNjMtLjUyLTEuNDMtLjg1LTIuMTQtMS4yNy4zOC0uNDIuNzYtLjg0LDEuMTQtMS4yNiwxLjksMS41NSwzLjc5LDMuMTEsNS43Nyw0LjczLjIxLS4zMS40OS0uNTMuNDctLjczLS40LTUuMzgsMi42NC04LjYzLDYuODQtMTEuMTguNzItLjQ0LDEuNC0uOTQsMi4wOS0xLjQyWiI+PC9wYXRoPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTE2LjA5LDQ1LjkzYzEuNTctMTYuMzEsMTMuNDItMjYuMDEsMzYuOTEtMzAuMTctMi44NCwxLjMzLTUuMDUsMi4yNy03LjE3LDMuMzgtNy45MSw0LjEyLTE0LjAxLDEwLjE4LTE4LjUyLDE3LjgyLS45NiwxLjYyLTEuNjEsMy41MS0yLDUuMzYtLjM1LDEuNjctMS4wMSwyLjU3LTIuNzIsMi43NS0yLjA4LjIyLTQuMTUuNTQtNi41Ljg2WiI+PC9wYXRoPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTYyLjM2LDEyLjI3Yy0xOS4wNS0uMDgtMzQuNzUsNi4wOC00Ni44LDIxLjM3QzE5LjAyLDEyLjU4LDQ2Ljc3LDMuNzIsNjIuMzYsMTIuMjdaIj48L3BhdGg+PC9nPjwvZz48L3N2Zz4=" alt="" aria-hidden="true"></div><div class="body"><h3>Mazda 2 1.5 · 2024</h3><span class="price"><s>€17.000</s>€16.500</span><span class="specs" data-i18n="c6.specs">19,000 km</span><a href="https://flamingomotors.com.cy/" rel="noopener" data-i18n="cars.view">View vehicle</a></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="services">
+    <div class="wrap">
+      <div class="label" data-i18n="services.label">Beyond just a car</div>
+      <h2 data-i18n="services.h2">Our services</h2>
+      <p class="lead" data-i18n="services.lead">Ensure your vehicle’s long and reliable life with maintenance and services performed on a regular basis.</p>
+      <div class="tiles">
+        <div class="tile"><h3 data-i18n="s1.h">MOT</h3><p data-i18n="s1.p">Essential for safety, the environment and your insurance, done hassle-free.</p></div>
+        <div class="tile"><h3 data-i18n="s2.h">Tires</h3><p data-i18n="s2.p">Book your tire check-up to keep your wheels in showroom condition.</p></div>
+        <div class="tile"><h3 data-i18n="s3.h">Cosmetic repairs</h3><p data-i18n="s3.p">Touch-ups to keep your car looking fresh.</p></div>
+        <div class="tile"><h3 data-i18n="s4.h">Car storage</h3><p data-i18n="s4.p">Safe, reliable and convenient short-term vehicle storage.</p></div>
+        <div class="tile"><h3 data-i18n="s5.h">Car pre-orders</h3><p data-i18n="s5.p">Looking for a specific car? We locate it through our network and handle sourcing and import.</p></div>
+        <div class="tile"><h3 data-i18n="s6.h">Car insurance</h3><p data-i18n="s6.p">Competitive insurance packages to suit all drivers and vehicles.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="story" class="story">
+    <div class="wrap">
+      <div class="label" data-i18n="story.label">About us</div>
+      <h2 data-i18n="story.h2">Four decades on Omonia Avenue</h2>
+      <p data-i18n="story.p1">Flamingo Motor Agency Ltd has been satisfying motoring needs for over four decades. Established in the 1980s, the dealership has grown continuously and is today one of the most reliable new and used car dealers in Cyprus, and one of its largest independent ones.</p>
+      <div class="facts3">
+        <div><h3 data-i18n="f1.h">Experience</h3><p data-i18n="f1.p">For over four decades, high-quality used cars for the local market.</p></div>
+        <div><h3 data-i18n="f2.h">Dealership</h3><p data-i18n="f2.p">A wide selection from leading manufacturers, including Mercedes, BMW, Range Rover, Toyota and Mazda.</p></div>
+        <div><h3 data-i18n="f3.h">Support</h3><p data-i18n="f3.p">Our commitment to customer service, honesty, and transparency has made us one of Cyprus’ largest independent car dealerships.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews">
+    <div class="wrap">
+      <div class="label" data-i18n="reviews.label">Google reviews</div>
+      <h2 data-i18n="reviews.h2">What customers say</h2>
+      <p class="lead" data-i18n="reviews.lead">Two of 162 Google reviews, 4.9 stars on average.</p>
+      <div class="quotes">
+        <blockquote>
+          <span data-i18n="q1.text">“I recently purchased a Toyota Corolla Cross from Flamingo Motors in Limassol, and I couldn't be happier with my decision. Although I don't usually write reviews, the outstanding service and quality of the car deserved a public thank you.”</span>
+          <footer>Doros Papaelia · <span data-i18n="q.source">Google review</span></footer>
+        </blockquote>
+        <blockquote>
+          <span data-i18n="q2.text">“We had a great experience at Flamingo Motors. From start to finish, the process was fast, friendly, and efficient. No pressure selling!”</span>
+          <footer>Ray Jones · <span data-i18n="q.source">Google review</span></footer>
+        </blockquote>
+      </div>
+      <div class="tags" aria-label="Most mentioned in reviews">
+        <span data-i18n="tag.quality">quality cars · 11</span>
+        <span data-i18n="tag.team">helpful team · 9</span>
+        <span data-i18n="tag.showroom">good showroom · 8</span>
+        <span data-i18n="tag.fast">fast deal · 4</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="visit" class="visit">
+    <div class="wrap">
+      <h2 data-i18n="visit.h2">Get in touch</h2>
+      <p class="lead" data-i18n="visit.lead">Expect a response within 24 hours.</p>
+      <div class="facts">
+        <div>
+          <h3 data-i18n="visit.address">Find us</h3>
+          <p>109 Omonia Avenue<br>Limassol 3045<br>Cyprus</p>
+        </div>
+        <div>
+          <h3 data-i18n="visit.hours">Opening hours</h3>
+          <div class="hours">
+            <span data-i18n="d.monfri">Monday – Friday</span><span>9:00 – 13:00, 15:00 – 18:00</span>
+            <span data-i18n="d.sat">Saturday</span><span>9:00 – 13:00</span>
+            <span data-i18n="d.sun">Sunday</span><span class="closed" data-i18n="d.closed">Closed</span>
+          </div>
+        </div>
+        <div>
+          <h3 data-i18n="visit.contact">Contact</h3>
+          <p><a href="tel:+35725566456">+357 25 566456</a><br><a href="mailto:info@flamingomotors.com.cy">info@flamingomotors.com.cy</a><br><a href="https://www.instagram.com/flamingo.motors/" rel="noopener">@flamingo.motors</a></p>
+          <p style="margin-top:14px"><a class="btn btn-dark" href="mailto:info@flamingomotors.com.cy" data-i18n="cta.service">Schedule service</a></p>
+        </div>
+      </div>
+      <div class="map">
+        <iframe title="Map: Flamingo Motors" data-i18n-title="visit.map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Flamingo+Motor+Agency+Ltd,+Omonoias+109,+Limassol&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJMYXllcl8yIiBkYXRhLW5hbWU9IkxheWVyIDIiIHZpZXdCb3g9IjAgMCA1MTAuOTkgMTE1LjA4Ij48ZGVmcz48c3R5bGU+IC5jbHMtMSB7IGZpbGw6ICNmZmY7IH0gPC9zdHlsZT48L2RlZnM+PGcgaWQ9IkxheWVyXzEtMiIgZGF0YS1uYW1lPSJMYXllciAxIj48Zz48Zz48Zz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xMzYuMTQsMTEuOTNoMzUuMzR2Ny42aC0yN3YxMi45NmgyMy45NXY3LjZoLTIzLjk1djE5LjMzaC04LjM0VjExLjkzWiI+PC9wYXRoPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTE4MC42NSwxMS45M2g4LjM0djM5Ljg5aDI0Ljk2djcuNmgtMzMuMzFWMTEuOTNaIj48L3BhdGg+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjM5LjQ3LDExLjU5aDcuNzNsMjAuODksNDcuODNoLTguODJsLTQuODItMTEuNDZoLTIyLjQ2bC00Ljg4LDExLjQ2aC04LjU1bDIwLjg5LTQ3LjgzWk0yNTEuNDEsNDAuNTVsLTguMjEtMTktOC4xNCwxOWgxNi4zNVoiPjwvcGF0aD48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNzYuMjUsMTEuOTNoOC44OWwxNC40NSwyMi40NSwxNC40NS0yMi40NWg4Ljg5djQ3LjQ5aC04LjM0VjI1LjM2bC0xNC45OSwyMi4zOWgtLjI3bC0xNC44Ni0yMi4yNXYzMy45MmgtOC4yMVYxMS45M1oiPjwvcGF0aD48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zMzUuNjEsMTEuOTNoOC4zNHY0Ny40OWgtOC4zNFYxMS45M1oiPjwvcGF0aD48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zNTYuNjQsMTEuOTNoNy43M2wyNS40NCwzMi44M1YxMS45M2g4LjIxdjQ3LjQ5aC02Ljk5bC0yNi4xOS0zMy43OHYzMy43OGgtOC4yMVYxMS45M1oiPjwvcGF0aD48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik00MDguMTQsMzUuODF2LS4xNGMwLTEzLjMsMTAuMTgtMjQuNTYsMjQuNDktMjQuNTYsOC4yOCwwLDEzLjM2LDIuMzEsMTguMjUsNi40NWwtNS4yOSw2LjMxYy0zLjY2LTMuMTItNy4yNi01LjA5LTEzLjMtNS4wOS04Ljc1LDAtMTUuNCw3LjY3LTE1LjQsMTYuNzZ2LjE0YzAsOS43Nyw2LjQ1LDE2Ljk2LDE2LjE1LDE2Ljk2LDQuNDgsMCw4LjU1LTEuNDIsMTEuNDYtMy42di04Ljg5aC0xMi4xNHYtNy4yNmgyMC4yMnYxOS45NWMtNC42OCw0LTExLjQsNy4zOS0xOS44MSw3LjM5LTE0Ljg2LDAtMjQuNjMtMTAuNTgtMjQuNjMtMjQuNDJaIj48L3BhdGg+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNDYxLjMzLDM1Ljgxdi0uMTRjMC0xMy4zNiwxMC4zMS0yNC41NiwyNC45LTI0LjU2czI0Ljc2LDExLjA2LDI0Ljc2LDI0LjQydi4xNGMwLDEzLjM2LTEwLjMxLDI0LjU2LTI0LjksMjQuNTZzLTI0Ljc2LTExLjA2LTI0Ljc2LTI0LjQyWk01MDIuMjQsMzUuODF2LS4xNGMwLTkuMjMtNi43Mi0xNi44OS0xNi4xNS0xNi44OXMtMTYuMDEsNy41My0xNi4wMSwxNi43NnYuMTRjMCw5LjIzLDYuNzIsMTYuODksMTYuMTUsMTYuODlzMTYuMDEtNy41MywxNi4wMS0xNi43NloiPjwvcGF0aD48L2c+PGc+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjQ2LjU0LDgwLjM1aDEuNzVsMTAuMDIsMTQuNzYsMTAuMDItMTQuNzZoMS43NXYyNC45NmgtMS44NXYtMjEuNjhsLTkuODgsMTQuMzdoLS4xNGwtOS44OC0xNC4zN3YyMS42OGgtMS43OHYtMjQuOTZaIj48L3BhdGg+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjc2LjM5LDkyLjl2LS4wN2MwLTYuODEsNS4wMy0xMi45MSwxMi41OS0xMi45MXMxMi41Miw2LjAzLDEyLjUyLDEyLjg0di4wN2MwLDYuODEtNS4wMywxMi45MS0xMi41OSwxMi45MXMtMTIuNTItNi4wMy0xMi41Mi0xMi44NFpNMjk5LjU3LDkyLjl2LS4wN2MwLTYuMTctNC40OS0xMS4yMy0xMC42Ni0xMS4yM3MtMTAuNTksNC45OS0xMC41OSwxMS4xNnYuMDdjMCw2LjE3LDQuNDksMTEuMjMsMTAuNjYsMTEuMjNzMTAuNTktNC45OSwxMC41OS0xMS4xNloiPjwvcGF0aD48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zMTIuNzcsODIuMDZoLTguN3YtMS43MWgxOS4yNnYxLjcxaC04Ljd2MjMuMjVoLTEuODV2LTIzLjI1WiI+PC9wYXRoPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTMyNS44OSw5Mi45di0uMDdjMC02LjgxLDUuMDMtMTIuOTEsMTIuNTktMTIuOTFzMTIuNTIsNi4wMywxMi41MiwxMi44NHYuMDdjMCw2LjgxLTUuMDMsMTIuOTEtMTIuNTksMTIuOTFzLTEyLjUyLTYuMDMtMTIuNTItMTIuODRaTTM0OS4wNyw5Mi45di0uMDdjMC02LjE3LTQuNDktMTEuMjMtMTAuNjYtMTEuMjNzLTEwLjU5LDQuOTktMTAuNTksMTEuMTZ2LjA3YzAsNi4xNyw0LjQ5LDExLjIzLDEwLjY2LDExLjIzczEwLjU5LTQuOTksMTAuNTktMTEuMTZaIj48L3BhdGg+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMzU3LjMxLDgwLjM1aDEwLjQ4YzMuMDcsMCw1LjUzLjk2LDcuMDMsMi40NiwxLjE4LDEuMTgsMS44OSwyLjg1LDEuODksNC42NHYuMDdjMCw0LjE3LTMuMSw2LjU2LTcuMzEsNy4xM2w4LjI0LDEwLjY2aC0yLjM1bC03Ljk1LTEwLjM0aC04LjE3djEwLjM0aC0xLjg1di0yNC45NlpNMzY3LjU4LDkzLjI5YzQuMTcsMCw3LjI3LTIuMSw3LjI3LTUuNzF2LS4wN2MwLTMuMzUtMi42NC01LjQ2LTcuMTctNS40NmgtOC41MnYxMS4yM2g4LjQyWiI+PC9wYXRoPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTM4MS40OSwxMDEuNjdsMS4yMS0xLjM5YzIuNzUsMi41Myw1LjI4LDMuNzEsOC45NSwzLjcxczYuMzEtMi4xLDYuMzEtNC45NnYtLjA3YzAtMi42NC0xLjM5LTQuMTctNy4wNi01LjMxLTUuOTktMS4yMS04LjQyLTMuMjUtOC40Mi03LjAydi0uMDdjMC0zLjcxLDMuMzktNi41Niw4LjAyLTYuNTYsMy42NCwwLDYuMDMsMSw4LjU2LDMuMDNsLTEuMTgsMS40NmMtMi4zNS0yLjAzLTQuNzEtMi44Mi03LjQ1LTIuODItMy42NywwLTYuMSwyLjEtNi4xLDQuNzF2LjA3YzAsMi42NCwxLjM1LDQuMjQsNy4yNyw1LjQ2LDUuNzgsMS4xOCw4LjIsMy4yNSw4LjIsNi44OHYuMDdjMCw0LjAzLTMuNDYsNi44MS04LjI3LDYuODEtMy45OSwwLTcuMDYtMS4zMi0xMC4wNi0zLjk5WiI+PC9wYXRoPjwvZz48L2c+PGc+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjguODksODMuNThjLTUuMjksMS45OS0xMC41OSwzLjk2LTE1Ljg2LDUuOTktMy4xNiwxLjIyLTYuMjcsMi41NC05LjUsMy42MSwxMS4xLTEwLjMzLDI2LjE0LTEzLjQyLDM4Ljk3LTIxLjAxLTcuNzEtNS42Ny0xNi43OC03LjU3LTI1LjMzLTExLjU5aDExLjI2Yy04LjgtNS4yMi0xOC42Ni01LjQzLTI4LjQyLTguMDgsNC4zMy0xLjMsOC4xNi0yLjQ1LDEyLjI5LTMuNy0uNy0uNTktMS4xNi0uOTctMS45My0xLjYxLDE3LjgtMS45NywzNS4yMS00LjEzLDUyLjc1LTIuMSw0LjMxLjUsOC41NiwyLjIxLDEyLjY2LDMuODEsNC42NiwxLjgzLDkuMjcsMy4zNywxNC4zLDIuMDMsNC40Mi0xLjE3LDUuNjYtMy40MSw1LjAxLTguMDQtMS4xNi04LjE5LTYuMjctMTMuOC0xMi4yLTE4Ljg0LTIuOTUtMi41MS02LjE2LTQuNzEtOS4xMy03LjItMy4zMS0yLjc3LTIuOTEtNi4zNi0xLjY3LTkuOTEsMS4yOS0zLjcxLDMuNjUtNi41NSw3LjgzLTYuODYsNC4yOC0uMzEsOC40Ny4wMiwxMi4wOCwzLDEuMDcuODgsMi43OCwxLjAyLDQuMjIsMS40MywyLjMxLjY2LDMuNzIsMi4wOCw0LjIsNC40Ny4zNSwxLjc2Ljg0LDMuNDksMS4yOCw1LjIyLDEuMDMsNC4wNC4wOSw1LjMxLTMuODksNS42LS4xNi0xLjc1LjE5LTMuNzctLjYtNS4xMi0uODEtMS4zOC0yLjc4LTIuMDQtNC4xNS0zLjE0LS45Mi0uNzQtMS44Mi0xLjU5LTIuNDktMi41NS0xLjg1LTIuNjYtMy41My01LjI2LTcuMjUtNS43OC0zLjg2LS41NC03LjA0Ljg4LTkuMDEsNC43LTEuNTMsMi45Ni0uNyw2Ljg2LDIuMTksOS4yMSwyLjA1LDEuNjcsNC40MywyLjk0LDYuNDUsNC42NCw2LjA2LDUuMTIsMTIuNTcsOS44NiwxNy44NiwxNS43LDYuMDYsNi42OSw5LjAxLDE0Ljg3LDUuODksMjQuMTQtMS4zNSw0LjAyLTMuOTUsNy4xNS04LjA0LDguMTktNi41NywxLjY2LTEzLjIyLDMuMjItMTkuOTMsNC4wMS0xNS4wNCwxLjc3LTI5Ljk2LDQuMTUtNDQuNjksNy42Ni0uOTYuMjMtMS44Mi45LTIuNzIsMS4zNy0uOC4yNC0xLjYuNDktMi40LjczWiI+PC9wYXRoPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI4Ljg5LDgzLjU4Yy44LS4yNCwxLjYtLjQ5LDIuNC0uNzMuMzMtLjEyLjY3LS4yNCwxLS4zNi4xLjE3LjIuMzUuMzEuNTItMS41My44Ni0zLjA1LDEuNzMtNC41OSwyLjU4LTYuNjEsMy42NC03LjMyLDEwLjgyLS44NywxNC42MywyMC44NiwxMi4zMiwzNy4zNCwxNC4wNyw1Ny45My44NCwxMC43Mi02Ljg4LDE3LjczLTE2LjU2LDIxLjgtMjguNTIuMzktMS4xNi45Mi0yLjI3LDEuMzktMy40LjExLS4yNS4yNC0uNDkuNDMtLjg3LTIuNDYsMTguNzktNy41MiwzMS40My0yNy40NSw0MS4xOC0xOS44Myw5LjY5LTM4Ljc4LDYuNS01Ni4yMS02LjYxLTMuNDctMi42MS02LjY3LTUuNTktMTAuMDMtOC4zNi0uNjItLjUxLTEuNC0uODMtMi4xLTEuMjQuMzctLjQxLjc1LS44MiwxLjEyLTEuMjMsMS44NiwxLjUyLDMuNzIsMy4wNSw1LjY2LDQuNjQuMi0uMy40OC0uNTIuNDYtLjcxLS4zOS01LjI3LDIuNTgtOC40Niw2LjcxLTEwLjk1LjcxLS40MywxLjM3LS45MywyLjA1LTEuMzlaIj48L3BhdGg+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTUuNzcsNDUuMDJjMS41NC0xNS45OSwxMy4xNS0yNS40OSwzNi4xOC0yOS41Ny0yLjc4LDEuMy00Ljk0LDIuMjMtNy4wMywzLjMxLTcuNzUsNC4wNC0xMy43Myw5Ljk4LTE4LjE2LDE3LjQ2LS45NCwxLjU5LTEuNTgsMy40NC0xLjk2LDUuMjYtLjM0LDEuNjMtLjk5LDIuNTItMi42NiwyLjctMi4wNC4yMi00LjA2LjUzLTYuMzcuODRaIj48L3BhdGg+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNjEuMTIsMTIuMDJjLTE4LjY3LS4wOC0zNC4wNiw1Ljk2LTQ1Ljg3LDIwLjk1QzE4LjY1LDEyLjMzLDQ1Ljg0LDMuNjUsNjEuMTIsMTIuMDJaIj48L3BhdGg+PC9nPjwvZz48L2c+PC9zdmc+" alt="Flamingo Motors" width="511" height="115">
+    <span>© 2026 Flamingo Motor Agency Ltd · 109 Omonia Avenue, Limassol 3045</span>
+    <span data-i18n="footer.note">Design concept. Content and prices from flamingomotors.com.cy and Google, September 2026.</span>
+  </div>
+</footer>
+
+<script>
+  var T = {
+    en: {
+      'concept':'Design concept for Flamingo Motors · not the live website',
+      'nav.cars':'Vehicles','nav.services':'Services','nav.story':'About','nav.visit':'Contact',
+      'hero.kicker':'Where quality meets confidence',
+      'hero.h1':'New and used car specialists in Cyprus',
+      'hero.p':'Serving Cyprus with quality used cars since the 1980s. A carefully selected range from Mercedes, BMW, Range Rover, Toyota and Mazda, sold with trust, transparency and service.',
+      'cta.cars':'Browse cars','cta.service':'Schedule service',
+      'proof.num':'4.9','proof.rating':'Google rating, 162 reviews','proof.since':'in Limassol since the','proof.reply':'reply to every enquiry',
+      'visit.map':'Map: Flamingo Motors',
+      'cars.label':'In stock','cars.h2':'Featured vehicles','cars.lead':'Six cars from the current stock, prices as listed on flamingomotors.com.cy on 4 September 2026.','cars.view':'View vehicle',
+      'c1.specs':'10,000 km · petrol · automatic','c2.specs':'30 km · hybrid / petrol · automatic','c3.specs':'21,000 km · petrol · automatic','c4.specs':'2,900 km · hybrid / petrol · automatic','c5.specs':'14,000 km · hybrid / petrol · automatic','c6.specs':'19,000 km',
+      'services.label':'Beyond just a car','services.h2':'Our services','services.lead':'Ensure your vehicle’s long and reliable life with maintenance and services performed on a regular basis.',
+      's1.h':'MOT','s1.p':'Essential for safety, the environment and your insurance, done hassle-free.',
+      's2.h':'Tires','s2.p':'Book your tire check-up to keep your wheels in showroom condition.',
+      's3.h':'Cosmetic repairs','s3.p':'Touch-ups to keep your car looking fresh.',
+      's4.h':'Car storage','s4.p':'Safe, reliable and convenient short-term vehicle storage.',
+      's5.h':'Car pre-orders','s5.p':'Looking for a specific car? We locate it through our network and handle sourcing and import.',
+      's6.h':'Car insurance','s6.p':'Competitive insurance packages to suit all drivers and vehicles.',
+      'story.label':'About us','story.h2':'Four decades on Omonia Avenue',
+      'story.p1':'Flamingo Motor Agency Ltd has been satisfying motoring needs for over four decades. Established in the 1980s, the dealership has grown continuously and is today one of the most reliable new and used car dealers in Cyprus, and one of its largest independent ones.',
+      'f1.h':'Experience','f1.p':'For over four decades, high-quality used cars for the local market.',
+      'f2.h':'Dealership','f2.p':'A wide selection from leading manufacturers, including Mercedes, BMW, Range Rover, Toyota and Mazda.',
+      'f3.h':'Support','f3.p':'Our commitment to customer service, honesty, and transparency has made us one of Cyprus’ largest independent car dealerships.',
+      'reviews.label':'Google reviews','reviews.h2':'What customers say','reviews.lead':'Two of 162 Google reviews, 4.9 stars on average.',
+      'q1.text':'“I recently purchased a Toyota Corolla Cross from Flamingo Motors in Limassol, and I couldn\'t be happier with my decision. Although I don\'t usually write reviews, the outstanding service and quality of the car deserved a public thank you.”',
+      'q2.text':'“We had a great experience at Flamingo Motors. From start to finish, the process was fast, friendly, and efficient. No pressure selling!”',
+      'q.source':'Google review',
+      'tag.quality':'quality cars · 11','tag.team':'helpful team · 9','tag.showroom':'good showroom · 8','tag.fast':'fast deal · 4',
+      'visit.h2':'Get in touch','visit.lead':'Expect a response within 24 hours.','visit.address':'Find us','visit.hours':'Opening hours','visit.contact':'Contact',
+      'd.monfri':'Monday – Friday','d.sat':'Saturday','d.sun':'Sunday','d.closed':'Closed',
+      'footer.note':'Design concept. Content and prices from flamingomotors.com.cy and Google, September 2026.'
+    },
+    el: {
+      'concept':'Πρόταση σχεδιασμού για τη Flamingo Motors · όχι η επίσημη ιστοσελίδα',
+      'nav.cars':'Οχήματα','nav.services':'Υπηρεσίες','nav.story':'Η εταιρεία','nav.visit':'Επικοινωνία',
+      'hero.kicker':'Όπου η ποιότητα συναντά την εμπιστοσύνη',
+      'hero.h1':'Ειδικοί σε καινούργια και μεταχειρισμένα αυτοκίνητα στην Κύπρο',
+      'hero.p':'Εξυπηρετούμε την Κύπρο με ποιοτικά μεταχειρισμένα αυτοκίνητα από τη δεκαετία του 1980. Προσεκτικά επιλεγμένη γκάμα από Mercedes, BMW, Range Rover, Toyota και Mazda, με εμπιστοσύνη, διαφάνεια και εξυπηρέτηση.',
+      'cta.cars':'Δείτε τα αυτοκίνητα','cta.service':'Κλείστε σέρβις',
+      'proof.num':'4,9','proof.rating':'βαθμολογία Google, 162 κριτικές','proof.since':'στη Λεμεσό από τη δεκαετία του','proof.reply':'απάντηση σε κάθε ερώτημα',
+      'visit.map':'Χάρτης: Flamingo Motors',
+      'cars.label':'Διαθέσιμα','cars.h2':'Επιλεγμένα οχήματα','cars.lead':'Έξι αυτοκίνητα από το τρέχον απόθεμα, τιμές όπως αναγράφονται στο flamingomotors.com.cy στις 4 Σεπτεμβρίου 2026.','cars.view':'Δείτε το όχημα',
+      'c1.specs':'10.000 km · βενζίνη · αυτόματο','c2.specs':'30 km · υβριδικό / βενζίνη · αυτόματο','c3.specs':'21.000 km · βενζίνη · αυτόματο','c4.specs':'2.900 km · υβριδικό / βενζίνη · αυτόματο','c5.specs':'14.000 km · υβριδικό / βενζίνη · αυτόματο','c6.specs':'19.000 km',
+      'services.label':'Πέρα από το αυτοκίνητο','services.h2':'Οι υπηρεσίες μας','services.lead':'Εξασφαλίστε μακρά και αξιόπιστη ζωή για το όχημά σας με τακτική συντήρηση και σέρβις.',
+      's1.h':'MOT','s1.p':'Απαραίτητο για την ασφάλεια, το περιβάλλον και την ασφάλισή σας, χωρίς ταλαιπωρία.',
+      's2.h':'Ελαστικά','s2.p':'Κλείστε έλεγχο ελαστικών για να παραμένουν οι τροχοί σας σε κατάσταση εκθεσιακού.',
+      's3.h':'Μικροεπισκευές αμαξώματος','s3.p':'Επιδιορθώσεις για να δείχνει το αυτοκίνητό σας φρέσκο.',
+      's4.h':'Φύλαξη οχημάτων','s4.p':'Ασφαλής, αξιόπιστη και βολική βραχυπρόθεσμη φύλαξη.',
+      's5.h':'Προπαραγγελίες','s5.p':'Ψάχνετε συγκεκριμένο αυτοκίνητο; Το εντοπίζουμε μέσω του δικτύου μας και αναλαμβάνουμε εύρεση και εισαγωγή.',
+      's6.h':'Ασφάλιση αυτοκινήτου','s6.p':'Ανταγωνιστικά ασφαλιστικά πακέτα για όλους τους οδηγούς και τα οχήματα.',
+      'story.label':'Η εταιρεία','story.h2':'Τέσσερις δεκαετίες στη λεωφόρο Ομονοίας',
+      'story.p1':'Η Flamingo Motor Agency Ltd καλύπτει τις ανάγκες των οδηγών για πάνω από τέσσερις δεκαετίες. Ιδρύθηκε τη δεκαετία του 1980, αναπτύσσεται συνεχώς και σήμερα είναι ένας από τους πιο αξιόπιστους εμπόρους καινούργιων και μεταχειρισμένων αυτοκινήτων στην Κύπρο, και ένας από τους μεγαλύτερους ανεξάρτητους.',
+      'f1.h':'Εμπειρία','f1.p':'Πάνω από τέσσερις δεκαετίες ποιοτικά μεταχειρισμένα για την τοπική αγορά.',
+      'f2.h':'Έκθεση','f2.p':'Μεγάλη επιλογή από κορυφαίους κατασκευαστές, όπως Mercedes, BMW, Range Rover, Toyota και Mazda.',
+      'f3.h':'Υποστήριξη','f3.p':'Η δέσμευσή μας στην εξυπηρέτηση, την ειλικρίνεια και τη διαφάνεια μας έκανε έναν από τους μεγαλύτερους ανεξάρτητους εμπόρους αυτοκινήτων στην Κύπρο.',
+      'reviews.label':'Κριτικές Google','reviews.h2':'Τι λένε οι πελάτες','reviews.lead':'Δύο από 162 κριτικές Google, 4,9 αστέρια κατά μέσο όρο.',
+      'q1.text':'«Αγόρασα πρόσφατα ένα Toyota Corolla Cross από τη Flamingo Motors στη Λεμεσό και δεν θα μπορούσα να είμαι πιο ευχαριστημένος με την απόφασή μου. Αν και συνήθως δεν γράφω κριτικές, η εξαιρετική εξυπηρέτηση και η ποιότητα του αυτοκινήτου άξιζαν ένα δημόσιο ευχαριστώ.»',
+      'q2.text':'«Είχαμε μια εξαιρετική εμπειρία στη Flamingo Motors. Από την αρχή ως το τέλος, η διαδικασία ήταν γρήγορη, φιλική και αποτελεσματική. Καμία πίεση για πώληση!»',
+      'q.source':'κριτική Google',
+      'tag.quality':'ποιοτικά αυτοκίνητα · 11','tag.team':'εξυπηρετική ομάδα · 9','tag.showroom':'καλή έκθεση · 8','tag.fast':'γρήγορη συμφωνία · 4',
+      'visit.h2':'Επικοινωνήστε μαζί μας','visit.lead':'Απαντάμε εντός 24 ωρών.','visit.address':'Πού θα μας βρείτε','visit.hours':'Ώρες λειτουργίας','visit.contact':'Επικοινωνία',
+      'd.monfri':'Δευτέρα – Παρασκευή','d.sat':'Σάββατο','d.sun':'Κυριακή','d.closed':'Κλειστά',
+      'footer.note':'Πρόταση σχεδιασμού. Περιεχόμενο και τιμές από το flamingomotors.com.cy και το Google, Σεπτέμβριος 2026.'
+    },
+    de: {
+      'concept':'Designentwurf für Flamingo Motors · nicht die offizielle Website',
+      'nav.cars':'Fahrzeuge','nav.services':'Leistungen','nav.story':'Über uns','nav.visit':'Kontakt',
+      'hero.kicker':'Wo Qualität auf Vertrauen trifft',
+      'hero.h1':'Spezialist für Neu- und Gebrauchtwagen auf Zypern',
+      'hero.p':'Seit den 1980er-Jahren versorgt Flamingo Motors Zypern mit hochwertigen Gebrauchtwagen. Eine sorgfältig ausgewählte Auswahl von Mercedes, BMW, Range Rover, Toyota und Mazda, verkauft mit Vertrauen, Transparenz und Service.',
+      'cta.cars':'Fahrzeuge ansehen','cta.service':'Service buchen',
+      'proof.num':'4,9','proof.rating':'Google-Bewertung, 162 Rezensionen','proof.since':'in Limassol seit den','proof.reply':'Antwort auf jede Anfrage',
+      'visit.map':'Karte: Flamingo Motors',
+      'cars.label':'Auf Lager','cars.h2':'Ausgewählte Fahrzeuge','cars.lead':'Sechs Autos aus dem aktuellen Bestand, Preise wie am 4. September 2026 auf flamingomotors.com.cy angegeben.','cars.view':'Fahrzeug ansehen',
+      'c1.specs':'10.000 km · Benzin · Automatik','c2.specs':'30 km · Hybrid / Benzin · Automatik','c3.specs':'21.000 km · Benzin · Automatik','c4.specs':'2.900 km · Hybrid / Benzin · Automatik','c5.specs':'14.000 km · Hybrid / Benzin · Automatik','c6.specs':'19.000 km',
+      'services.label':'Mehr als nur ein Auto','services.h2':'Unsere Leistungen','services.lead':'Sichere deinem Fahrzeug ein langes, zuverlässiges Leben durch regelmäßige Wartung und Service.',
+      's1.h':'MOT-Prüfung','s1.p':'Pflicht für Sicherheit, Umwelt und Versicherung, ohne Aufwand erledigt.',
+      's2.h':'Reifen','s2.p':'Reifencheck buchen, damit die Räder im Showroom-Zustand bleiben.',
+      's3.h':'Kosmetische Reparaturen','s3.p':'Ausbesserungen, damit dein Auto frisch aussieht.',
+      's4.h':'Fahrzeuglagerung','s4.p':'Sichere, zuverlässige und bequeme Kurzzeitlagerung.',
+      's5.h':'Vorbestellung','s5.p':'Du suchst ein bestimmtes Auto? Wir finden es über unser Netzwerk und übernehmen Beschaffung und Import.',
+      's6.h':'Kfz-Versicherung','s6.p':'Wettbewerbsfähige Versicherungspakete für alle Fahrer und Fahrzeuge.',
+      'story.label':'Über uns','story.h2':'Vier Jahrzehnte an der Omonia-Allee',
+      'story.p1':'Flamingo Motor Agency Ltd erfüllt seit über vier Jahrzehnten Wünsche rund ums Auto. Gegründet in den 1980er-Jahren, ist der Händler stetig gewachsen und heute einer der verlässlichsten Neu- und Gebrauchtwagenhändler Zyperns, und einer der größten unabhängigen.',
+      'f1.h':'Erfahrung','f1.p':'Seit über vier Jahrzehnten hochwertige Gebrauchtwagen für den lokalen Markt.',
+      'f2.h':'Auswahl','f2.p':'Eine breite Auswahl führender Hersteller, darunter Mercedes, BMW, Range Rover, Toyota und Mazda.',
+      'f3.h':'Betreuung','f3.p':'Unser Anspruch an Kundenservice, Ehrlichkeit und Transparenz hat uns zu einem der größten unabhängigen Autohändler Zyperns gemacht.',
+      'reviews.label':'Google-Rezensionen','reviews.h2':'Was Kunden sagen','reviews.lead':'Zwei von 162 Google-Rezensionen, 4,9 Sterne im Schnitt.',
+      'q1.text':'„Ich habe kürzlich einen Toyota Corolla Cross bei Flamingo Motors in Limassol gekauft und könnte mit meiner Entscheidung nicht glücklicher sein. Normalerweise schreibe ich keine Rezensionen, aber der herausragende Service und die Qualität des Autos verdienen ein öffentliches Dankeschön.“',
+      'q2.text':'„Wir hatten eine großartige Erfahrung bei Flamingo Motors. Von Anfang bis Ende war der Ablauf schnell, freundlich und effizient. Kein Verkaufsdruck!“',
+      'q.source':'Google-Rezension',
+      'tag.quality':'Qualitätsautos · 11','tag.team':'hilfsbereites Team · 9','tag.showroom':'guter Showroom · 8','tag.fast':'schneller Abschluss · 4',
+      'visit.h2':'Kontakt aufnehmen','visit.lead':'Antwort innerhalb von 24 Stunden.','visit.address':'So findest du uns','visit.hours':'Öffnungszeiten','visit.contact':'Kontakt',
+      'd.monfri':'Montag – Freitag','d.sat':'Samstag','d.sun':'Sonntag','d.closed':'Geschlossen',
+      'footer.note':'Designentwurf. Inhalte und Preise von flamingomotors.com.cy und Google, September 2026.'
+    },
+    ru: {
+      'concept':'Дизайн-концепция для Flamingo Motors · не официальный сайт',
+      'nav.cars':'Автомобили','nav.services':'Услуги','nav.story':'О компании','nav.visit':'Контакты',
+      'hero.kicker':'Где качество встречается с доверием',
+      'hero.h1':'Специалисты по новым и подержанным автомобилям на Кипре',
+      'hero.p':'С 1980-х годов поставляем на Кипр качественные подержанные автомобили. Тщательно отобранный выбор Mercedes, BMW, Range Rover, Toyota и Mazda, с доверием, прозрачностью и сервисом.',
+      'cta.cars':'Смотреть автомобили','cta.service':'Записаться на сервис',
+      'proof.num':'4,9','proof.rating':'рейтинг Google, 162 отзыва','proof.since':'в Лимассоле с','proof.reply':'ответ на каждый запрос',
+      'visit.map':'Карта: Flamingo Motors',
+      'cars.label':'В наличии','cars.h2':'Избранные автомобили','cars.lead':'Шесть автомобилей из текущего наличия, цены как на flamingomotors.com.cy на 4 сентября 2026.','cars.view':'Смотреть автомобиль',
+      'c1.specs':'10 000 км · бензин · автомат','c2.specs':'30 км · гибрид / бензин · автомат','c3.specs':'21 000 км · бензин · автомат','c4.specs':'2 900 км · гибрид / бензин · автомат','c5.specs':'14 000 км · гибрид / бензин · автомат','c6.specs':'19 000 км',
+      'services.label':'Больше, чем автомобиль','services.h2':'Наши услуги','services.lead':'Обеспечьте автомобилю долгую и надёжную жизнь регулярным обслуживанием и сервисом.',
+      's1.h':'Техосмотр (MOT)','s1.p':'Обязателен для безопасности, экологии и страховки, без хлопот.',
+      's2.h':'Шины','s2.p':'Запишитесь на проверку шин, чтобы колёса были в идеальном состоянии.',
+      's3.h':'Косметический ремонт','s3.p':'Подкраска и мелкий ремонт, чтобы автомобиль выглядел свежо.',
+      's4.h':'Хранение автомобиля','s4.p':'Безопасное, надёжное и удобное краткосрочное хранение.',
+      's5.h':'Предзаказ','s5.p':'Ищете конкретную машину? Найдём её через нашу сеть и возьмём на себя поиск и импорт.',
+      's6.h':'Автострахование','s6.p':'Выгодные страховые пакеты для всех водителей и автомобилей.',
+      'story.label':'О компании','story.h2':'Четыре десятилетия на проспекте Омония',
+      'story.p1':'Flamingo Motor Agency Ltd уже более четырёх десятилетий помогает автомобилистам. Основанная в 1980-х, компания постоянно росла и сегодня входит в число самых надёжных продавцов новых и подержанных автомобилей на Кипре и в число крупнейших независимых.',
+      'f1.h':'Опыт','f1.p':'Более четырёх десятилетий качественных подержанных автомобилей для местного рынка.',
+      'f2.h':'Выбор','f2.p':'Широкий выбор от ведущих производителей, включая Mercedes, BMW, Range Rover, Toyota и Mazda.',
+      'f3.h':'Поддержка','f3.p':'Наша приверженность сервису, честности и прозрачности сделала нас одним из крупнейших независимых автодилеров Кипра.',
+      'reviews.label':'Отзывы Google','reviews.h2':'Что говорят клиенты','reviews.lead':'Два из 162 отзывов Google, средняя оценка 4,9.',
+      'q1.text':'«Недавно купил Toyota Corolla Cross в Flamingo Motors в Лимассоле и очень доволен решением. Обычно я не пишу отзывы, но отличный сервис и качество автомобиля заслужили публичное спасибо.»',
+      'q2.text':'«У нас остались прекрасные впечатления от Flamingo Motors. От начала до конца всё было быстро, дружелюбно и чётко. Никакого давления!»',
+      'q.source':'отзыв Google',
+      'tag.quality':'качественные автомобили · 11','tag.team':'отзывчивая команда · 9','tag.showroom':'хороший шоурум · 8','tag.fast':'быстрая сделка · 4',
+      'visit.h2':'Связаться с нами','visit.lead':'Ответ в течение 24 часов.','visit.address':'Как нас найти','visit.hours':'Часы работы','visit.contact':'Контакты',
+      'd.monfri':'понедельник – пятница','d.sat':'суббота','d.sun':'воскресенье','d.closed':'Закрыто',
+      'footer.note':'Дизайн-концепция. Содержание и цены с flamingomotors.com.cy и Google, сентябрь 2026.'
+    }
+  };
+  var cur = 'en';
+  function setLang(l) {
+    cur = l;
+    document.documentElement.lang = l;
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var s = T[l][el.getAttribute('data-i18n')];
+      if (s) el.textContent = s;
+    });
+    document.querySelectorAll('[data-i18n-title]').forEach(function (el) {
+      var s = T[l][el.getAttribute('data-i18n-title')];
+      if (s) el.title = s;
+    });
+    document.querySelectorAll('[data-lang]').forEach(function (b) {
+      b.setAttribute('aria-pressed', b.getAttribute('data-lang') === l ? 'true' : 'false');
+    });
+    try { localStorage.setItem('lang', l); } catch (e) {}
+  }
+  document.querySelectorAll('[data-lang]').forEach(function (b) {
+    b.addEventListener('click', function () { setLang(b.getAttribute('data-lang')); });
+  });
+  try { var saved = localStorage.getItem('lang'); if (saved && T[saved]) setLang(saved); } catch (e) {}
+</script>
+</body>
+</html>
