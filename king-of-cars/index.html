@@ -37,7 +37,7 @@
   nav{height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px}
   .brand{display:flex;flex-direction:column;text-decoration:none;white-space:nowrap;font-family:"Archivo Black",sans-serif;font-size:19px;letter-spacing:.04em;line-height:1}
   .brand small{font-family:Karla,sans-serif;font-weight:600;font-size:9px;letter-spacing:.28em;color:var(--ink-2);margin-top:3px}
-  @media (max-width:420px){.brand{font-size:15px}.brand small{font-size:8px}.lang button{padding:5px 8px}}
+  @media (max-width:600px){.brand{font-size:15px}.brand small{font-size:8px}.lang button{padding:5px 8px}}
   .links{display:flex;gap:26px;font-weight:500}
   .links a{text-decoration:none;color:var(--ink-2)}
   .links a:hover{color:var(--ink)}
@@ -151,6 +151,8 @@
   .hero.hero-anim .wrap>div:first-child{max-width:680px}
   @media (max-width:860px){.hero.hero-full,.hero.hero-anim{min-height:auto}.hero.hero-full .wrap,.hero.hero-anim .wrap{padding-top:56px;padding-bottom:64px}}
   @media (prefers-reduced-motion:reduce){.hero.hero-anim::before{animation:none}}
+  /* kopf-fix 7.9.2026: Sprachumschalter darf nie aus dem Bild laufen */
+  nav{min-width:0}.brand{min-width:0;overflow:hidden;text-overflow:ellipsis;flex:1 1 auto}.lang{flex:none}
 </style>
 </head>
 <body>

@@ -38,7 +38,7 @@
   .lang button{background:none;border:0;color:#fff;font:inherit;font-weight:700;font-size:13px;padding:5px 10px;border-radius:3px;cursor:pointer}
   .lang button[aria-pressed="true"]{background:var(--red);color:#fff}
   @media (max-width:860px){.links{display:none}}
-  @media (max-width:420px){.brand img{height:28px}.lang button{padding:5px 8px}}
+  @media (max-width:600px){.brand img{height:28px}.lang button{padding:5px 8px}}
   .hero{padding:40px 0 56px}
   .hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
   .kicker{font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--red);margin-bottom:14px}
@@ -88,6 +88,8 @@
   @media (max-width:860px){.facts{grid-template-columns:1fr}.map{aspect-ratio:4/3}}
   footer.site{background:var(--dark);color:rgba(255,255,255,.8);padding:32px 0;font-size:14px}
   footer.site .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  /* kopf-fix 7.9.2026: Sprachumschalter darf nie aus dem Bild laufen */
+  nav{min-width:0}.brand{min-width:0;overflow:hidden;text-overflow:ellipsis;flex:1 1 auto}.lang{flex:none}
   /* Niveau-Baustein (4.9.2026, nach design-motion-principles am 4.9. 21:10 geschärft): Marketing-Seite, Gewichtung Jakub (Politur), Jhey (Einstieg), Emil (Navigation). Animiert werden transform, opacity, filter; einzige Ausnahme sind die kurzen 200-ms-Hover-Übergänge auf box-shadow bei Karten und Kopfzeile. */
   :root{--ease-out:cubic-bezier(.22,1,.36,1);--ease-soft:cubic-bezier(.4,0,.2,1)}
   .kenburns{animation:kb 28s var(--ease-soft) infinite alternate;transform-origin:center;will-change:transform}
