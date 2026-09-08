@@ -63,7 +63,7 @@
   .mgroup li{display:flex;align-items:baseline;gap:8px;padding:10px 0;font-size:17px;border-top:1px solid var(--line-solid)}
   .mgroup li:first-child{border-top:0}
   .mgroup li small{display:block;color:var(--ink-2);font-size:14px;margin-top:2px}
-  .mgroup .dots{flex:1;border-bottom:1px dotted var(--ink-2);min-width:24px;transform:translateY(-5px)}
+  .mgroup .dots{flex:1;min-width:24px} /* keine Punktlinien (Regel 4.9.2026, CLAUDE.md), nur Luft zwischen Gericht und Preis */
   .mgroup .price{font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
   .mimg{border-radius:var(--radius);overflow:hidden;aspect-ratio:3/4;background:var(--panel);margin-top:38px;position:sticky;top:90px}
   .mimg img{width:100%;height:100%;object-fit:cover}
