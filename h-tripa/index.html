@@ -55,12 +55,12 @@
   section{padding:88px 0}
   section h2{font-size:clamp(30px,3.6vw,44px);margin-bottom:14px}
   .lead{color:var(--ink-2);max-width:60ch;margin:0 0 40px;font-size:18px}
-  /* menu: the tavern's real price list, two columns, dotted leaders */
+  /* menu: the tavern's real price list, two columns, space between name and price */
   .mgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px 56px}
   .mgroup h3{font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 14px;font-family:Karla,sans-serif;font-weight:700}
   .mgroup ul{list-style:none;margin:0 0 28px;padding:0}
   .mgroup li{display:flex;align-items:baseline;gap:8px;padding:7px 0;font-size:17px}
-  .mgroup .dots{flex:1;border-bottom:1px dotted var(--ink-2);min-width:24px;transform:translateY(-5px)}
+  .mgroup .dots{flex:1;min-width:24px} /* keine Punktlinien (Regel 4.9.2026, CLAUDE.md), nur Luft zwischen Gericht und Preis */
   .mgroup .price{font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
   @media (max-width:760px){.mgrid{grid-template-columns:1fr}}
   /* photos: four portrait tiles, same ratio as the photos, captions on the panel */
