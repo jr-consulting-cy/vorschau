@@ -1,0 +1,59 @@
+<!doctype html><html lang="en"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>D. Mandilas Car Sales · Font options</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@600&family=Space+Grotesk:wght@700&family=Oswald:wght@500&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#ffffff;--panel:#f3f7fa;--line:#dbe4ec;--ink:#111418;--ink-2:#4b5563;--brand:#00a2e8;--accent:#0077b6;--yellow:#ffde59}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--panel);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif}
+  .wrap{max-width:900px;margin:0 auto;padding:32px 20px 60px}
+  .top{margin:0 0 28px}
+  .top p{color:var(--ink-2);margin:6px 0 0;font-size:15px}
+  .card{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:28px 28px 24px;margin:0 0 20px}
+  .label{display:inline-block;background:var(--accent);color:#fff;font:600 12px/1 Inter,sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:6px 10px;border-radius:5px;margin:0 0 16px}
+  h1{margin:0 0 6px;line-height:1.1;text-transform:uppercase;letter-spacing:.01em;font-weight:500;font-size:38px;color:var(--ink)}
+  .price{display:inline-block;margin-top:10px;color:var(--accent);font-size:22px}
+  .price b{font-size:15px;color:var(--ink-2);font-family:Inter,sans-serif;font-weight:600;margin-right:6px;text-transform:none;letter-spacing:0}
+  .f1 h1{font-family:"Bebas Neue",sans-serif;letter-spacing:.02em}
+  .f2 h1{font-family:"Barlow Condensed",sans-serif;font-weight:600}
+  .f3 h1{font-family:"Space Grotesk",sans-serif;font-weight:700;text-transform:none}
+  .f0 h1{font-family:Oswald,sans-serif}
+  .f1 .price{font-family:"Bebas Neue",sans-serif;letter-spacing:.02em}
+  .f2 .price{font-family:"Barlow Condensed",sans-serif;font-weight:600}
+  .f3 .price{font-family:"Space Grotesk",sans-serif;font-weight:700}
+  .f0 .price{font-family:Oswald,sans-serif}
+  @media (max-width:600px){h1{font-size:30px}}
+</style>
+<div class="wrap">
+  <div class="top">
+    <h2 style="margin:0;font:600 20px Inter,sans-serif">Font options for D. Mandilas Car Sales</h2>
+    <p>Same headline and price, four fonts. The current site uses the first one.</p>
+  </div>
+
+  <div class="card f0">
+    <span class="label">Current: Oswald</span>
+    <h1>D. Mandilas Car Sales</h1>
+    <div class="price"><b>From</b>€8,900</div>
+  </div>
+
+  <div class="card f1">
+    <span class="label">Option 1: Bebas Neue</span>
+    <h1>D. Mandilas Car Sales</h1>
+    <div class="price"><b>From</b>€8,900</div>
+  </div>
+
+  <div class="card f2">
+    <span class="label">Option 2: Barlow Condensed</span>
+    <h1>D. Mandilas Car Sales</h1>
+    <div class="price"><b>From</b>€8,900</div>
+  </div>
+
+  <div class="card f3">
+    <span class="label">Option 3: Space Grotesk</span>
+    <h1>D. Mandilas Car Sales</h1>
+    <div class="price"><b>From</b>€8,900</div>
+  </div>
+</div>
+</html>
