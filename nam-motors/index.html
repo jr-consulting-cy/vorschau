@@ -114,21 +114,21 @@
 
   footer.site{background:var(--dark);color:#d5d8db;padding:32px 0;font-size:14px}
   footer.site .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-  /* Niveau-Baustein (4.9.2026, nach design-motion-principles am 4.9. 21:10 geschärft): Marketing-Seite, Gewichtung Jakub (Politur), Jhey (Einstieg), Emil (Navigation). Animiert werden transform, opacity, filter; einzige Ausnahme sind die kurzen 200-ms-Hover-Übergänge auf box-shadow bei Karten und Kopfzeile. */
+  /* Niveau-Baustein (4.9.2026, nach design-motion-principles am 4.9. 21:10 geschärft): Marketing-Seite, Gewichtung Politur, Einstieg, Navigation. Animiert werden transform, opacity, filter; einzige Ausnahme sind die kurzen 200-ms-Hover-Übergänge auf box-shadow bei Karten und Kopfzeile. */
   :root{--ease-out:cubic-bezier(.22,1,.36,1);--ease-soft:cubic-bezier(.4,0,.2,1)}
   .kenburns{animation:kb 28s var(--ease-soft) infinite alternate;transform-origin:center;will-change:transform}
   @keyframes kb{from{transform:scale(1)}to{transform:scale(1.06)}}
-  /* Sektionen erscheinen beim Scrollen: Deckkraft, 12 px von unten, Unschärfe zu scharf (Jakub-Rezept), 450 ms, eigene Kurve */
+  /* Sektionen erscheinen beim Scrollen: Deckkraft, 12 px von unten, Unschärfe zu scharf, 450 ms, eigene Kurve */
   .reveal{opacity:1;transform:none}
   .js .reveal{opacity:0;transform:translateY(12px);filter:blur(4px);transition:opacity .45s var(--ease-out),transform .45s var(--ease-out),filter .45s var(--ease-out)}
   .js .reveal.in{opacity:1;transform:none;filter:blur(0)}
-  /* Erster Bildschirm: Kicker, Überschrift, Text, Knöpfe kommen einmal nacheinander (Jhey, nur beim Laden) */
+  /* Erster Bildschirm: Kicker, Überschrift, Text, Knöpfe kommen einmal nacheinander (nur beim Laden) */
   .js .hero .wrap>div:first-child>*{animation:hero-in .55s var(--ease-out) both}
   .js .hero .wrap>div:first-child>*:nth-child(2){animation-delay:70ms}
   .js .hero .wrap>div:first-child>*:nth-child(3){animation-delay:140ms}
   .js .hero .wrap>div:first-child>*:nth-child(4){animation-delay:210ms}
   @keyframes hero-in{from{opacity:0;transform:translateY(10px);filter:blur(4px)}to{opacity:1;transform:none;filter:blur(0)}}
-  /* Karten heben sich leicht, 200 ms; Knöpfe geben beim Drücken nach (Emil) */
+  /* Karten heben sich leicht, 200 ms; Knöpfe geben beim Drücken nach */
   .lift{transition:transform .2s var(--ease-out),box-shadow .2s var(--ease-out)}
   .lift:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,.14)}
   .btn{transition:transform .15s var(--ease-out),filter .15s var(--ease-out)}
@@ -274,11 +274,11 @@
       <div class="quotes">
         <blockquote>
           <span data-i18n="q1.text">“Fantastic experience. Mr Tassos is not your typical Cipriot car salesman. Very honest and straightforward gentleman. Easy to deal with, extremely helpful. Bought a VW Golf for my wife. 1 owner car, full service history, with both remote keys. Talk to NAM Motors first.”</span>
-          <footer>SK Cyprus · <span data-i18n="q.source">Google review</span></footer>
+          <footer><span data-i18n="q.source">Google review</span></footer>
         </blockquote>
         <blockquote>
           <span data-i18n="q2.text">“Quality and respectable, I am very happy with my experience here, and from buy to pick up was a day. Car was looked over and sold good as new. Will be back again for my next car.”</span>
-          <footer>Andrew Pond · <span data-i18n="q.source">Google review</span></footer>
+          <footer><span data-i18n="q.source">Google review</span></footer>
         </blockquote>
       </div>
     </div>
